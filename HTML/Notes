@@ -1,0 +1,6 @@
+INTERNAL CSS
+This type of Css is written inside the head tag by mentioning the tags name inside the style tag
+
+INLINE CSS
+This type of Css is written inside the html tags while writing the html
+
