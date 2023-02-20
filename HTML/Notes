@@ -15,3 +15,9 @@ Special links which could help a user to jump to a specific part of the page dir
 /******************************************BOOTCAMP******************************************/
 + lorem -> To make the editor types some random text you can make more by multiplying the word with a number.
 + Boilerplate -> The codes appear automatically when you create the html file
+
+ENTITIES
++ Like there are symbols we shouldn't use them as we write the hmtl code like < or >, so to write thme symbols we are going to use other words to replace them which we call them entities.And these symbols are called "reserved symbols" and also the entity codes end with semicolon; 
+
+SEMANTIC MARKUP
++ Is just about using meaningful tags on their proper places instead of using the same tag even tho the web will still display with no problem.
