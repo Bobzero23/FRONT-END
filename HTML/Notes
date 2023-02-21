@@ -21,3 +21,9 @@ ENTITIES
 
 SEMANTIC MARKUP
 + Is just about using meaningful tags on their proper places instead of using the same tag even tho the web will still display with no problem.
+
+EMMET
++ Is a build in plug in which really helps to write a lot stuffs with abrreviation 
+
+BUTTONS
++ if you have a button inside a form without anything then when you click it will submit the form.
