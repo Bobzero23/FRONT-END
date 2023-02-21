@@ -26,4 +26,7 @@ EMMET
 + Is a build in plug in which really helps to write a lot stuffs with abrreviation 
 
 BUTTONS
-+ if you have a button inside a form without anything then when you click it will submit the form.
++ if you have a button inside a form without anything then when you click it will submit the form or you can make it behave like a button.
+
+NAME ATTRIBUTE
++ when a data is sent from a form it will go with a name it is kind important to have it..
