@@ -30,3 +30,6 @@ BUTTONS
 
 NAME ATTRIBUTE
 + when a data is sent from a form it will go with a name it is kind important to have it..
+
+RADIO BUTTON
++ To make only one radio button clickable you gonna have to use the same 'type' on all of them.
