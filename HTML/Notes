@@ -33,3 +33,10 @@ NAME ATTRIBUTE
 
 RADIO BUTTON
 + To make only one radio button clickable you gonna have to use the same 'type' on all of them.
+
+SELECTORS
++ Use # to select id's 
++ For input selectors -> input [type="andika"] {} hivi ndo utakavo tumia
+
+PSEUDO CLASSES
++ The words whicha are used with the selectors after this : sign 
