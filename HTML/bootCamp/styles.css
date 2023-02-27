@@ -10,3 +10,7 @@ body {
 .rad {
     color: #3a0ca3;
 }
+
+button:hover {
+    background-color: olive;
+}
