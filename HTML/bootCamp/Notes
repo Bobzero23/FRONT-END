@@ -49,3 +49,8 @@ PADDING ALL VALUES (THINK LIKE A CLOCK) -> Chrome color: GREEN
 top | right | bottom | left
 
 MARGING (THINK LIKE A CLOCKWISE) -> Chrome color: ORANGE
+
+DISPLAY
++ Can display blocs as you want (inline/block)
+Note: INLINE displays sometimes it ignores margin, padding, width and length
+Note: Display-none -> will hide the element but it doesnt mean it is ote there
