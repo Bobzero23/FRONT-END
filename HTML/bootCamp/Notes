@@ -44,3 +44,8 @@ PSEUDO CLASSES
 
 SPECIFICITY HIERIACHY
 ID > CLASS > ELEMENT  or you can use the website called specificityCalculator to know which and which
+
+PADDING ALL VALUES (THINK LIKE A CLOCK) -> Chrome color: GREEN
+top | right | bottom | left
+
+MARGING (THINK LIKE A CLOCKWISE) -> Chrome color: ORANGE

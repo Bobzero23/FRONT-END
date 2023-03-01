@@ -8,6 +8,8 @@ h1 {
     width: 80px;
     height: 40px;
     background-color: pink;
+    padding-left: 100px;
+    padding-top: 100px;
 }
 
 #one {
@@ -25,10 +27,15 @@ h1 {
     border-color: rgb(156, 47, 230);
     border-style: dashed;
     /* box-sizing: border-box; */
+    padding-right: 50px;
 }
 
 #three {
     background-color: rgb(185, 209, 97);
     border: 4px dotted rgb(15, 14, 14);
     border-radius: 10px;
+}
+
+button {
+    padding: 10px 30px 50px 70px;
 }
