@@ -58,3 +58,6 @@ Note: Display-none -> will hide the element but it doesnt mean it is ote there
 OPACITY AND ALPHA CHANNEL
 + Alpha channel is only affects the background color but opacity affects the whole box of elements and both 
   followo the color of their parent element
+
+POSITION 
++ Check the example
