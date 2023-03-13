@@ -67,3 +67,11 @@ TRANSICTIONS
 + property - delay - timingFunction 
 
 Note: Beware of html white space problem
+
+Flexbox (Flex-grow | Flex-shrink | Flex-basis) -> for shorthand
++ For moving divs around
+- flex-direction
+- justify content
+
+RESPONSIVE DESIGN
++ We achive this using media query
