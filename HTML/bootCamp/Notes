@@ -75,3 +75,12 @@ Flexbox (Flex-grow | Flex-shrink | Flex-basis) -> for shorthand
 
 RESPONSIVE DESIGN
 + We achive this using media query
+
+**************************************WORKING WITH BOOTSRAP******************************************
+SETUP
++ There are many ways to start working with bootstrap 
+  - installing it in your machine 
+  - linking it to the document you are working with (html)
+  Note: you need some scripts becaues some component of bootstrap requires js
+
+** container -> for containing things in a proper manner
