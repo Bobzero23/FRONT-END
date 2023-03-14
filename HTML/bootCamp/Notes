@@ -87,3 +87,6 @@ SETUP
 ** container-fluid -> this one will make thigns grow to the extend of the screen.
 
 ** btn -> for buttons (btn-lg  for large, btn-sm for small and more)
+
+Grid System
++ Can only work inside a container
