@@ -84,3 +84,6 @@ SETUP
   Note: you need some scripts becaues some component of bootstrap requires js
 
 ** container -> for containing things in a proper manner
+** container-fluid -> this one will make thigns grow to the extend of the screen.
+
+** btn -> for buttons (btn-lg  for large, btn-sm for small and more)
