@@ -90,3 +90,7 @@ SETUP
 
 Grid System
 + Can only work inside a container
+
+FORMS
++ .form-group -> puts the forms in a good margin 
++ .form-controll -> put the labels in a good margin 
