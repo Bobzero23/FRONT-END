@@ -1,0 +1,96 @@
+INTERNAL CSS
+This type of Css is written inside the head tag by mentioning the tags name inside the style tag
+
+INLINE CSS
+This type of Css is written inside the html tags while writing the html
+
+BOOKMARKS
+Special links which could help a user to jump to a specific part of the page directly by using 'id'
+
+** text-decoration:none -> Removes the underline of the link
+** tooltip link -> title= "Russell Westbrook", it is the link shows up when you hover something
+** you can turn images to link
+** you can make the image float to the right or left inside of the paragraph
+
+/******************************************BOOTCAMP******************************************/
++ lorem -> To make the editor types some random text you can make more by multiplying the word with a number.
++ Boilerplate -> The codes appear automatically when you create the html file
+
+ENTITIES
++ Like there are symbols we shouldn't use them as we write the hmtl code like < or >, so to write thme symbols we are going to use other words 
+to replace them which we call them entities.And these symbols are called "reserved symbols" and also the entity codes end with semicolon; 
+
+SEMANTIC MARKUP
++ Is just about using meaningful tags on their proper places instead of using the same tag even tho the web will still display with no problem.
+
+EMMET
++ Is a build in plug in which really helps to write a lot stuffs with abrreviation 
+
+BUTTONS
++ if you have a button inside a form without anything then when you click it will submit the form or you can make it behave like a button.
+
+NAME ATTRIBUTE
++ when a data is sent from a form it will go with a name it is kind important to have it..
+
+RADIO BUTTON
++ To make only one radio button clickable you gonna have to use the same 'type' on all of them.
+
+SELECTORS
++ Use # to select id's 
++ For input selectors -> input [type="andika"] {} hivi ndo utakavo tumia
+
+PSEUDO CLASSES
++ The words which are used with the selectors after this : sign 
+
+SPECIFICITY HIERIACHY
+ID > CLASS > ELEMENT  or you can use the website called specificityCalculator to know which and which
+
+PADDING ALL VALUES (THINK LIKE A CLOCK) -> Chrome color: GREEN
+top | right | bottom | left
+
+MARGING (THINK LIKE A CLOCKWISE) -> Chrome color: ORANGE
+
+DISPLAY
++ Can display blocs as you want (inline/block)
+Note: INLINE displays sometimes it ignores margin, padding, width and length
+Note: Display-none -> will hide the element but it doesnt mean it is ote there
+
+OPACITY AND ALPHA CHANNEL
++ Alpha channel is only affects the background color but opacity affects the whole box of elements and both 
+  followo the color of their parent element
+
+POSITION 
++ Check the example
+
+TRANSICTIONS
++ is very cool really 
++ property - delay - timingFunction 
+
+Note: Beware of html white space problem
+
+Flexbox (Flex-grow | Flex-shrink | Flex-basis) -> for shorthand
++ For moving divs around
+- flex-direction
+- justify content
+
+RESPONSIVE DESIGN
++ We achive this using media query
+
+**************************************WORKING WITH BOOTSRAP******************************************
+SETUP
++ There are many ways to start working with bootstrap 
+  - installing it in your machine 
+  - linking it to the document you are working with (html)
+  Note: you need some scripts becaues some component of bootstrap requires js
+
+** container -> for containing things in a proper manner
+** container-fluid -> this one will make thigns grow to the extend of the screen.
+
+** btn -> for buttons (btn-lg  for large, btn-sm for small and more)
+
+Grid System
++ Can only work inside a container
+
+FORMS
++ .form-group -> puts the forms in a good margin 
++ .form-controll -> put the labels in a good margin 

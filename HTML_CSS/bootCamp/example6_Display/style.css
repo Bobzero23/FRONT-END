@@ -1,0 +1,19 @@
+span {
+    background-color: #588157;
+    margin: 500px;
+}
+
+div {
+    width: 100px;
+    height: 100px;
+    background-color: #588157;
+    border: 2px solid black;
+    display: inline-block;
+}
+
+h1 {
+    background-color: aquamarine;
+    border: 2px solid black;
+    font-size: 150%;
+    display: none;
+}

@@ -1,0 +1,16 @@
+body {
+    background-color: #a8dadc;
+}
+
+#register {
+    background-color: #2b2d42;
+    color: #f1faee;
+}
+
+.rad {
+    color: #3a0ca3;
+}
+
+button:hover {
+    background-color: olive;
+}
