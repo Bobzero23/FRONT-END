@@ -93,3 +93,8 @@ button {
     font-weight: 600;
     margin-bottom: 30px;
 }
+
+
+tr td:first-child {
+    padding: 20px;
+}
