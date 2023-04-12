@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    background: #cdb4db;
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+}
+
+.outer-row {
+    background: #ffc8dd;
+    display: flex;
+}
+
+.col-left {
+    flex-basis: 60%;
+}
+
+.col-right {
+    flex-basis: 40%;
+    background: #ffafcc;
+}
