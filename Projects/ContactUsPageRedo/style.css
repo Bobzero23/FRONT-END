@@ -43,3 +43,19 @@ body {
 h3 {
     margin-bottom: 30px;
 }
+
+.input-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    /* it makes change between input and label why */
+}
+
+.input-row input-group {
+    flex-basis: 45%;
+    /* this one doesn't make no change why */
+}
+
+input {
+    width: 100%;
+}
