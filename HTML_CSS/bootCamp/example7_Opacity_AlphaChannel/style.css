@@ -2,6 +2,8 @@ section {
     width: 500px;
     height: 500px;
     background-color: magenta;
+    border: 1px solid black;
+    margin-bottom: 5px;
 }
 
 #rgba {
