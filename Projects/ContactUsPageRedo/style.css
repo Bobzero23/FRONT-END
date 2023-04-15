@@ -59,3 +59,7 @@ h3 {
 input {
     width: 100%;
 }
+
+label {
+    font-weight: 100;
+}
