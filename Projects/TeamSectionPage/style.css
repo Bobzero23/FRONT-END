@@ -27,8 +27,29 @@ body {
     width: 100%;
     cursor: pointer;
     object-fit: cover;
+    transition: .5s;
 }
 
 .col p {
     margin: 20px;
+}
+
+.social-links .fa-brands {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    border: 1px solid black;
+    margin: 0 7px;
+    cursor: pointer;
+    transition: transform .5s;
+}
+
+.social-links .fa-brands:hover {
+    background-color: black;
+    color: #ffe501;
+    transform: translateY(-7px);
+}
+
+.col:hover img {
+    transform: scale(1.1);
 }
