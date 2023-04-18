@@ -20,4 +20,15 @@ body {
 .col {
     flex-basis: 25%;
     text-align: center;
+    height: 100%;
+}
+
+.col img {
+    width: 100%;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.col p {
+    margin: 20px;
 }
