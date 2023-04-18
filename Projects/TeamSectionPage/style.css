@@ -1,0 +1,23 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-image: linear-gradient(to right, #cddc39, #009688);
+}
+
+.row {
+    background: #ffe501;
+    width: 80%;
+    display: flex;
+    margin: 4% auto;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.col {
+    flex-basis: 25%;
+    text-align: center;
+}
