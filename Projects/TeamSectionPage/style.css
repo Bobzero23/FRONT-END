@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
     font-family: sans-serif;
 }
 
@@ -21,13 +22,17 @@ body {
     flex-basis: 25%;
     text-align: center;
     height: 100%;
+    overflow: hidden;
+    /* position: relative; */
 }
 
 .col img {
     width: 100%;
+    height: 100%;
     cursor: pointer;
     object-fit: cover;
     transition: .5s;
+    display: block;
 }
 
 .col p {
@@ -52,4 +57,14 @@ body {
 
 .col:hover img {
     transform: scale(1.1);
+}
+
+.col span {
+    width: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 15px solid #ffe501;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
