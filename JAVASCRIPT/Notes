@@ -2,3 +2,16 @@
 
 ** TRUTHY AND FALSY
 + check the code for more information
+
+ARRAYS
++ push -> method to add element to thes to array (it returns the size of an array)
+Note: Not like java you can put different data types to this array
++ pop -> removing the last element of the array and returns it.
++ shift
++ unshift
++ concat
++ reverse
++ slice(?start, ?end)
+Note: is not necessary to put both 'start' and 'end', and the '?' means optional but if you don't put anything
+it will return the copy of that array, it always includes the start but not the end.
++splice(start, howManyToDelete, 'smthToAdd') -> to put in betwween (original destructive)
