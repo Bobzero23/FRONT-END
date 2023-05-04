@@ -14,4 +14,12 @@ Note: Not like java you can put different data types to this array
 + slice(?start, ?end)
 Note: is not necessary to put both 'start' and 'end', and the '?' means optional but if you don't put anything
 it will return the copy of that array, it always includes the start but not the end.
-+splice(start, howManyToDelete, 'smthToAdd') -> to put in betwween (original destructive)
++ splice(start, howManyToDelete, 'smthToAdd') -> to put in betwween (original destructive)
++ sort -> converting every element of arrya to its UTF-16 code value and sort accordingly
+Note: the sorting method it doesn't work like the other programming languages
+Note: It's normal to use 'const' because we dont change the reference we just change the context.
+Note: arrays can also arrays inside and also objects
+
+OBJECTS 
++ property = key : value
+Note: we gonna need to use the key to get our value back
