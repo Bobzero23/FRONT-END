@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AJAX Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <h1>Random Quote Generator</h1>
+    <button id="quoteButton">Get Quote</button>
+    <div id="quoteContainer"></div>
+
+    <script>
+        $(document).ready(function () {
+            // Event handling for the button click
+            $('#quoteButton').click(function () {
+                // Make an AJAX request to fetch a random quote
+                $.ajax({
+                    url: 'https://api.quotable.io/random',
+                    method: 'GET',
+                    dataType: 'json',
+                    success: function (data) {
+                        // Handle the successful response
+                        var quote = data.content;
+                        var author = data.author;
+
+                        // Update the quote container with the fetched quote
+                        $('#quoteContainer').html('<p>"' + quote + '"</p><p>- ' + author + '</p>');
+                    },
+                    error: function () {
+                        // Handle the error case
+                        $('#quoteContainer').text('Failed to fetch the quote.');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

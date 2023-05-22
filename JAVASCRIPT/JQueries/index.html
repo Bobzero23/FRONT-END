@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQuery Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="myHeading">Welcome to jQuery Example</h1>
+    <p>This is a paragraph.</p>
+    <button id="myButton">Click me</button>
+
+    <script>
+        // Ensure the DOM is ready
+        $(document).ready(function () {
+
+            // Changing CSS properties
+            $('#myHeading').css('color', 'blue');
+
+            // Modifying content
+            $('p').text('Updated paragraph content');
+
+            // Adding or removing classes
+            $('#myHeading').addClass('highlight');
+
+            // Event handling
+            $('#myButton').click(function () {
+                // Change the text and color of the heading on button click
+                $('#myHeading').text('Button clicked!').css('color', 'red');
+            });
+
+        });
+    </script>
+</body>
+
+</html>
