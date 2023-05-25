@@ -9,9 +9,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com%22%3E/
     <link rel=" preconnect" href="https://fonts.gstatic.com/" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Quizz Game</title>
 </head>
 
@@ -26,14 +23,14 @@
                     <span class="timer">Time Left </span>
                     <span>
                         <div class="inner-div">
-                            <span>15</span>
+                            <span id="seconds">15</span>
                         </div>
                     </span>
                 </div>
             </div>
         </div>
         <div class="question-row">
-            <h1 class="question">What does HTML stand for ? </h1>
+            <h1 class="question">What does HTML stands for ?</h1>
         </div>
         <div class="multiple-choices">
             <div class="choices">
@@ -48,15 +45,21 @@
             <div class="choices">
                 <p class="answer">Hyper Tool Multi Language</p>
             </div>
-            <div class="bottom-row">
-                <div class="dynamic">
-                    <p><span>2</span> of <span>5</span> Questions</p>
-                </div>
-                <div class="col2">
-                    <button class="next-button">Next Que</button>
-                </div>
+        </div>
+
+        <div class="bottom-row">
+            <div class="dynamic">
+                <p>
+                    <span id="currentQ">1</span> of <span id="totalQ">5</span> Questions
+                </p>
+            </div>
+            <div class="col2">
+                <button id="nextQ" class="next-button">Next Que</button>
             </div>
         </div>
+    </div>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script src="./index.js"></script>
 
 </html>
