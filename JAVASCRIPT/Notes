@@ -23,3 +23,7 @@ Note: arrays can also arrays inside and also objects
 OBJECTS 
 + property = key : value
 Note: we gonna need to use the key to get our value back
+
+
+LOOPS 
++ for...of this is a new to javascript as I am watching 25-May-2023 (you can check the examples)

@@ -9,12 +9,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com%22%3E/
     <link rel=" preconnect" href="https://fonts.gstatic.com/" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Quizz Game</title>
 </head>
 
 <body>
     <div class="container">
-        <div class="row1">
+        <div class="upper-row">
             <div class="col1">
                 <h2>Awesome Quiz Application</h2>
             </div>
@@ -29,13 +32,31 @@
                 </div>
             </div>
         </div>
-        <div class="row"></div>
-        <div class="row"></div>
-        <div class="row"></div>
-        <div class="row"></div>
-        <div class="row"></div>
-        <div class="row"></div>
-    </div>
+        <div class="question-row">
+            <h1 class="question">What does HTML stand for ? </h1>
+        </div>
+        <div class="multiple-choices">
+            <div class="choices">
+                <p class="answer">Hyper-text Prerocessor</p>
+            </div>
+            <div class="choices">
+                <p class="answer">Hyper-text Markup Languange</p>
+            </div>
+            <div class="choices">
+                <p class="answer">Hyper-text Multiple Languange</p>
+            </div>
+            <div class="choices">
+                <p class="answer">Hyper Tool Multi Language</p>
+            </div>
+            <div class="bottom-row">
+                <div class="dynamic">
+                    <p><span>2</span> of <span>5</span> Questions</p>
+                </div>
+                <div class="col2">
+                    <button class="next-button">Next Que</button>
+                </div>
+            </div>
+        </div>
 </body>
 
 </html>
