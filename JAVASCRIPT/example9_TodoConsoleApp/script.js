@@ -23,7 +23,7 @@ while (answer != "quit") {
         answer = prompt("What would you like to do");
     } else if (answer === "delete") {
         let elementToDelete = prompt("Enter the number of Todo you want to delete");
-        todos.slice(elementToDelete, 1);
+        todos.splice(elementToDelete, 1);
         alert("Todo is deleted successfully!!");
         answer = prompt("What would you like to do");
     } else {
