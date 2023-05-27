@@ -45,3 +45,8 @@ HIGHER ORDER FUNCTIONS
 ARROW FUNCTION 
 + helps us to create a function without using the function keyword but we have to assign it to a variable
 + if you use '()' instead of '{}' arrow function will return itself, you don't have to write the return keyword also it must be one liner
+
+
+SET TIMEOUT & SET INTERVAL
+** setTimeout() -> this function takes two parameters the first one is a function and the second one is  time to wait for that function to be executed
+** setInterval() -> this one will keep running the give function in the given interval untll you stop the function itself, and this function gives us an 'id', so store the id of the function to a variable and use that id as the paramter of 'clearInterval(id)' function just like this.
