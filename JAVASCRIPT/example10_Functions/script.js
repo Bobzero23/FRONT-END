@@ -14,3 +14,5 @@ const multiplyByTen = numbers.map(function (number) {
     return number * 10;
 });
 
+/**This is how you create a filter function */
+const greaterThanFive = numbers.filter((number) => number > 5);
