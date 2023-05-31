@@ -60,3 +60,61 @@ FILTER FUNCTION
 EVERY & SOME
 ** EVERY -> returns 'true' if all the elements matches the condition else it returns 'false'
 ** SOME -> return 'true' if any of the element matches the condtion other wise it returns 'false'
+
+IMPORTANT: 'This' keyword behaves different in 'Arrow function' and in 'Normal function'
+
+DEFAULT PARAMS
++ initializing the paramters just incase the user won't pass the parameters of a method 
++ this is how you do it in the paramters (a = 5, b = 3) simply as that
+
+SPREAD
++ you can do anything yo want to iterables like this [...array] or [..."string"] or [...object]
++ you will use this in copying stuffs and more in REACT
+
+REST PARAMS
++ you create your function paramter just like this (...nums) and whatever you add as an argument 
+will be put into array
+
+DESTRUCTURING ARRAY
++ let's say you hane an array called nums to assign its element to varaible you just do it like this 
+instead of using the tradition way 'cost [gold, silver, bronze] = nums' remember the order matters
+
+DESTRUCTURING OBJECTS
++ same idea as destructing arrays and this is the syntax of it
++ const {keyName: variableName} = objectName; that is it
+
+DOM (Document Object Model)
++ console.dir(document) -> to see all the Js objects
+
+SELECTING 
++ GetElementById
++ GetElementByTagName
++ GetElementByClassName
+
+SELECTORS
++ querySelector('#p')
+Note: note this one returns the first one available in the html and not all of them
+
+
+STYLE
++ they are on camel cased 
++ everything shall be in quotes (string)
+Note: this will not give you the style in the css, but will give you the inline and js style.
+
+COMPUTED STYLE
++ window.getComputedStyle('tag').fontSize or whatever, this is how you do it...
++ whatever you apply shall be in the "quotes" ulness if it's an array
+
+GET ATTRIBUTE
++ to check if there is an attribute what you are looking for in the tag
+Note: prefer class list instead of this
+
+SET ATTRIBUTE
++ to set/add attribute to a particular tag
++ this one takes two arguments 'the attribute you wanna add' and 'the name of the attribute'
+Note: prefer class list instead of this
+
+CLASS LIST
++ an easy way to add and remove classes
+** here are some useful methods (add, remove, contains, toggle)
++ toggle() this is a useful method of do and undo

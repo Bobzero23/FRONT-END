@@ -16,3 +16,8 @@ const multiplyByTen = numbers.map(function (number) {
 
 /**This is how you create a filter function */
 const greaterThanFive = numbers.filter((number) => number > 5);
+
+/**this is how you can use reduce function*/
+const numSum = numbers.reduce((total, curr) => {
+    return total + curr;
+});

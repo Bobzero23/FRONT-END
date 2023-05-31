@@ -1,3 +1,11 @@
+body,
+html {
+    height: 100%;
+    position: relative;
+    background-image: linear-gradient(to top left, #757f9a, #d7dde8);
+    background-repeat: no-repeat;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     position: relative;
@@ -136,4 +144,12 @@ span {
 
 span {
     font-weight: bold;
+}
+
+.true {
+    background-color: green;
+}
+
+.false {
+    background-color: red;
 }

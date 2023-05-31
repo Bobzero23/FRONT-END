@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com%22%3E/
+    <link rel=" preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+    <title>Quizz Game</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="upper-row">
+            <div class="col1">
+                <h2>Awesome Quiz Application</h2>
+            </div>
+            <div class="col2">
+                <div class="outer-div">
+                    <span class="timer">Time Left </span>
+                    <span>
+                        <div class="inner-div">
+                            <span id="seconds">15</span>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="question-row">
+            <h1 id="text" class="question">What does HTML stands for ?</h1>
+        </div>
+        <div class="multiple-choices">
+            <div class="choices">
+                <p id="a" class="answer">Hyper-text Prerocessor</p>
+            </div>
+            <div class="choices">
+                <p id="b" class="answer">Hyper-text Markup Languange</p>
+            </div>
+            <div class="choices">
+                <p id="c" class="answer">Hyper-text Multiple Languange</p>
+            </div>
+            <div class="choices">
+                <p id="d" class="answer">Hyper Tool Multi Language</p>
+            </div>
+        </div>
+
+        <div class="bottom-row">
+            <div class="dynamic">
+                <p>
+                    <span id="currentQ">1</span> of <span id="totalQ">5</span> Questions
+                </p>
+            </div>
+            <div class="col2">
+                <button id="nextQ" class="next-button">Next Que</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script src="./index.js"></script>
+
+</html>
