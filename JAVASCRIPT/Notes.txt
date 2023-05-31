@@ -118,3 +118,33 @@ CLASS LIST
 + an easy way to add and remove classes
 ** here are some useful methods (add, remove, contains, toggle)
 + toggle() this is a useful method of do and undo
+
+PARENT ELEMENT
++ giving us the parent of the provided tag
+
+CHILDREN
++ giving us the number of children of the parent
+
+CREATE ELEMENT
++ This is a way of creating  a new element
+
+APPEND CHILD
++ this is a way of adding a new element to e.g document.body.appendChild('name of the element you created') 
+
+APPEND
++ this one is more flexible we can add (text, more than one element)
+Note: this one add to the end of the parentNode
+
+
+PREPEND
++ this one works as APPEND but it adds to the beginning of the parentNode
+
+ISNERT ADJACENT ELEMENT
++ this one allows us to add element between two elemnts, it takes two arguments
+
+REMOVE
++ for removing selected tag or element
+
+ADD EVENT LISTENER
++ Takes two pareamter, the first one is the event and the
+ second one is the function which you want to happpen when the even is triggered
