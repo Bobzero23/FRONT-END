@@ -40,6 +40,7 @@ SELECTORS
 + For input selectors -> input [type="andika"] {} hivi ndo utakavo tumia
 
 PSEUDO CLASSES
++ it used for doing something when the particular stated is triggered.
 + The words which are used with the selectors after this : sign 
 
 SPECIFICITY HIERIACHY
