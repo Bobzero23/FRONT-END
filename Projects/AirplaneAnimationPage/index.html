@@ -36,7 +36,37 @@
                 <img src="images/twitter.png" alt="">
                 <img src="images/youtube.png" alt="">
             </div>
+            <div class="search-box">
+                <input type="text" placeholder="search">
+                <img src="images/search.png">
+            </div>
         </div>
+        <img src="images/cloud.png" id="clouds">
+        <img src="images/plane.png" id="airplane">
+        <div id="hotairballoon">
+            <img src="images/balloon.png" class="balloon1">
+            <img src="images/balloon.png" class="balloon2">
+            <img src="images/balloon.png" class="balloon3">
+        </div>
+
+        <img src="images/pause.png" id="myImg">
+
+        <script>
+            var myImg = document.getElementById('myImg');
+            myImg.onclick = function () {
+                if (clouds.style.webkitAnimationPlayState == "paused") {
+                    clouds.style.webkitAnimationPlayState = "running";
+                    airplane.style.webkitAnimationPlayState = "running"
+                    hotairballoon.style.webkitAnimationPlayState = "running"
+                    myImg.src = 'images/pause.png'
+                } else {
+                    clouds.style.webkitAnimationPlayState = "paused";
+                    airplane.style.webkitAnimationPlayState = "paused";
+                    hotairballoon.style.webkitAnimationPlayState = "paused";
+                    myImg.src = 'images/play.png';
+                }
+            }
+        </script>
     </div>
 </body>
 
