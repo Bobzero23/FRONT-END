@@ -156,3 +156,11 @@ ADD EVENT LISTENER
 
  PREVENT DEFAULT 
  + to avoid the default event, ex. when there is no page to go after submission
+
+
+ INPUT VALUE
+ + a method to get the value of the input
+
+ INPUT
+ + any time you put the value in which makes a change in you input it will be detected, is useful
+ + use this as your first paramter of addEventListener
