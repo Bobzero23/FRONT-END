@@ -54,13 +54,10 @@
     margin: 10px;
 }
 
-.playing-to h2 {
-    margin-right: 20px;
-}
-
 .plyTo {
     width: 40px;
     height: 30px;
+    margin: 20px;
     border-radius: 20px;
     text-align: center;
     border: none;
@@ -93,4 +90,12 @@ button {
 
 .rst-btn {
     background-color: #ef476f;
+}
+
+.winner {
+    color: green;
+}
+
+.loser {
+    color: red;
 }
