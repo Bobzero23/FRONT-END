@@ -164,3 +164,17 @@ ADD EVENT LISTENER
  INPUT
  + any time you put the value in which makes a change in you input it will be detected, is useful
  + use this as your first paramter of addEventListener
+
+
+ CALL BACKS 
+ + is like when you have a funciton which shall only run after a function, like when you nest them 
+ Note: prefer PROMISES
+
+
+ PROMISES
+ + Makes call backs way more cleaner and readable using 'then' and 'catch' keywords
+ + it has three states (pending, resolved and rejected)
+
+ ASYNC KEYWORD
+ + When you use this keyword with a function, that function will automatically return a 'PROMISE'
+ + in this case, promise can only be rejected if we 'throw' an error 
