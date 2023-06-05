@@ -196,6 +196,7 @@ ADD EVENT LISTENER
 
 
 AXIOS 
-+ a third part libarary
++ a third part libarary, you need to import it or download it before starting to work with it
 + A better way of using fetch api because it will return a full body with no empty body 
 like we experienced in fetch api
+Note: there is a way of dealing with headers, check the code for more information
