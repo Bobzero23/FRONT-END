@@ -178,3 +178,24 @@ ADD EVENT LISTENER
  ASYNC KEYWORD
  + When you use this keyword with a function, that function will automatically return a 'PROMISE'
  + in this case, promise can only be rejected if we 'throw' an error 
+
+
+ JSON.parse
+ + changing a Json format to a Javascript object literals
+
+ JSON.stringify
+ + changin a Javascript object literals to Json format
+
+ STATUS CODE, QUERIES, HEADERS
+ + Nothing I am not familiar with
+
+ FETCH API
+ + is just one of the good way working with endpoints in Javascript using 'fetch' method
+ Note: fetch method may return the response with no body of the json so to return it,
+  use the 'json()' function which also returns a promise with json data which we can display 
+
+
+AXIOS 
++ a third part libarary
++ A better way of using fetch api because it will return a full body with no empty body 
+like we experienced in fetch api
