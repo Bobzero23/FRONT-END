@@ -200,3 +200,9 @@ AXIOS
 + A better way of using fetch api because it will return a full body with no empty body 
 like we experienced in fetch api
 Note: there is a way of dealing with headers, check the code for more information
+
+
+IMPORTANT NOTE: 
++ Using form gives you adavantage to extract the value of the input types using their names just like this..
+ first you need to select the form, then simply use the variable as follows
+ 'form.elements.nameOfTheInput.value' this could be so useful
