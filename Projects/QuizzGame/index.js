@@ -1,11 +1,11 @@
 const questions = [
     {
-        text: 'What does HTML stand for?',
+        text: 'Bendera Tanzania ina rangi ngapi ?',
         answers: [
-            'Hyper-text Markup Language',
-            'Hyper-tool Multi Language',
-            'Hyper-text Multiple Language',
-            'Hyper-text Preprocessor',
+            '5',
+            '4',
+            '9',
+            '10',
         ],
         t: 0,
     },
