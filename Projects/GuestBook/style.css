@@ -53,6 +53,17 @@ input::placeholder {
     height: 100px;
 }
 
-.row-4 input::placeholder {
-    padding-bottom: 0px;
+.row-5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 80px;
+    height: 40px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background-color: #adc178;
 }
