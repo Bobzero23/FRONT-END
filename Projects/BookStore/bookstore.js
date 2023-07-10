@@ -3,9 +3,10 @@ const form = document.getElementById('myForm');
 form.addEventListener('submit', function (event) {
     event.preventDefault(); // Prevent the default form submission
 
+
     const formData = new FormData(this);
 
-    axios.post('http://localhost:8081/api/addBook', Object.fromEntries(formData))
+    axios.post('http://localhost:8081/addBook', Object.fromEntries(formData))
         .then(response => {
             // Handle the successful response
             console.log(response.data);

@@ -152,7 +152,7 @@ ADD EVENT LISTENER
 
  KEY UP & KEY DOWN
  + decting when a key is pressed
- Note: wath more on #Keyboard Events
+ Note: watch more on #Keyboard Events
 
  PREVENT DEFAULT 
  + to avoid the default event, ex. when there is no page to go after submission

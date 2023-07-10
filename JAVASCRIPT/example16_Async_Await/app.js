@@ -4,7 +4,7 @@ const login = async (username, password) => {
     throw "invalid password"
 }
 
-login("bobzero", "mypassword")
+login("bobzero", "password")
     .then((data) => {
         console.log(data);
         console.log("LOGGED IN");

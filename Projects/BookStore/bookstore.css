@@ -56,7 +56,6 @@ input::placeholder {
     width: 100px;
     height: 30px;
     border-radius: 5px;
-    outline: none;
     border: none;
     background-color: #bc6c25;
 }
