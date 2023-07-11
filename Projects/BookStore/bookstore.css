@@ -7,9 +7,48 @@ body {
     width: 100%;
     height: 100vh;
     display: flex;
+    flex-direction: column;
+}
+
+nav {
+    display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #606c38;
+    background-color: #333;
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    margin-right: 80px;
+    margin-left: 10px;
+}
+
+a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+a:hover {
+    background-color: #555;
+}
+
+.container {
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(media/image1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 form {
@@ -19,7 +58,7 @@ form {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: #283618;
+    background-color: #1b4332;
     border-radius: 5px;
 }
 

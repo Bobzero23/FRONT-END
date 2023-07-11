@@ -10,6 +10,9 @@ body {
     align-items: center;
     justify-content: center;
     background-color: #219ebc;
+    background-image: url(media/image7.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 form {
