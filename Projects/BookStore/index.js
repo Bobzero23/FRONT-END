@@ -1,23 +1,25 @@
-const form = document.getElementById("my-form");
-const usernameInput = document.getElementById("username");
-const passwordInput = document.getElementById("password");
-
-form.addEventListener("submit", function (event) {
+// Assuming you have a login form with id "loginForm"
+const loginForm = document.getElementById('my-form'); 1
+loginForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    axios.post("http://localhost:8081/login", {
-        username: usernameInput.value,
-        password: passwordInput.value,
+
+    // Get the username and password from the form
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Make a request to the server to login the user
+    axios.post('http://localhost:8081/login', {
+        username,
+        password,
     })
-        .then(function (response) {
-            if (response.status === 201) {
-                location.reload();
-                window.location.href = "home.html";
-            } else {
-                alert(response.data);
-            }
+        .then((response) => {
+            window.location.href = 'home.html';
         })
-        .catch(function (error) {
-            alert("Invalid input")
-            console.error(error);
+        .catch((error) => {
+            location.reload();
+            alert("Invalid credentials");
+            console.error('Login error:', error);
         });
 });
+
+
