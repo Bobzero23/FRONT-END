@@ -65,6 +65,8 @@ input[type="text"] {
     padding: 5px;
     font-size: 16px;
     border: 1px solid #ccc;
+    outline: none;
+    border: none;
 }
 
 button {
