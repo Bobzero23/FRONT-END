@@ -1,12 +1,12 @@
 import './App.css'
-import Chicken from './chicken'
+import Die from './Die'
 
 export default function App() {
   return (
     <div>
-      <Chicken />
-      <Chicken />
-      <Chicken />
+      <Die numSide={20} />
+      <Die numSide={6} />
+      <Die numSide={10} />
     </div>
   )
 }
