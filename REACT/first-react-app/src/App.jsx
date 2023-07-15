@@ -1,13 +1,11 @@
 import './App.css'
-import Die from './Die'
-import DoubleDice from './DoubleDice'
+import TrippleDice from './TrippleDice'
 
 export default function App() {
   return (
     <div>
-      <DoubleDice />
-      <DoubleDice />
-      <DoubleDice />
+      <TrippleDice value1="🍒" value2="🍌" value3="🍒" />
+      <TrippleDice value1="🍒" value2="🍒" value3="🍒" />
     </div>
   )
 }
