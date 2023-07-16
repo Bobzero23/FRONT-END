@@ -1,5 +1,5 @@
 import './App.css'
-import RentalProperty from './RentalProperty';
+import Clicker from './Clicker';
 
 
 const data = [
@@ -21,7 +21,7 @@ const properties = [
 export default function App() {
   return (
     <div>
-      <RentalProperty data={properties} />
+      <Clicker />
     </div>
   )
 }
