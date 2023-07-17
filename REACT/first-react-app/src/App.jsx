@@ -1,5 +1,5 @@
 import './App.css'
-import Clicker from './Clicker';
+import ButtonExercise from './ButtonExercise';
 
 
 const data = [
@@ -20,8 +20,9 @@ const properties = [
 
 export default function App() {
   return (
-    <div>
-      <Clicker />
+    <div className='my-app'>
+      <ButtonExercise message="Hii!!" buttonText="Click Me" />
+      <ButtonExercise message="Stop clicking me" buttonText="Don't click" />
     </div>
   )
 }
