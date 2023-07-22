@@ -1,5 +1,6 @@
 import './App.css'
-import Counter from './Counter'
+import Toggler from './Toggler'
+
 
 export default function App() {
   return (
