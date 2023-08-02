@@ -1,0 +1,67 @@
+/* THIS IS BASE STYLING, I MEAN IS GOOD TO HAVE REALLY */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 400;
+    /* 1.6 x 10 = 16px because of the font-size: 62.5px in the universal selector*/
+    font-size: 1.6rem;
+}
+
+h1,
+h2,
+p {
+    margin: 1.6rem;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 3.6rem;
+}
+
+h2 {
+    font-weight: 800;
+    font-size: 2.4rem;
+}
+
+p {
+    font-weight: 400;
+    font-size: 1.8rem;
+}
+
+/* this will make the image fit and responsive */
+img {
+    width: 100%;
+    height: auto;
+}
+
+
+/* will make the divs vertical when it is needed */
+.row {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    align-items: center;
+    /* since the width is 80% margin will set it to center */
+    margin: auto;
+}
+
+section {
+    padding: 100px 0;
+}
+
+
+
+/* HERO SECTION */
+header {}
