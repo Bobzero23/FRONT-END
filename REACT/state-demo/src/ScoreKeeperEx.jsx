@@ -2,7 +2,11 @@ import { useState } from "react";
 import "./ScoreKeeperEx.css"
 
 export default function ScoreKeeperEx({ players, target }) {
-    const [score, setScore] = useState(0)
+    const [score, setScore] = useState(0);
+
+    function addScore(id) {
+
+    }
 
     return (
         <ul>
