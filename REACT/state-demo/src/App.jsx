@@ -1,10 +1,14 @@
 import './App.css'
-import EmojiClicker from './EmojiClicker'
+import ScoreKeeperEx from './ScoreKeeperEx'
+
+const players = new Array(10);
+players.fill("Player");
+
 
 function App() {
   return (
     <>
-      <EmojiClicker />
+      <ScoreKeeperEx players={players} target={10} />
     </>
   )
 }
