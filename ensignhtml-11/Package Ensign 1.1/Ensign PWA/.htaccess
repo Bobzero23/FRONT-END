@@ -1,0 +1,12 @@
+### Turn on URL rewriting
+RewriteEngine On
+
+RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
+RewriteRule .* - [F]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ([^/]+)\.html$ $1.php [L]
+
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*) https://%{HTTP_HOST}/ensign-html/app/$1
