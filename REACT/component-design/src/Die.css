@@ -3,10 +3,10 @@
     height: 3rem;
     background-color: blueviolet;
     border-radius: .2rem;
+    border: 1px solid black;
     margin: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row;
-    display: inline-block;
+    flex-direction: column;
 }
