@@ -1,14 +1,13 @@
 import './App.css'
-import Dice from './Dice'
+import LuckyN from './LuckyN'
 
 
 function App() {
 
   return (
     <>
-      <Dice dice={[4, 6, 2]} />
-      <Dice dice={[4, 6, 2]} color="lightgreen" />
-      <Dice dice={[4, 6, 2]} />
+      <LuckyN />
+      <LuckyN numDice={3} goal={11} />
     </>
 
   )
