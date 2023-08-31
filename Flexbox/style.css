@@ -8,38 +8,42 @@ body {
 }
 
 .container {
-    width: auto;
+    width: 85%;
     min-height: 0;
     display: flex;
     background-color: wheat;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 
 
 
 .card1 {
     background-color: gray;
-    
-    /* box-sizing: border-box; */
-    width: 200px;
-    height: 100px;
+    flex-basis: 100%;
+    box-sizing: border-box;
+    min-height: 100px;
+    margin: 10px;
+    padding: 5px;
 }
 .card2 {
     background-color: lightblue;
-    
-    /* box-sizing: border-box; */
-    width: 200px;
-    height: 100px;
+    flex-basis: 100%;
+    box-sizing: border-box;
+    min-height: 100px;
+    margin: 10px;
+    padding: 5px;
 }
 .card3 {
     background-color: lightgreen;
-    /* box-sizing: border-box; */
-    width: 200px;
-    height: 100px;
+    box-sizing: border-box;
+    flex-basis: 100%;
+    min-height: 100px;
+    margin: 10px;
+    padding: 5px;
 }
 
-@media screen and (min-widht: 480px) {
+@media screen and (max-width: 1000px) {
     .container{
-        background-color: red;
+        flex-wrap: wrap;
     }
 }
