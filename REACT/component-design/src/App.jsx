@@ -7,7 +7,6 @@ function App() {
   return (
     <>
       <LuckyN />
-      <LuckyN numDice={3} goal={11} />
     </>
 
   )
