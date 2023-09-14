@@ -1,19 +1,21 @@
 {
-  "name": "fullstack-frontend",
+  "name": "redo",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 2000",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD:REACT/fullstack-frontend/package.json
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.1",
+=======
+>>>>>>> 617b8c0f21eb0158d48d87d72cdb85e118560915:REACT/redo/package.json
     "react": "^18.2.0",
-    "react-bootstrap": "^2.8.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
