@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    min-width: 375px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+.wrapper>* {
+    padding: 10px;
+    margin: 10px;
+    flex: 1 100%;
+    border-radius: 10px;
+}
+
+header{
+    background-color: tomato;
+    height: 120px;
+}
+
+footer{
+    background-color: lightgreen;
+    height: 80px;
+}
+
+.main {
+    text-align: left;
+    background: deepskyblue;
+    height: 300px;
+    font-size: 24px;
+    overflow: none;
+}
+p {
+    overflow: none;
+}
+.aside1 {
+    background-color: gold;
+}
+
+.aside2 {
+    background-color: hotpink;
+}
+@media all and (min-width: 800px) {
+    .main {
+        flex: 3;
+        order: 2; /* Keep this declaration to set the order */
+    }
+
+    .aside1 {
+        order: 1;
+    }
+
+    .aside2 {
+        order: 3;
+    }
+
+    footer {
+        order: 4;
+    }
+}
+
+
+
+@media all and (min-width: 600px) {
+    .aside {
+        flex: 1;
+    }
+}
