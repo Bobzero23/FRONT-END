@@ -1,0 +1,17 @@
+.container1 {
+    display: flex;
+    justify-content: center;
+    border: 1px solid hotpink;
+    align-items: center;
+    height: 700px;
+
+ }
+
+ .margin5 {
+    margin: 20px;
+    padding: 20px;
+    height: 100px;
+    display: inline-block;
+    border: 1px solid black;
+    align-items: center;
+ }
