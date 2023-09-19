@@ -1,16 +1,30 @@
-* {
+html, body {
     margin: 0;
     padding: 0;
 }
 
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+
 header {
     background-color: lightgrey;
+    top: 0;
     margin-bottom: 5px;
+    min-width: 100%;
 }
 
 .card-container {
     display: flex;
-    gap: 5px;
+    gap: 10px;
     flex-flow: row wrap;
     border: 1px solid black;
     justify-content: space-around;
@@ -44,23 +58,57 @@ ul li a {
     width: 18rem;
 }
 
-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: row wrap;
-    margin: 10px;
-    padding: 10px;
-}
-
 .btn-submit {
     padding: 4px;
     border-radius: 5px;
 }
 
+.main-section {
+    padding: 0;
+    margin: 0;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid gray;
+}
+
+.post-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    gap: 10px;
+    margin: 10px;
+    border: 1px solid black;
+    padding: 10px;
+    width: 85%;
+}
+
+.post-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    gap: 10px;
+    border: 1px solid gray;
+    padding: 10px;
+    width: 100%;
+}
+
+input {
+    min-width: 50%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
 @media (max-width: 768px) {
     .card {
         width: 90%;
+    }
+    input {
+        width: 100%;
     }
 }
 
