@@ -30,6 +30,7 @@ formEl.addEventListener('submit', function(evetnt) {
 function displayPosts() {
     axios.get('http://localhost:1001/posts') // Replace with your actual GET endpoint
       .then((response) => {
+        console.log(response.data);
         const cardContainer = document.getElementById('card-container');
         cardContainer.innerHTML = ''; // Clear previous content
   
@@ -40,7 +41,7 @@ function displayPosts() {
           card.className = 'card';
   
           const cardImg = document.createElement('img');
-          cardImg.src = post.imageUrl; // Replace with the actual image URL
+          cardImg.src = post.image; // Replace with the actual image URL
           cardImg.className = 'card-img-top';
   
           const cardBody = document.createElement('div');
@@ -62,6 +63,7 @@ function displayPosts() {
   
           // Append the card to the container
           cardContainer.appendChild(card);
+
         });
       })
       .catch((error) => {
