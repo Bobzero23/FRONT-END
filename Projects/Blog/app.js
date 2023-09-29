@@ -51,11 +51,31 @@ function displayPosts() {
             cardText.className = 'card-text';
             cardText.textContent = post.content;
 
+            const btnCard = document.createElement('div');
+            btnCard.className = "btn-card";
+            
+            const editBtnEl = document.createElement('button');
+            editBtnEl.textContent = "edit";
+            editBtnEl.className = 'editBtn';
+
+            const deleteBtnEl = document.createElement('button');
+            deleteBtnEl.textContent = "delete";
+            deleteBtnEl.className = 'deleteBtn';
+
+            const commentBtnEl = document.createElement('button');
+            commentBtnEl.textContent = "comment"
+            commentBtnEl.className = 'commentBtn';
+
             // Append elements to the card
+            btnCard.appendChild(editBtnEl);
+            btnCard.appendChild(deleteBtnEl);
+            btnCard.appendChild(commentBtnEl);
             cardBody.appendChild(cardTitle);
             cardBody.appendChild(cardText);
+            
             card.appendChild(cardImg);
             card.appendChild(cardBody);
+            card.appendChild(btnCard);
 
             // Append the card to the container
             cardContainer.appendChild(card);

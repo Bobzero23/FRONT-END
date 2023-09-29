@@ -74,7 +74,7 @@ ul li a {
 }
 
 .btn-submit {
-    /* padding: 4px; */
+    padding: 4px;
     border-radius: 5px;
 }
 
@@ -128,6 +128,17 @@ img {
    height: 300px;
 }
   
+.btn-card {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.editBtn, .deleteBtn, .commentBtn {
+    border-radius: 5px;
+    padding: 5px;
+}
 
 @media (max-width: 768px) {
     .card {
