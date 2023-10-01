@@ -48,15 +48,23 @@ function displayPosts() {
             cardTitle.textContent = post.title;
 
             const cardText = document.createElement('p');
+            const btnCard = document.createElement('div');
             cardText.className = 'card-text';
             cardText.textContent = post.content;
-
-            const btnCard = document.createElement('div');
+            
             btnCard.className = "btn-card";
             
             const editBtnEl = document.createElement('button');
+            editBtnEl.setAttribute("postid", post.id)
             editBtnEl.textContent = "edit";
             editBtnEl.className = 'editBtn';
+
+           // how to fetch id from the element and manipulate it
+            editBtnEl.addEventListener(function(event) {
+                const postid = event.target.getAttribute("postid");
+                editContent(postid);
+            }) 
+
 
             const deleteBtnEl = document.createElement('button');
             deleteBtnEl.textContent = "delete";
@@ -85,6 +93,8 @@ function displayPosts() {
         console.error('Error:', error);
     });
 }
+
+
 
 // Call the function to initially display posts
 displayPosts();
