@@ -139,6 +139,11 @@ img {
     padding: 5px;
 }
 
+.hide {
+    border: 1px soldi black;
+    display: none;
+}
+
 @media (max-width: 768px) {
     .card {
         width: 90%;

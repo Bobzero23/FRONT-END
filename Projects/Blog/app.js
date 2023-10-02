@@ -1,5 +1,4 @@
 const formEl = document.querySelector(".post-form");
-
 formEl.addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -32,6 +31,11 @@ function displayPosts() {
 
         // Loop through the posts and create cards for each
         response.data.forEach((post) => {
+            let postid = post.id;
+            let postImage = post.image;
+            let postTitle = post.title;
+            let postContent = post.content;
+            
             // Create card elements
             const card = document.createElement('div');
             card.className = 'card';
@@ -55,20 +59,30 @@ function displayPosts() {
             btnCard.className = "btn-card";
             
             const editBtnEl = document.createElement('button');
-            editBtnEl.setAttribute("postid", post.id)
+            editBtnEl.setAttribute("postid", post.id);
             editBtnEl.textContent = "edit";
             editBtnEl.className = 'editBtn';
 
-           // how to fetch id from the element and manipulate it
-            editBtnEl.addEventListener(function(event) {
-                const postid = event.target.getAttribute("postid");
-                editContent(postid);
+           //editing
+            editBtnEl.addEventListener('click', function(event) {
+                const postContainerEl = document.querySelector(".post-container");
+                postContainerEl.style.display = "none";
+                cardContainer.style.display = "none"; 
+
+                editPost(postid, postTitle, postContent, postImage);
             }) 
 
-
+            
             const deleteBtnEl = document.createElement('button');
             deleteBtnEl.textContent = "delete";
             deleteBtnEl.className = 'deleteBtn';
+
+            //deleting
+            deleteBtnEl.addEventListener('click', function() {
+                deletePost(postid);
+            })
+
+
 
             const commentBtnEl = document.createElement('button');
             commentBtnEl.textContent = "comment"
@@ -94,7 +108,44 @@ function displayPosts() {
     });
 }
 
+function deletePost(postid) {
+    axios.delete(`http://localhost:1001/posts/${postid}`)
+    .then(()=> {
+        location.reload();
+    })
+    .catch(()=> {
+        console.error(error);
+    })
+}
 
+
+function editPost(postid, title, content, image) {
+    const unhide = document.querySelector(".hide");
+    unhide.style.display = "block"
+    
+
+    const titleInputEl = document.getElementById("titleEdit");
+    const imageInputEl = document.getElementById("imageEdit");
+    const contentInputEl = document.getElementById("contentEdit");
+    titleInputEl.value = title;
+    imageInputEl.src = image;
+    contentInputEl.value = content;
+
+    // const formData = new FormData();
+    // formData.append('title', title);
+    // formData.append('content', content);
+    // formData.append('image', img);
+
+    // axios.put(`http://localhost:1001/posts/${postid}`, formData)
+    // .then((response)=> {
+    //     console.log("post created: ", response.data);
+    //     console.log("edited successfully!!");
+    // }).catch((error) => {    
+    //     console.error(error);
+    // })
+}
 
 // Call the function to initially display posts
 displayPosts();
+
+
