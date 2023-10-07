@@ -37,13 +37,20 @@
       <section class="post-container">
         <h5>ADD A NEW BLOG</h5>
         <form action="#" class="post-form">
-          <input type="file" name="image" id="image" />
-          <input type="text" name="title" id="title" placeholder="title" />
+          <input type="file" name="image" id="image" required />
+          <input
+            type="text"
+            name="title"
+            id="title"
+            placeholder="title"
+            required
+          />
           <input
             type="text"
             name="content"
             id="content"
             placeholder="content"
+            required
           />
           <button type="submit" class="btn-submit">post</button>
         </form>
@@ -52,21 +59,26 @@
       <main class="card-main">
         <section class="post-container hide">
           <h5>EDIT A BLOG</h5>
-          <form action="#" class="post-form">
-            <input type="file" name="imageEdit" id="imageEdit" />
+          <form action="#" class="edit-form">
+            <input type="file" name="image" id="imageEdit" required />
             <input
               type="text"
-              name="titleEdit"
+              name="title"
               id="titleEdit"
               placeholder="title"
+              required
             />
             <input
               type="text"
-              name="contentEdit"
+              name="content"
               id="contentEdit"
               placeholder="content"
+              required
             />
-            <button type="submit" class="btn-save">save</button>
+            <div class="edit-btn-container">
+              <button class="btn-save" id="saveEdit">back</button>
+              <button class="btn-save" id="backEdit">save</button>
+            </div>
           </form>
         </section>
         <div id="card-container"></div>

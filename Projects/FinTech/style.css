@@ -1,4 +1,5 @@
-/* THIS IS BASE STYLING, I MEAN IS GOOD TO HAVE REALLY */
+/* THIS IS BASE CSS STYLING PART IS BETTER TO HAVE */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
 
 * {
@@ -17,12 +18,13 @@ a {
     font-weight: 400;
     /* 1.6 x 10 = 16px because of the font-size: 62.5px in the universal selector*/
     font-size: 1.6rem;
+    color: whitesmoke;
 }
 
 h1,
 h2,
 p {
-    margin: 1.6rem;
+    margin: 1.6rem 0;
 }
 
 h1 {
@@ -61,7 +63,336 @@ section {
     padding: 100px 0;
 }
 
-
-
 /* HERO SECTION */
-header {}
+
+header {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)), url("media/image1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: whitesmoke;
+}
+
+.logo h1 {
+    font-size: 3.2rem;
+    color: #4CAF50;
+    margin: 0;
+}
+
+nav {
+    padding: 2% 8%;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-left: 2.5rem;
+}
+
+nav ul li a:hover {
+    color: #4CAF50;
+    transition: .3s ease-in-out;
+}
+
+nav box-icon {
+    display: none;
+}
+
+
+.header-content {
+    position: relative;
+    width: 50%;
+    top: 16%;
+    left: 8%;
+}
+
+form {
+    margin: 2.4rem 0;
+}
+
+input {
+    font-size: 1.8rem;
+}
+
+input[type=text],
+input[type=email] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 1.2rem 0;
+    display: block;
+    border: 1px solid #ccc;
+}
+
+input[type=submit] {
+    width: 50%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+input::placeholder {
+    font-size: 1.3rem;
+    color: #ccc;
+}
+
+
+/* About section */
+
+.about-left,
+.about-middle,
+.about-right {
+    flex-basis: 30%;
+    padding: 1.6rem;
+}
+
+
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    margin: 2rem 0;
+    display: inline-block;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.about2 {
+    background-color: #222;
+    color: whitesmoke;
+}
+
+.about2-left {
+    flex-basis: 50%;
+}
+
+.about2-right {
+    flex-basis: 30%;
+}
+
+.about2 .card {
+    padding: 3rem 8rem;
+    color: #222;
+    background-color: #dcdcdc;
+    margin: 1.6rem;
+    text-align: center;
+}
+
+/* Process Section */
+.process .row {
+    justify-content: center;
+}
+
+.process-content {
+    margin-top: 100px;
+}
+
+.progress-bar {
+    width: 80%;
+    height: 2px;
+    background-color: #222;
+    margin: auto;
+    position: relative;
+}
+
+
+.progress-bar .c1,
+.progress-bar .c2,
+.progress-bar .c3 {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #222;
+    position: absolute;
+}
+
+.progress-bar .c1 {
+    top: -8px;
+    left: 50px;
+}
+
+
+.progress-bar .c2 {
+    top: -8px;
+    left: 50%;
+}
+
+.progress-bar .c3 {
+    top: -8px;
+    right: 50px;
+}
+
+.box1,
+.box2,
+.box3 {
+    padding: 1.8rem;
+}
+
+.process .box2 {
+    text-align: center;
+}
+
+.process .box3 {
+    text-align: right;
+}
+
+.process-content h2 {
+    color: #4CAF50;
+}
+
+.testimony {
+    background-color: #222;
+    color: whitesmoke;
+}
+
+.testimony .test {
+    background-color: #505050;
+    padding: 4rem 8rem;
+    margin: 0 1rem;
+}
+
+.testimony .image {
+    width: 80px;
+    height: 80px;
+}
+
+.testimony img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+/* contact */
+.contact .row {
+    justify-content: center;
+}
+
+.contact form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact form input {
+    width: 50%;
+}
+
+.contact textarea {
+    width: 50%;
+    height: 150px;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    font-size: 1.3rem;
+    resize: none;
+    color: #ccc;
+    margin: 1.2rem 0;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Footer */
+footer {
+    height: 80px;
+    background-color: #222;
+    color: white;
+    line-height: 80px;
+    text-align: center;
+}
+
+
+
+
+
+
+/* MEDIA QUERIES */
+/* this will only work if the screen is lesser than the given value */
+@media only screen and (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+
+    nav {
+        flex-direction: column;
+        position: relative;
+    }
+
+    nav box-icon {
+        display: block;
+        position: absolute;
+        top: 18px;
+        right: 32px;
+    }
+
+    nav ul {
+        background-color: whitesmoke;
+        display: none;
+    }
+
+    .showmenu {
+        display: block;
+    }
+
+    nav ul li {
+        display: block;
+        padding: 2% 0;
+    }
+
+    nav ul li a {
+        color: #222;
+    }
+
+    /* Header content */
+    .header-content {
+        width: 100%;
+        top: 16%;
+        left: 0;
+        text-align: center;
+        padding: 0 8px;
+    }
+
+    input[type=text],
+    input[type=email],
+    input[type=submit] {
+        width: 80%;
+        margin: 1.2rem auto;
+
+    }
+
+    .progress-bar {
+        display: none;
+    }
+
+    .process-content {
+        margin-top: 20px;
+    }
+
+    .process .box1,
+    .process .box2,
+    .process .box3 {
+        text-align: center;
+    }
+
+    /* Testimony */
+    .testimony .test {
+        margin: 1.6rem 0;
+    }
+
+    .contact form input,
+    .contact textarea {
+        width: 100%;
+    }
+}

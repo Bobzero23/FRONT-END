@@ -113,6 +113,17 @@ ul li a {
     width: 100%;
 }
 
+.edit-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    gap: 10px;
+    border: 1px solid gray;
+    padding: 10px;
+    width: 100%;
+}
+
 input {
     min-width: 50%;
     box-sizing: border-box;
@@ -142,6 +153,12 @@ img {
 .hide {
     border: 1px soldi black;
     display: none;
+}
+
+.edit-btn-container{
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 @media (max-width: 768px) {

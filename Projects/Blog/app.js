@@ -1,4 +1,5 @@
 const formEl = document.querySelector(".post-form");
+
 formEl.addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -123,7 +124,6 @@ function editPost(postid, title, content, image) {
     const unhide = document.querySelector(".hide");
     unhide.style.display = "block"
     
-
     const titleInputEl = document.getElementById("titleEdit");
     const imageInputEl = document.getElementById("imageEdit");
     const contentInputEl = document.getElementById("contentEdit");
@@ -131,19 +131,44 @@ function editPost(postid, title, content, image) {
     imageInputEl.src = image;
     contentInputEl.value = content;
 
-    // const formData = new FormData();
-    // formData.append('title', title);
-    // formData.append('content', content);
-    // formData.append('image', img);
+    
+    
 
-    // axios.put(`http://localhost:1001/posts/${postid}`, formData)
-    // .then((response)=> {
-    //     console.log("post created: ", response.data);
-    //     console.log("edited successfully!!");
-    // }).catch((error) => {    
-    //     console.error(error);
-    // })
+    const saveEditEl = document.getElementById("saveEdit")
+    saveEditEl.addEventListener("click", function() {
+
+        const titleEdit = document.getElementById("titleEdit").value;
+        const imageEdit = document.getElementById("imageEdit").files[0];
+        const contentEdit = document.getElementById("contentEdit").value;
+    
+        console.log(titleEdit);
+
+        const formData = new FormData();
+        formData.append('title', titleEdit);
+        formData.append('content', contentEdit);
+        formData.append('image', imageEdit);
+
+        axios.put(`http://localhost:1001/posts/${postid}`, formData)
+        .then((response)=> {
+            location.reload();
+            displayPosts();
+        }).catch((error) => {    
+            console.error("an error happened");
+        })
+        
+    })
+
+    const backEditEl = document.getElementById("backEdit");
+    backEditEl.addEventListener("click", function(params) {
+        location.reload();
+        displayPosts();
+    })
+
 }
+
+
+
+
 
 // Call the function to initially display posts
 displayPosts();

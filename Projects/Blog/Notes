@@ -1,5 +1,5 @@
 implement light and dark mode
+add something for loading
+put some colors make it beautiful
 
 QUESTIONS
-
-- instead of writing this "editBtnEl.setAttribute("postid", post.id);" for every button how do I create a local variable
