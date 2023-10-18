@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>BOBZERO'S BLOG</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="header-container container">
+        <nav class="navbar">
+          <div class="container-fluid">
+            <a class="navbar-brand">BOB-BLOG</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <section class="main-section">
+      <section class="post-container">
+        <h5>ADD A NEW BLOG</h5>
+        <form action="#" class="post-form">
+          <input type="file" name="image" id="image" required />
+          <input
+            type="text"
+            name="title"
+            id="title"
+            placeholder="title"
+            required
+          />
+          <input
+            type="text"
+            name="content"
+            id="content"
+            placeholder="content"
+            required
+          />
+          <button type="submit" class="btn-submit">post</button>
+        </form>
+      </section>
+
+      <main class="card-main">
+        <section class="post-container hide">
+          <h5>EDIT A BLOG</h5>
+          <form action="#" class="edit-form">
+            <input type="file" name="image" id="imageEdit" required />
+            <input
+              type="text"
+              name="title"
+              id="titleEdit"
+              placeholder="title"
+              required
+            />
+            <input
+              type="text"
+              name="content"
+              id="contentEdit"
+              placeholder="content"
+              required
+            />
+            <button class="btn-save" id="saveEdit">save</button>
+          </form>
+        </section>
+        <div id="card-container"></div>
+      </main>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

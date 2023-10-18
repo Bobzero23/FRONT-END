@@ -10,40 +10,44 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>login-page</title>
+    <title>register-page</title>
   </head>
   <body>
-    <div class="container-login">
-      <div class="login-form-container">
+    <div class="container-register">
+      <div class="register-form-container">
         <form>
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label"
-              >Email address</label
-            >
+            <label for="username" class="form-label">Username</label>
             <input
               type="email"
               class="form-control"
-              id="exampleInputEmail1"
+              id="username"
               aria-describedby="emailHelp"
+              name="username"
             />
             <div id="emailHelp" class="form-text">
               We'll never share your email with anyone else.
             </div>
           </div>
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label"
-              >Password</label
-            >
+            <label for="email" class="form-label">Email</label>
             <input
               type="password"
               class="form-control"
-              id="exampleInputPassword1"
+              id="email"
+              name="email"
             />
-            <div id="registerHelp" class="form-text">
-              Don't have an accoutnt? <a href="register.html"> register</a>
-            </div>
           </div>
-          <button type="submit" class="btn btn-outline-success">Submit</button>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="passowrd"
+              name="passowrd"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
     </div>

@@ -170,3 +170,23 @@ img {
     }
 }
 
+.container-login,
+.container-register{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7209b7;
+}
+
+.login-form-container,
+.register-form-container {
+    width: 300px;
+    background-color: #cbf3f0;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+@media (max-width: )
+

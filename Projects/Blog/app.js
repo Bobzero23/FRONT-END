@@ -24,9 +24,8 @@ formEl.addEventListener('submit', function(event) {
 
 // Function to fetch and display posts
 function displayPosts() {
-    axios.get('http://localhost:1001/posts') // Replace with your actual GET endpoint
+    axios.get('http://localhost:1001/posts') 
     .then((response) => {
-        console.log(response.data);
         const cardContainer = document.getElementById('card-container');
         cardContainer.innerHTML = ''; // Clear previous content
 
@@ -42,7 +41,7 @@ function displayPosts() {
             card.className = 'card';
 
             const cardImg = document.createElement('img');
-            cardImg.src = `data:image/jpeg;base64,${post.image}`; // Assuming your response contains base64-encoded image data
+             // Assuming your response contains base64-encoded image data
             cardImg.className = 'card-img-top';
 
             const cardBody = document.createElement('div');
@@ -152,16 +151,11 @@ function editPost(postid, title, content, image) {
         .then((response)=> {
             location.reload();
             displayPosts();
+
         }).catch((error) => {    
             console.error("an error happened");
         })
         
-    })
-
-    const backEditEl = document.getElementById("backEdit");
-    backEditEl.addEventListener("click", function(params) {
-        location.reload();
-        displayPosts();
     })
 
 }
