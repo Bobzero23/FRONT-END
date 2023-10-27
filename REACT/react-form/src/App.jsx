@@ -1,10 +1,12 @@
 import "./App.css"
-import SignupForm from "./SignupForm"
+import ShoppingList from "./ShoppingList"
+import ShoppingListForm from "./ShoppingListForm"
 
 function App() {
   return (
     <>
-      <SignupForm/>
+      <ShoppingList/>
+      <ShoppingListForm/>
     </>
   )
 }
