@@ -12,7 +12,7 @@ formEl.addEventListener('submit', function(event) {
     formData.append('content', contentEl);
     formData.append('image', imageEl);
 
-    axios.post('http://localhost:1001/posts', formData)
+    axios.post('http://localhost:1001/api/posts', formData)
     .then((response) => {
         console.log("post created: ", response.data);
         location.reload();
@@ -24,7 +24,7 @@ formEl.addEventListener('submit', function(event) {
 
 // Function to fetch and display posts
 function displayPosts() {
-    axios.get('http://localhost:1001/posts') 
+    axios.get('http://localhost:1001/api/posts') 
     .then((response) => {
         const cardContainer = document.getElementById('card-container');
         cardContainer.innerHTML = ''; // Clear previous content
@@ -41,7 +41,7 @@ function displayPosts() {
             card.className = 'card';
 
             const cardImg = document.createElement('img');
-             // Assuming your response contains base64-encoded image data
+            cardImg.src = `data:image/jpeg;base64,${post.image}`; // Assuming your response contains base64-encoded image data
             cardImg.className = 'card-img-top';
 
             const cardBody = document.createElement('div');
@@ -147,7 +147,7 @@ function editPost(postid, title, content, image) {
         formData.append('content', contentEdit);
         formData.append('image', imageEdit);
 
-        axios.put(`http://localhost:1001/posts/${postid}`, formData)
+        axios.put(`http://localhost:1001/api/posts/${postid}`, formData)
         .then((response)=> {
             location.reload();
             displayPosts();
