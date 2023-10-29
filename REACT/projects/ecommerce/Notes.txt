@@ -1,0 +1,13 @@
+**Initiated the react vite project as normal
+**Followed this link to be able to use tailwind components 
+    +https://tailwindcss.com/docs/guides/vite
+**Here is where I found the tailwindui components 
+    +https://tailwindui.com/
+**Here is where I found the materialui
+    +https://mui.com/material-ui/getting-started/installation/
+**Here is where I found the materialui Icons
+    +https://mui.com/material-ui/material-icons/
+** React alice carousel -> React Alice Carousel is a React component for building content galleries, content rotators and any React carousels.
+    +https://www.npmjs.com/package/react-alice-carousel
+** React alice carousel web package -> I used this website to create carousels
+    +https://maxmarinich.github.io/react-alice-carousel/
