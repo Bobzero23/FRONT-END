@@ -1,1 +1,0 @@
-/**here we put the data to show in our carousel */

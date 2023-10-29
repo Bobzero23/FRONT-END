@@ -1,11 +1,14 @@
 import React from "react";
 import MainCarousel from "../../HomeCarousel/MainCarousel";
+import HomeSectionCarousel from "../../homeSectionCarousel/HomeSectionCarousel";
 
 function HomePage() {
   return (
     <div>
       <MainCarousel />
-      <div>Other Sections</div>
+      <div>
+        <HomeSectionCarousel />
+      </div>
     </div>
   );
 }
