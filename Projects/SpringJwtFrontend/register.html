@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="register.css" />
+    <title>register-page</title>
+  </head>
+  <body>
+    <div class="container-register">
+      <div class="image-form-container">
+        <div class="image-container">
+          <img
+            src="images/moon-quotes-w-clement-stone-aim-for-the-3291.webp"
+            alt=""
+          />
+        </div>
+        <div class="register-form-container">
+          <form id="my-form">
+            <div class="mb-3">
+              <label for="firstname" class="form-label">firstname</label>
+              <input
+                type="text"
+                class="form-control"
+                id="firstname"
+                aria-describedby="emailHelp"
+                name="firstname"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="lastname" class="form-label">lastname</label>
+              <input
+                type="text"
+                class="form-control"
+                id="lastname"
+                aria-describedby="emailHelp"
+                name="lastname"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                required
+              />
+              <div id="emailHelp" class="form-text">
+                We'll never share your email with anyone else.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="register.js"></script>
+  </body>
+</html>

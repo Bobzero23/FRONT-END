@@ -12,12 +12,13 @@ formEl.addEventListener("submit", function (event) {
     formData.append("email", emailEl);
     formData.append("password", passwordEl);
 
-    axios.post("http://localhost:1001/api/auth/signup", formData)
+    axios.post(`http://localhost:1001/api/auth/signup`, formData)
     .then((response) => {
         console.log(response.data);
         window.location.href = "login.html"
     }).catch((error) => {
         console.error("Error ", error);
     })
+    
 })
 

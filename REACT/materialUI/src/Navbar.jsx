@@ -10,7 +10,7 @@ import MaterialUIDemo from "./MaterialUIDemo";
 function Navbar() {
   return (
     <Box sx={{ flexGrow: 1, border: "1px solid black", width: 400 }}>
-      <AppBar position="static" sx={{ marginBottom: 2, flexGrow: 1 }}>
+      <AppBar position="static" sx={{ marginBottom: 2 }}>
         <Toolbar>
           <IconButton
             size="large"

@@ -109,7 +109,7 @@ function displayPosts() {
 }
 
 function deletePost(postid) {
-    axios.delete(`http://localhost:1001/posts/${postid}`)
+    axios.delete(`http://localhost:1001/api/posts/${postid}`)
     .then(()=> {
         location.reload();
     })
