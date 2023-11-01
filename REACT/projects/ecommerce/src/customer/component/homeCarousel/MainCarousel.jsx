@@ -18,7 +18,7 @@ function MainCarousel() {
       items={items}
       disableButtonsControls
       autoPlay
-      autoPlayInterval={1000}
+      autoPlayInterval={1500}
       infinite
     />
   );
