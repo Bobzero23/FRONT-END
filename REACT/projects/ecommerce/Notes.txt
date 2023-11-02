@@ -16,3 +16,11 @@
 
 TODOS
 - Define the paths in mainCarouselData
+
+
+NEW IDEAS
+- Using Relative containers for next and prev button 
+
+REACT ALICE CAROUSEL
+- onSlideChanged -> first changes the state then the carousel (not so responsive but no bugs)
+- onSlideChange -> first changes the carousel then the state (makes the browser responsive but with bugs) 

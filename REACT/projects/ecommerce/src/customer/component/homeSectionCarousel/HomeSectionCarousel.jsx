@@ -14,7 +14,7 @@ function HomeSectionCarousel({ data, sectionName }) {
   };
 
   const items = mens_kurta
-    .slice(0, 10)
+    // .slice(0, 10)
     .map((item) => <HomeSectionCard product={item} />);
 
   // Create a reference to the carousel instance
@@ -26,10 +26,12 @@ function HomeSectionCarousel({ data, sectionName }) {
   // Define the functions to handle the button clicks
   const handlePrev = () => {
     carousel.slidePrev();
+    activeIndex - 1;
   };
 
   const handleNext = () => {
     carousel.slideNext();
+    activeIndex + 1;
   };
 
   // Define a function to handle the slide change event
@@ -56,7 +58,7 @@ function HomeSectionCarousel({ data, sectionName }) {
           disableButtonsControls
           disableDotsControls
           // Add the onSlideChange handler to update the active index state before the slide changes
-          onSlideChange={handleSlideChange}
+          onSlideChanged={handleSlideChange}
         />
         {/* Add the buttons to the carousel container */}
         {/* Show the prev button only if the active index is not zero */}
@@ -81,9 +83,10 @@ function HomeSectionCarousel({ data, sectionName }) {
           </Button>
         )}
 
-        {/* Show the next button only if the active index is not at the end of the items array */}
+        {/* Show the next button only if there are more items left to see */}
         {/* Use Math.ceil instead of Math.floor to round up the number of items per slide */}
-        {activeIndex !== Math.ceil(items.length - itemsPerSlide) && (
+        {/* Use activeIndex + itemsPerSlide instead of activeIndex to check how many items are visible in the current slide */}
+        {activeIndex !== items.length - 5 && (
           <Button
             variant="contained"
             className="z-50 bg-white"
