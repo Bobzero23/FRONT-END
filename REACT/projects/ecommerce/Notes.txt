@@ -17,6 +17,9 @@
 TODOS
 - Define the paths in mainCarouselData
 
+TOLEARNS
+- How does variant, component works (source footer)
+
 
 NEW IDEAS
 - Using Relative containers for next and prev button 
