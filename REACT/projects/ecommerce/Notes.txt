@@ -11,6 +11,8 @@
     +https://www.npmjs.com/package/react-alice-carousel
 ** React alice carousel web package -> I used this website to create carousels
     +https://maxmarinich.github.io/react-alice-carousel/
+** Easily get some cool box shadows
+    +https://getcssscan.com/css-box-shadow-examples
 
 
 
