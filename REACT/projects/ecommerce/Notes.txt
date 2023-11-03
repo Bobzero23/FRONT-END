@@ -29,3 +29,6 @@ NEW IDEAS
 REACT ALICE CAROUSEL
 - onSlideChanged -> first changes the state then the carousel (not so responsive but no bugs)
 - onSlideChange -> first changes the carousel then the state (makes the browser responsive but with bugs) 
+
+SHORTCUTS
+- CTRL + I -> for auto import 
