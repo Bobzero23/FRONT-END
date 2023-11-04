@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { StarIcon } from "@heroicons/react/20/solid";
 import { RadioGroup } from "@headlessui/react";
-import { Rating } from "@mui/material";
+import { Button, ButtonBase, Rating } from "@mui/material";
 
 const product = {
   name: "Basic Tee 6-Pack",
@@ -35,14 +35,10 @@ const product = {
     { name: "Black", class: "bg-gray-900", selectedClass: "ring-gray-900" },
   ],
   sizes: [
-    { name: "XXS", inStock: false },
-    { name: "XS", inStock: true },
     { name: "S", inStock: true },
     { name: "M", inStock: true },
     { name: "L", inStock: true },
     { name: "XL", inStock: true },
-    { name: "2XL", inStock: true },
-    { name: "3XL", inStock: true },
   ],
   description:
     'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.',
@@ -161,7 +157,7 @@ export default function ProductDetails() {
 
                 <form className="mt-10">
                   {/* Colors */}
-                  <div>
+                  {/* <div>
                     <h3 className="text-sm font-medium text-gray-900">Color</h3>
 
                     <RadioGroup
@@ -200,7 +196,7 @@ export default function ProductDetails() {
                         ))}
                       </div>
                     </RadioGroup>
-                  </div>
+                  </div> */}
 
                   {/* Sizes */}
                   <div className="mt-10">
@@ -208,12 +204,12 @@ export default function ProductDetails() {
                       <h3 className="text-sm font-medium text-gray-900">
                         Size
                       </h3>
-                      <a
+                      {/* <a
                         href="#"
                         className="text-sm font-medium text-indigo-600 hover:text-indigo-500"
                       >
                         Size guide
-                      </a>
+                      </a> */}
                     </div>
 
                     <RadioGroup
@@ -285,12 +281,12 @@ export default function ProductDetails() {
                     </RadioGroup>
                   </div>
 
-                  <button
-                    type="submit"
-                    className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                  <Button
+                    variant="contained"
+                    sx={{ py: "1rem", px: "2rem", bgcolor: "#9155fd" }}
                   >
-                    Add to bag
-                  </button>
+                    Add To Cart
+                  </Button>
                 </form>
               </div>
 
