@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { StarIcon } from "@heroicons/react/20/solid";
 import { RadioGroup } from "@headlessui/react";
+import { Rating } from "@mui/material";
 
 const product = {
   name: "Basic Tee 6-Pack",
@@ -128,45 +129,33 @@ export default function ProductDetails() {
             </div>
 
             {/* Product info */}
-            <div className="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16">
-              <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-                <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
-                  {product.name}
+            <div className="lg:col-span-1 max-auto max-w-2xl px-4 pb-16 sm:px-6 lg:max-w-7xl lg:px-8 lg:pb-24">
+              <div className="lg:col-span-2">
+                <h1 className="text-lg lg:text-xl font-semibold text-gray-900">
+                  Universaloutfit
+                </h1>
+                <h1 className="text-lg lg:text-xl opacity-60 pt-1 text-gray-900">
+                  Casual Puff Sleeve solid Women White top
                 </h1>
               </div>
 
               {/* Options */}
               <div className="mt-4 lg:row-span-3 lg:mt-0">
                 <h2 className="sr-only">Product information</h2>
-                <p className="text-3xl tracking-tight text-gray-900">
-                  {product.price}
-                </p>
+                <div className="flex space-x-5 items-center text-lg lg:text-xl text-gray-900 mt-6">
+                  <p className="font-semibold">$199</p>
+                  <p className="opacity-50 line-through">$211</p>
+                  <p className="text-green-600 font-semibold">5% off</p>
+                </div>
 
                 {/* Reviews */}
-                <div className="mt-6">
-                  <h3 className="sr-only">Reviews</h3>
+                <div className="mt-6 ">
                   <div className="flex items-center">
-                    <div className="flex items-center">
-                      {[0, 1, 2, 3, 4].map((rating) => (
-                        <StarIcon
-                          key={rating}
-                          className={classNames(
-                            reviews.average > rating
-                              ? "text-gray-900"
-                              : "text-gray-200",
-                            "h-5 w-5 flex-shrink-0"
-                          )}
-                          aria-hidden="true"
-                        />
-                      ))}
-                    </div>
-                    <p className="sr-only">{reviews.average} out of 5 stars</p>
-                    <a
-                      href={reviews.href}
-                      className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500"
-                    >
-                      {reviews.totalCount} reviews
-                    </a>
+                    <Rating name="read-only" value={4} readOnly />
+                    <p className="opacity-50 text-sm">3437 Ratings</p>
+                    <p className="ml-3 text-sm font-sm text-indigo-800 hover:text-indigo-500">
+                      459922 Reviews
+                    </p>
                   </div>
                 </div>
 

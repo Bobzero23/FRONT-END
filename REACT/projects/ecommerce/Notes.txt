@@ -31,4 +31,4 @@ REACT ALICE CAROUSEL
 - onSlideChange -> first changes the carousel then the state (makes the browser responsive but with bugs) 
 
 SHORTCUTS
-- CTRL + I -> for auto import 
+- CTRL + I -> for auto import or fix the line automatically
