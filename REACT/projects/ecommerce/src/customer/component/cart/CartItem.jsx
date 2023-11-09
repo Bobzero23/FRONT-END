@@ -1,9 +1,11 @@
-import { IconButton } from "@mui/material";
+import { Button, IconButton } from "@mui/material";
+import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import React from "react";
 
 function CartItem() {
   return (
-    <div className="m-5 p-5 shadow-lg border rounded-md">
+    <div className="p-5 shadow-lg border rounded-md">
       <div className="flex items-center">
         <div className="w-[5rem] h-[5rem] lg:w-[9rem] lg:h-[9rem]">
           <img
@@ -22,10 +24,20 @@ function CartItem() {
             <p className="text-green-600 font-semibold">5% off</p>
           </div>
         </div>
-        <div className="lg:flex items-center lg:space-x-10 pt-4">
-          <div className="flex items-center space-x-2">
-            <IconButton></IconButton>
-          </div>
+      </div>
+      <div className="lg:flex items-center lg:space-x-10 pt-4">
+        <div className="flex items-center space-x-2">
+          <IconButton sx={{ color: "RGB(145 85 253)" }}>
+            <RemoveCircleOutlineIcon />
+          </IconButton>
+          <span className="py-1 px-7 border rounded-sm">3</span>
+          <IconButton sx={{ color: "RGB(145 85 253)" }}>
+            <AddCircleOutlineIcon />
+          </IconButton>
+        </div>
+
+        <div>
+          <Button sx={{ color: "RGB(145 85 253)" }}>Remove</Button>
         </div>
       </div>
     </div>
