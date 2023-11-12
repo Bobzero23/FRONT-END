@@ -49,7 +49,7 @@ function HomeSectionCarousel({ data, sectionName }) {
       <h2 className="text-2xl font-extrabold text-gray-800 py-2 px-2">
         {sectionName}
       </h2>
-      <div className="relative p-5 ">
+      <div className="relative p-5 mx-auto">
         <AliceCarousel
           // Pass the reference to the carousel instance
           ref={(el) => setCarousel(el)}
