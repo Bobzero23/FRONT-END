@@ -15,6 +15,9 @@
     +https://getcssscan.com/css-box-shadow-examples
 
 
+WARNINGS
+- I messed up one of te buttons while trying to do the sign in (FIXED)
+
 
 TODOS
 - Define the paths in mainCarouselData
@@ -33,3 +36,9 @@ REACT ALICE CAROUSEL
 
 SHORTCUTS
 - CTRL + I -> for auto import or fix the line automatically
+- CTRL + SPACE -> for auto import or fix the line automatically
+
+LEARNED
+- useNavigate() -> tells where to go after an event happened by giving the url paht (src. RegisterForm.jsx -)
+- useLocation() -> finds the current url and do things accordingly by using `pahtname` attribute (src. Authmodal.jsx - 30)
+- in CustomRouter.jsx is where you define the web urls and inside page urls such as /login and /register but they are all in Homepage.jsx
