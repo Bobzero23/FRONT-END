@@ -25,6 +25,7 @@ TODOS
 TOLEARNS
 - How does variant, component works (source footer)
 - How to handle form (source -> DeliveryAddresForm.jsx)
+- REDUX
 
 
 NEW IDEAS
