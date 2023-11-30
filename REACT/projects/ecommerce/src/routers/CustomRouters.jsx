@@ -22,7 +22,7 @@ const CustomRouters = () => {
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
         <Route
-          path="/:lavelOne/:lavelTwo/:lavelThre"
+          path="/:lavelOne/:lavelTwo/:lavelThree"
           element={<Product />}
         ></Route>
         <Route path="/product/:productId" element={<ProductDetails />}></Route>

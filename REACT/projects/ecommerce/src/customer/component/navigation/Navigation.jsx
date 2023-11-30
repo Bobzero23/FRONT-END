@@ -59,11 +59,8 @@ export default function Navigation() {
 
   useEffect(() => {
     if (auth.user) {
-      console.log("user vardir");
       handleClose();
     }
-
-    console.log(auth.user);
 
     if (location.pathname === "/login" || location.pathname === "/register") {
       navigate(-1);
