@@ -7,7 +7,7 @@ function ProductCard({ product }) {
 
   return (
     <div
-      onClick={() => navigate(`/product/${product.id}`)}
+      onClick={() => navigate(`/product/${product}`)}
       className="productCard w-[15rem] m-3 transition-all cursor-pointer"
     >
       <div className="h-[20rem]">

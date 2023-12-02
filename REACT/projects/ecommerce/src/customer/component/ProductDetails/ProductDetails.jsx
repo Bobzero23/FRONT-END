@@ -128,12 +128,12 @@ export default function ProductDetails() {
             <div className=" overflow-hidden rounded-lg max-w-[30rem] max-h-[35rem]">
               <img
                 src={products.product?.imageUrl}
-                alt={product.images[0].alt}
+                alt=""
                 className="h-full w-full object-cover object-center"
               />
             </div>
             <div className="flex flex-wrap space-x-5 justify-center">
-              {product.images.map((item) => (
+              {products.images.map((item) => (
                 <div className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg max-w-[5rem] max-h-[5rem] mt-4">
                   <img
                     src={item.src}

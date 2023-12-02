@@ -30,8 +30,8 @@ export const getCart = () => async (dispatch) => {
 
   try {
     const { data } = await api.get(`api/cart/`);
+    console.log("cart_data", data);
     dispatch({ type: GET_CART_SUCCESS, payload: data });
-    console.log("data", data);
   } catch (error) {
     dispatch({ type: GET_CART_FAILURE, payload: error.message });
   }
