@@ -38,7 +38,7 @@ export default function Product() {
   const navigate = useNavigate();
   const param = useParams();
   const dispatch = useDispatch();
-  const { product } = useSelector((store) => store); //selecting the store that includes the data
+  const { products } = useSelector((store) => store); //selecting the store that includes the data
 
   //getting the values of the url
   const decodeQueryString = decodeURIComponent(location.search);
@@ -51,11 +51,11 @@ export default function Product() {
   const pageNumber = searchParams.get("page") || 1; //this means by deafult
   const stock = searchParams.get("stock");
 
-  const handlePaginationChange = (value) => {
+  const handlePaginationChange = (event, value) => {
     const searchParams = new URLSearchParams(location.search);
     searchParams.set("page", value);
     const query = searchParams.toString();
-    navigate({ search: `${query}` });
+    navigate({ search: `? ${query}` });
   };
 
   const handleFilter = (value, sectionId) => {
@@ -88,7 +88,7 @@ export default function Product() {
 
   useEffect(() => {
     const [minPrice, maxPrice] =
-      priceValue === null ? [0, 10000000] : priceValue.split("-").map(Number);
+      priceValue === null ? [0, 9999999] : priceValue.split("-").map(Number);
     const data = {
       category: param.lavelThree,
       colors: colorValue || [],
@@ -437,8 +437,8 @@ export default function Product() {
               {/* Product grid */}
               <div className="lg:col-span-4 w-full">
                 <div className="flex flex-wrap justify-center bg-white py-5">
-                  {product.products &&
-                    product.products?.content?.map((item) => (
+                  {products.products &&
+                    products.products?.content?.map((item) => (
                       <ProductCard product={item} />
                     ))}
                 </div>
@@ -448,7 +448,7 @@ export default function Product() {
           <section className="w-full px-[3.6rem]">
             <div className="px-4 py-5 flex justify-center">
               <Pagination
-                count={product.products?.totalPages}
+                count={products.products?.totalPages}
                 color="secondary"
                 onChange={handlePaginationChange}
               />

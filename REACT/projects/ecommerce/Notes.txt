@@ -17,7 +17,7 @@
 
 WARNINGS
 - I messed up one of te buttons while trying to do the sign in (FIXED)
-- He changed some stufss while rendering the product pages stuff (src: min 1:20:00) the 8th video
+- He changed some stufss while rendering the product pages stuff (src: min 1:20:00) the 8th video (FIXED)
 
 
 TODOS
@@ -28,6 +28,7 @@ TOLEARNS
 - How to handle form (source -> DeliveryAddresForm.jsx)
 - REDUX
 - decodeURIComponent(location.search)
+- Why taking an "event" parameter on a product method for handling pagination
 
 
 NEW IDEAS

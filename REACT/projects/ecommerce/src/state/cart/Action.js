@@ -1,5 +1,4 @@
-import api from "../../config/ApiConfig";
-
+import { api } from "../../config/ApiConfig";
 import {
   ADD_ITEM_TO_CART_FAILURE,
   ADD_ITEM_TO_CART_REQUEST,
@@ -19,19 +18,20 @@ export const addItemToCart = (reqData) => async (dispatch) => {
   dispatch({ type: ADD_ITEM_TO_CART_REQUEST });
 
   try {
-    const { data } = await api.put("/api/cart/add", reqData.data);
+    const { data } = await api.put("api/cart/add", reqData);
     dispatch({ type: ADD_ITEM_TO_CART_SUCCESS, payload: data });
   } catch (error) {
     dispatch({ type: ADD_ITEM_TO_CART_FAILURE, payload: error.message });
   }
 };
 
-export const get = () => async (dispatch) => {
+export const getCart = () => async (dispatch) => {
   dispatch({ type: GET_CART_REQUEST });
 
   try {
-    const { data } = await api.get(`/api/cart`);
+    const { data } = await api.get(`api/cart/`);
     dispatch({ type: GET_CART_SUCCESS, payload: data });
+    console.log("data", data);
   } catch (error) {
     dispatch({ type: GET_CART_FAILURE, payload: error.message });
   }

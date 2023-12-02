@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CartItem from "./CartItem";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getCart } from "../../../state/cart/Action";
 
 function Cart() {
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
+  const { cart } = useSelector((store) => store);
   const handleCheckout = () => {
     navigate("/checkout?step=2");
   };
+
+  useEffect(() => {
+    dispatch(getCart());
+  }, []);
 
   return (
     <div>
@@ -26,12 +33,12 @@ function Cart() {
             <div className="space-y-3 mb-10 p-3">
               <div className="flex justify-between pt-3 text-black">
                 <span>Price</span>
-                <span>$499</span>
+                <span>${cart.cart?.totalPrice}</span>
               </div>
 
               <div className="flex justify-between pt-3">
                 <span>Discount</span>
-                <span className=" text-green-600">$49</span>
+                <span className=" text-green-600">${cart.cart?.discount}</span>
               </div>
 
               <div className="flex justify-between pt-3 text-black">
@@ -41,7 +48,9 @@ function Cart() {
 
               <div className="flex justify-between pt-3 text-black font-bold">
                 <span>Total Amount</span>
-                <span className=" text-green-600">$5699</span>
+                <span className=" text-green-600">
+                  {cart.cart?.totalDiscountedPrice}
+                </span>
               </div>
             </div>
             <Button
