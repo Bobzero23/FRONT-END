@@ -71,7 +71,7 @@ export default function ProductDetails() {
   const { products } = useSelector((store) => store);
 
   const handleAddToCart = () => {
-    const data = { productId: params.productId, sizes: selectedSize.name };
+    const data = { productId: params.productId, size: selectedSize.name };
     dispatch(addItemToCart(data));
     navigate("/cart");
   };
@@ -133,7 +133,7 @@ export default function ProductDetails() {
               />
             </div>
             <div className="flex flex-wrap space-x-5 justify-center">
-              {products.images.map((item) => (
+              {product.images.map((item) => (
                 <div className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg max-w-[5rem] max-h-[5rem] mt-4">
                   <img
                     src={item.src}
