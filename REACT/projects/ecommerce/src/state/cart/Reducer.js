@@ -2,6 +2,7 @@ import {
   ADD_ITEM_TO_CART_FAILURE,
   ADD_ITEM_TO_CART_REQUEST,
   ADD_ITEM_TO_CART_SUCCESS,
+  GET_CART_FAILURE,
   GET_CART_REQUEST,
   GET_CART_SUCCESS,
   REMOVE_CART_ITEM_FAILURE,
@@ -35,15 +36,22 @@ export const cartReducer = (state = initialState, action) => {
     case GET_CART_REQUEST:
       return {
         ...state,
-        cart: action.payload,
         loading: false,
         error: null,
+      };
+
+    case GET_CART_FAILURE:
+      return {
+        ...state,
+        error: action.payload,
+        loading: false,
       };
 
     case GET_CART_SUCCESS:
       return {
         ...state,
         cart: action.payload,
+        cartItems: action.payload.cartItems,
         loading: false,
         error: null,
       };
@@ -59,16 +67,14 @@ export const cartReducer = (state = initialState, action) => {
     case REMOVE_CART_ITEM_SUCCESS:
       return {
         ...state,
-        cartItems: state.cartItems.filter((item) => item.id !== action.payload),
+        deleteCartItem: action.payload,
         loading: false,
       };
 
     case UPDATE_CART_ITEM_SUCCESS:
       return {
         ...state,
-        cartItems: state.cartItems.map((item) =>
-          item.id === action.payload.id ? action.payload : item
-        ),
+        updateCartItem: action.payload,
         loading: false,
       };
 

@@ -1,24 +1,33 @@
 import { Box, Button, Grid, TextField } from "@mui/material";
 import React from "react";
 import AddressCard from "../addressCard/AddressCard";
+import { useDispatch } from "react-redux";
+import { createOrder } from "../../../state/order/Action";
+import { useNavigate } from "react-router-dom";
 
 const DeliveryAddresForm = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
     const data = new FormData(event.currentTarget);
 
     const address = {
-      firstname: data.get("firstname"),
-      lastname: data.get("lastname"),
-      address: data.get("address"),
+      firstName: data.get("firstname"),
+      lastName: data.get("lastname"),
+      streetAddress: data.get("address"),
       city: data.get("city"),
       state: data.get("state"),
-      zipcode: data.get("zipcode"),
-      phoneNumber: data.get("phoneNumber"),
+      zipCode: data.get("zipCode"),
+      mobile: data.get("mobile"),
     };
 
-    console.log("address", address);
+    const orderData = { address, navigate };
+    dispatch(createOrder(orderData));
+
+    console.log("address", orderData);
   };
 
   return (
@@ -100,8 +109,8 @@ const DeliveryAddresForm = () => {
                 <Grid item xs={12} sm={6}>
                   <TextField
                     required
-                    id="zipcode"
-                    name="zipcode"
+                    id="zipCode"
+                    name="zipCode"
                     label="Zipcode / Postal code"
                     autoComplete="shipping postal-code"
                     fullWidth
@@ -110,8 +119,8 @@ const DeliveryAddresForm = () => {
                 <Grid item xs={12} sm={6}>
                   <TextField
                     required
-                    id="phoneNumber"
-                    name="phoneNumber"
+                    id="mobile"
+                    name="mobile"
                     label="Phone Number"
                     fullWidth
                     autoComplete="given-name"

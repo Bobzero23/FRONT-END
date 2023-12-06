@@ -55,7 +55,7 @@ export default function Product() {
     const searchParams = new URLSearchParams(location.search);
     searchParams.set("page", value);
     const query = searchParams.toString();
-    navigate({ search: `? ${query}` });
+    navigate({ search: `?${query}` });
   };
 
   const handleFilter = (value, sectionId) => {
