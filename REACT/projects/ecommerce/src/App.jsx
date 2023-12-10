@@ -9,7 +9,7 @@ import Order from "./customer/component/order/Order";
 import HomePage from "./customer/component/pages/homePage/HomePage";
 import Product from "./customer/component/product/Product";
 import CustomRouters from "./routers/CustomRouters";
-import AdminRouters from "./routers/AdminRouters";
+import Admin from "./admin/component/Admin";
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
         <div className="">
           <Routes>
             <Route path="/*" element={<CustomRouters />}></Route>
-            <Route path="/admin/*" element={<AdminRouters />}></Route>
+            <Route path="/admin/*" element={<Admin />}></Route>
           </Routes>
         </div>
       </div>
