@@ -17,6 +17,11 @@ import EmailIcon from "@mui/icons-material/Email";
 import InboxIcon from "@mui/icons-material/Inbox";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import Dashboard from "./Dashboard";
+import CreateProductForm from "./CreateProductForm";
+import ProductsTable from "./ProductsTable";
+import OrdersTable from "./OrdersTable";
+import CustomersTable from "./CustomersTable";
 
 const menu = [
   { name: "Dashboard", path: "/admin", icon: <DashboardIcon /> },
@@ -43,9 +48,10 @@ const Admin = () => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
+        height: "100%",
       }}
     >
-      {isLargeScreen && <Toolbar />}
+      {/* {isLargeScreen && <Toolbar />} */}
 
       <List>
         {menu.map((item, index) => (
@@ -64,6 +70,7 @@ const Admin = () => {
             <ListItemIcon>
               <AccountCircleIcon />
             </ListItemIcon>
+            <ListItemText>Account</ListItemText>
           </ListItemButton>
         </ListItem>
       </List>
@@ -73,7 +80,29 @@ const Admin = () => {
     <div>
       <Box sx={{ display: `${isLargeScreen} ? "flex" : "block"` }}>
         <CssBaseline />
-        <Drawer variant="permanent">{drawer}</Drawer>
+        <Drawer
+          variant="permanent"
+          sx={{
+            height: "100vh",
+            width: 240,
+            flexShrink: 0,
+          }}
+        >
+          {drawer}
+        </Drawer>
+
+        <Box>
+          <Routes>
+            <Route path="/" element={<Dashboard />}></Route>
+            <Route
+              path="/products/create"
+              element={<CreateProductForm />}
+            ></Route>
+            <Route path="/products" element={<ProductsTable />}></Route>
+            <Route path="/orders" element={<OrdersTable />}></Route>
+            <Route path="/customers" element={<CustomersTable />}></Route>
+          </Routes>
+        </Box>
       </Box>
     </div>
   );
