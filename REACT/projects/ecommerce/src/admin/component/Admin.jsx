@@ -36,8 +36,8 @@ const menu = [
 ];
 
 const Admin = () => {
-  const theme = useTheme();
-  const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
+  const theme = useTheme(); //to access some screen view properties
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg")); //to know if the current screen is large or not (boolean)
   const [sideBarVisible, setSideBarVisivle] = useState(false);
   const navigate = useNavigate();
 
@@ -48,16 +48,22 @@ const Admin = () => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
+        border: "1px solid blue",
         height: "100%",
+        paddingRight: "10px",
       }}
     >
       {/* {isLargeScreen && <Toolbar />} */}
 
       <List>
         {menu.map((item, index) => (
-          <ListItem key={item.name} onClick={() => navigate(item.path)}>
+          <ListItem
+            key={item.name}
+            disablePadding
+            onClick={() => navigate(item.path)}
+          >
             <ListItemButton>
-              <ListItemIcon>{item.icon}</ListItemIcon>
+              <ListItemIcon sx={{ fontSize: "24px" }}>{item.icon}</ListItemIcon>
             </ListItemButton>
             <ListItemText>{item.name}</ListItemText>
           </ListItem>
@@ -65,7 +71,7 @@ const Admin = () => {
       </List>
 
       <List>
-        <ListItem>
+        <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
               <AccountCircleIcon />
@@ -78,18 +84,15 @@ const Admin = () => {
   );
   return (
     <div>
-      <Box sx={{ display: `${isLargeScreen} ? "flex" : "block"` }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          height: "100vh",
+        }}
+      >
         <CssBaseline />
-        <Drawer
-          variant="permanent"
-          sx={{
-            height: "100vh",
-            width: 240,
-            flexShrink: 0,
-          }}
-        >
-          {drawer}
-        </Drawer>
+        <div>{drawer}</div>
 
         <Box>
           <Routes>
