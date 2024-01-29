@@ -154,8 +154,7 @@ function editPost(postid, title, content, image) {
 
         }).catch((error) => {    
             console.error("an error happened");
-        })
-        
+        })   
     })
 
 }

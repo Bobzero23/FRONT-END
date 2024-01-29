@@ -19,15 +19,16 @@
           <img src="images/best-quotes-gandi.webp" alt="" />
         </div>
         <div class="login-form-container">
-          <form>
+          <form id="my-form">
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label"
-                >Email address</label
+                >Email address or Username</label
               >
               <input
-                type="email"
+                type="text"
+                name="usernameOrEmail"
                 class="form-control"
-                id="exampleInputEmail1"
+                id="username"
                 aria-describedby="emailHelp"
               />
               <div id="emailHelp" class="form-text">
@@ -41,7 +42,8 @@
               <input
                 type="password"
                 class="form-control"
-                id="exampleInputPassword1"
+                id="password"
+                name="password"
               />
               <div id="registerHelp" class="form-text">
                 Don't have an accoutnt? <a href="register.html"> register</a>
@@ -60,5 +62,6 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script src="login.js"></script>
   </body>
 </html>
