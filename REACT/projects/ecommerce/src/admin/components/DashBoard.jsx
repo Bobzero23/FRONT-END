@@ -1,6 +1,7 @@
 import React from "react";
 import Achievement from "./Achievement";
 import { Grid } from "@mui/material";
+import MonthlyOverview from "./MonthlyOverview";
 
 const AdminDashBoard = () => {
   return (
@@ -9,7 +10,9 @@ const AdminDashBoard = () => {
         <Grid item xs={12} md={4}>
           <Achievement />
         </Grid>
-        <Grid item xs={12} md={8}></Grid>
+        <Grid item xs={12} md={8}>
+          <MonthlyOverview />
+        </Grid>
       </Grid>
     </div>
   );
