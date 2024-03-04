@@ -2,6 +2,7 @@ import React from "react";
 import Achievement from "./Achievement";
 import { Grid } from "@mui/material";
 import MonthlyOverview from "./MonthlyOverview";
+import ProductsTable from "./ProductsTable";
 
 const AdminDashBoard = () => {
   return (
@@ -12,6 +13,9 @@ const AdminDashBoard = () => {
         </Grid>
         <Grid item xs={12} md={8}>
           <MonthlyOverview />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <ProductsTable />
         </Grid>
       </Grid>
     </div>
