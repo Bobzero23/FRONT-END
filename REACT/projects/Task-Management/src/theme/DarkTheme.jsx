@@ -10,7 +10,7 @@ export const darkTheme = createTheme({
       primary: "#fff",
     },
     primary: {
-      mainin: "rgba(215, 106, 255, 0.507)",
+      main: "rgba(215, 106, 255, 0.507)",
     },
   },
 });
