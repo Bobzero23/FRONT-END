@@ -11,3 +11,4 @@ PROJECT TRACE
 
 - initializing the Frontend dependencies (materialUI, Tailwind, React-Router-Dom)
 - Creating the theme (changine the background)
+- Navbar
