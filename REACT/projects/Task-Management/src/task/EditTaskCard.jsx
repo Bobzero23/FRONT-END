@@ -15,7 +15,7 @@ const style = {
   p: 4,
 };
 
-export default function UserList({ handleClose, open }) {
+export default function EditTaskCard({ handleClose, open }) {
   return (
     <div>
       <Modal
@@ -26,7 +26,7 @@ export default function UserList({ handleClose, open }) {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            User List
+            Edit Task Form
           </Typography>
         </Box>
       </Modal>
