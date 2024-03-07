@@ -54,7 +54,9 @@ const TaskCard = () => {
     handleMenuClose();
   };
 
-  const handleDeleteTask = () => {};
+  const handleDeleteTask = () => {
+    handleMenuClose();
+  };
 
   return (
     <div>
