@@ -27,9 +27,9 @@ export default function SubmissionList({ handleClose, open }) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <div>
+          <div className="space-y-2">
             {Submissions.length > 0 ? (
-              <SubmissionCard />
+              Submissions.map((item) => <SubmissionCard />)
             ) : (
               <div className="">
                 <div className="text-center">No Submission Found</div>
