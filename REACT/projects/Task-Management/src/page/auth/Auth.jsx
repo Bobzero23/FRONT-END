@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "./Auth.css";
+import Signin from "./Signin";
+import Signup from "./Signup";
 
 const Auth = () => {
-  const [isRegister, setIsRegister] = useState(true);
+  const [isRegister, setIsRegister] = useState(false);
 
   const togglePanel = () => {
     setIsRegister(!isRegister);
@@ -11,7 +13,7 @@ const Auth = () => {
   return (
     <div className="flex justify-center h-screen items-center overflow-hidden">
       <div className="box lg:max-w-4xl">
-        <div className={`cover ${isRegister ? "rotete-active" : ""}`}>
+        <div className={`cover ${isRegister ? "rotate-active" : ""}`}>
           <div className="front">
             <img
               src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D"
@@ -33,8 +35,12 @@ const Auth = () => {
         </div>
         <div className="forms h-full">
           <div className="form-content h-full">
-            <div className="login-form">signin form</div>
-            <div className="signup-form">signup form</div>
+            <div className="login-form">
+              <Signin togglePanel={togglePanel} />
+            </div>
+            <div className="signup-form">
+              <Signup togglePanel={togglePanel} />
+            </div>
           </div>
         </div>
       </div>
