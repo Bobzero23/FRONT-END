@@ -14,7 +14,6 @@ const style = {
   transform: "translate(-50%, -50%)",
   width: 400,
   bgcolor: "background.paper",
-  border: "1px solid white",
   boxShadow: 24,
   p: 4,
 };
@@ -26,10 +25,10 @@ export default function CreateTask({ handleClose, open }) {
     title: "",
     image: "",
     description: "",
-    tage: [],
+    tags: [],
     deadline: new Date(),
   });
-  const handleChange = (event) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -50,8 +49,37 @@ export default function CreateTask({ handleClose, open }) {
     });
   };
 
+  const formatDate = (input) => {
+    let {
+      $y: year,
+      $M: month,
+      $D: day,
+      $H: hours,
+      $m: minutes,
+      $s: seconds,
+      $ms: milliseconds,
+    } = input;
+
+    const date = new Date(
+      year,
+      month,
+      day,
+      hours,
+      minutes,
+      seconds,
+      milliseconds
+    );
+    const formattedDate = date.toISOString();
+    return formattedDate;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    const { deadline } = formData;
+    formData.deadline = formatDate(formData.deadline);
+    formData.tags = selectedTags;
+    console.log("formData: ", formData, "deadline: ", formData.deadline);
+    handleClose();
   };
 
   return (
@@ -63,64 +91,75 @@ export default function CreateTask({ handleClose, open }) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Grid container spacing={2} alignItems={"center"}>
-            <Grid item xs={12}>
-              <TextField
-                label="title"
-                name="title"
-                fullWidth
-                value={formData.title}
-                onChange={handleChange}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                label="image"
-                name="image"
-                fullWidth
-                value={formData.image}
-                onChange={handleChange}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                label="description"
-                name="description"
-                multiline
-                rows={4}
-                fullWidth
-                value={formData.description}
-                onChange={handleChange}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <Autocomplete
-                multiple
-                id="multiple-limit-tags"
-                options={tags}
-                onChange={handleTagsChange}
-                getOptionLabel={(option) => option}
-                renderInput={(params) => (
-                  <TextField label="image" fullWidth {...params} />
-                )}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <DateTimePicker
-                  className="w-full"
-                  label="Deadline"
-                  onChange={handleDeadlineChange}
-                  renderInput={(params) => <TextField {...params} />}
+          <form onSubmit={handleSubmit}>
+            <Grid container spacing={2} alignItems={"center"}>
+              <Grid item xs={12}>
+                <TextField
+                  label="title"
+                  name="title"
+                  fullWidth
+                  value={formData.title}
+                  onChange={handleChange}
                 />
-              </LocalizationProvider>
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  label="image"
+                  name="image"
+                  fullWidth
+                  value={formData.image}
+                  onChange={handleChange}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  label="description"
+                  name="description"
+                  multiline
+                  rows={4}
+                  fullWidth
+                  value={formData.description}
+                  onChange={handleChange}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <Autocomplete
+                  multiple
+                  id="multiple-limit-tags"
+                  options={tags}
+                  onChange={handleTagsChange}
+                  getOptionLabel={(option) => option}
+                  renderInput={(params) => (
+                    <TextField label="technologies" fullWidth {...params} />
+                  )}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                  <DateTimePicker
+                    className="w-full"
+                    label="Deadline"
+                    onChange={handleDeadlineChange}
+                    renderInput={(params) => <TextField {...params} />}
+                  />
+                </LocalizationProvider>
+              </Grid>
+              <Grid item xs={12}>
+                <Button
+                  type="submit"
+                  fullWidth
+                  sx={{
+                    padding: "0.9rem",
+                    color: "white",
+                    backgroundImage:
+                      "linear-gradient(150deg, #c24dd0, #7a72fa)",
+                  }}
+                >
+                  Create
+                </Button>
+              </Grid>
             </Grid>
-            <Grid item xs={12}>
-              <Button type="submit" fullWidth sx={{ padding: "0.9rem" }}>
-                Create
-              </Button>
-            </Grid>
-          </Grid>
+          </form>
         </Box>
       </Modal>
     </div>
