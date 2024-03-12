@@ -5,16 +5,14 @@
 * Note: there are some steps you must do which are available in the link above
 * Note: Also don't forget a link to install the mui icons
 
-PROJECT TRACE
-
-- initializing the Frontend dependencies (materialUI, Tailwind, React-Router-Dom)
-- Creating the theme (changine the background)
-- Navbar
-
 
 Notes:
 + Anything you put in index.css is applicable and reachable to the whole application
++ After installing react-router-dom make sure to provide the routing before starting to use it
++ While implementing the UrlParams beware with "WHITE SPACES" they will cause the "20%20%" in your params
 
 
 LEARNED:
 + How to format a date (CreateTask.jsx - formatDate)
++ Url Query params (SideBar.jsx - handleMenuChange)
+
