@@ -7,7 +7,7 @@ const Signin = ({ togglePanel }) => {
   const dispatch = useDispatch();
 
   const [formData, setFormData] = useState({
-    email: "",
+    username: "",
     password: "",
   });
 
@@ -32,9 +32,9 @@ const Signin = ({ togglePanel }) => {
         <TextField
           fullWidth
           label="email"
-          name="email"
+          name="username"
           type="email"
-          value={formData.email}
+          value={formData.username}
           onChange={handleChange}
           placeholder="Enter your email"
         />
