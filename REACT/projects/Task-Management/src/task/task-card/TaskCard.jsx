@@ -6,13 +6,15 @@ import { MenuItem } from "@mui/material";
 import UserList from "../UserList";
 import SubmissionList from "../SubmissionList";
 import EditTaskCard from "../EditTaskCard";
-import CreateTask from "../CreateTask";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteTask } from "../../reduxToolkit/TaskSlice";
 
 const role = "ROLE_ADMIN";
 
 const TaskCard = ({ item }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const openMenu = Boolean(anchorEl);
+  const dispatch = useDispatch();
 
   const handleMenuClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -56,6 +58,7 @@ const TaskCard = ({ item }) => {
   };
 
   const handleDeleteTask = () => {
+    dispatch(deleteTask(item.id));
     handleMenuClose();
   };
 

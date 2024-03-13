@@ -25,7 +25,18 @@ export default function CreateTask({ handleClose, open }) {
   const dispatch = useDispatch();
 
   //the tags to select from
-  const tags = ["Angular", "React", "Vue", "SpringBoot", "Node", "Python"];
+  const tags = [
+    "Angular",
+    "React",
+    "Vue",
+    "SpringBoot",
+    "Node",
+    "Python",
+    "Php",
+    "Flask",
+    ".NET",
+    "Express",
+  ];
 
   const [formData, setFormData] = useState({
     title: "",
