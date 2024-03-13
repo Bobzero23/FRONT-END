@@ -23,8 +23,8 @@ export const register = createAsyncThunk("auth/register", async (userData) => {
     console.log("register success", data);
     return data;
   } catch (error) {
-    throw Error(error.response.data.error);
     console.log("catch error", error);
+    throw Error(error.response.data.error);
   }
 });
 

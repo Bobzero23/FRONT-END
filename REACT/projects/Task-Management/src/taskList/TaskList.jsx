@@ -8,7 +8,7 @@ const TaskList = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchTasks());
+    dispatch(fetchTasks({}));
   }, []);
 
   console.log("task: ", task);
