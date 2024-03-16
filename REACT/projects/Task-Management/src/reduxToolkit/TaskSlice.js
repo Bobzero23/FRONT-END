@@ -153,7 +153,7 @@ const taskSlice = createSlice({
       })
       .addCase(fetchTasksById.fulfilled, (state, action) => {
         state.loading = false;
-        state.taskDetails = action.payload;
+        state.task = action.payload;
       })
       .addCase(fetchUsersTasks.rejected, (state, action) => {
         state.error = action.error.message;
@@ -175,14 +175,14 @@ const taskSlice = createSlice({
         const updatedTask = action.payload;
         state.loading = false;
         state.tasks.push = state.tasks.map((task) =>
-          task.id === updateTask.id ? { ...task, ...updateTask } : task
+          task.id === updatedTask.id ? { ...task, ...updatedTask } : task
         );
       })
       .addCase(assignedTaskToUser.fulfilled, (state, action) => {
-        const updatedTask = action.payload;
+        const assignedTask = action.payload;
         state.loading = false;
         state.tasks.push = state.tasks.map((task) =>
-          task.id === updateTask.id ? { ...task, ...updateTask } : task
+          task.id === assignedTask.id ? { ...task, ...assignedTask } : task
         );
       })
       .addCase(deleteTask.fulfilled, (state, action) => {

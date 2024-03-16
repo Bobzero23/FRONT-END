@@ -56,10 +56,10 @@ const TaskCard = ({ item }) => {
   };
 
   const handleOpenUpdateTaskModel = () => {
-    // const updatedParams = new URLSearchParams(location.search);
+    const updatedParams = new URLSearchParams(location.search);
     setOpenUpdateTaskForm(true);
-    // updatedParams.set("taskId", item.id);
-    // navigate(`${location.pathname}?${updatedParams.toString()}`);
+    updatedParams.set("taskId", item.id);
+    navigate(`${location.pathname}?${updatedParams.toString()}`);
     handleMenuClose();
   };
 

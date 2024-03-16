@@ -1,14 +1,12 @@
-import * as React from "react";
 import Box from "@mui/material/Box";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
 import Modal from "@mui/material/Modal";
 import { Autocomplete, Button, Grid, TextField } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { fetchTasksById } from "../reduxToolkit/TaskSlice";
+import { fetchTasksById, updateTask } from "../reduxToolkit/TaskSlice";
 
 const style = {
   position: "absolute",
@@ -87,6 +85,7 @@ export default function EditTaskCard({ item, handleClose, open }) {
     formData.tags = selectedTags;
     dispatch(EditTaskCard(item.id));
     console.log("formData: ", formData, "deadline: ", formData.deadline);
+    dispatch(updateTask({ taskId: item.id, updatedTaskData: formData }));
     handleClose();
   };
 
@@ -94,14 +93,12 @@ export default function EditTaskCard({ item, handleClose, open }) {
     dispatch(fetchTasksById(item.id));
   }, [item.id]);
 
-  useEffect(
-    (item) => {
-      if (task.taskDetails) {
-        setFormData(task.taskDetails);
-      }
-    },
-    [task.taskDetails]
-  );
+  useEffect(() => {
+    if (task.taskDetails) {
+      setFormData(task.taskDetails);
+      console.log("I am triggered");
+    }
+  }, [task.taskDetails]);
 
   return (
     <div>
