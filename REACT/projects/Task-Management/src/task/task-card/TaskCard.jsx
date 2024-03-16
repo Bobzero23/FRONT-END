@@ -8,6 +8,7 @@ import SubmissionList from "../SubmissionList";
 import EditTaskCard from "../EditTaskCard";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteTask } from "../../reduxToolkit/TaskSlice";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const role = "ROLE_ADMIN";
 
@@ -15,6 +16,8 @@ const TaskCard = ({ item }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const openMenu = Boolean(anchorEl);
   const dispatch = useDispatch();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleMenuClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -53,7 +56,10 @@ const TaskCard = ({ item }) => {
   };
 
   const handleOpenUpdateTaskModel = () => {
+    // const updatedParams = new URLSearchParams(location.search);
     setOpenUpdateTaskForm(true);
+    // updatedParams.set("taskId", item.id);
+    // navigate(`${location.pathname}?${updatedParams.toString()}`);
     handleMenuClose();
   };
 
@@ -128,6 +134,7 @@ const TaskCard = ({ item }) => {
         handleClose={handleCloseSubmissionList}
       />
       <EditTaskCard
+        item={item}
         open={openUpdateTaskForm}
         handleClose={handleCloseUpdateTaskForm}
       />

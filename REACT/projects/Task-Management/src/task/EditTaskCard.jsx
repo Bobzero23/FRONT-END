@@ -6,6 +6,9 @@ import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
 import Modal from "@mui/material/Modal";
 import { Autocomplete, Button, Grid, TextField } from "@mui/material";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { fetchTasksById } from "../reduxToolkit/TaskSlice";
 
 const style = {
   position: "absolute",
@@ -20,7 +23,10 @@ const style = {
 
 const tags = ["Angular", "React", "Vue", "SpringBoot", "Node", "Python"];
 
-export default function EditTaskCard({ handleClose, open }) {
+export default function EditTaskCard({ item, handleClose, open }) {
+  const dispatch = useDispatch();
+  const { task } = useSelector((store) => store);
+
   const [formData, setFormData] = useState({
     title: "",
     image: "",
@@ -28,6 +34,7 @@ export default function EditTaskCard({ handleClose, open }) {
     tags: [],
     deadline: new Date(),
   });
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -78,9 +85,23 @@ export default function EditTaskCard({ handleClose, open }) {
     const { deadline } = formData;
     formData.deadline = formatDate(formData.deadline);
     formData.tags = selectedTags;
+    dispatch(EditTaskCard(item.id));
     console.log("formData: ", formData, "deadline: ", formData.deadline);
     handleClose();
   };
+
+  useEffect(() => {
+    dispatch(fetchTasksById(item.id));
+  }, [item.id]);
+
+  useEffect(
+    (item) => {
+      if (task.taskDetails) {
+        setFormData(task.taskDetails);
+      }
+    },
+    [task.taskDetails]
+  );
 
   return (
     <div>

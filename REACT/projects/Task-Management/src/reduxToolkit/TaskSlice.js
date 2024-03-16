@@ -151,6 +151,10 @@ const taskSlice = createSlice({
         state.loading = false;
         state.usersTask = action.payload;
       })
+      .addCase(fetchTasksById.fulfilled, (state, action) => {
+        state.loading = false;
+        state.taskDetails = action.payload;
+      })
       .addCase(fetchUsersTasks.rejected, (state, action) => {
         state.error = action.error.message;
         state.loading = false;
