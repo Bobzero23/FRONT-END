@@ -22,6 +22,7 @@ const style = {
 };
 
 export default function CreateTask({ handleClose, open }) {
+  const [selectedTags, setSelectedTags] = useState();
   const dispatch = useDispatch();
 
   //the tags to select from
@@ -52,8 +53,6 @@ export default function CreateTask({ handleClose, open }) {
       [name]: value,
     });
   };
-
-  const [selectedTags, setSelectedTags] = useState();
 
   const handleTagsChange = (event, value) => {
     setSelectedTags(value);

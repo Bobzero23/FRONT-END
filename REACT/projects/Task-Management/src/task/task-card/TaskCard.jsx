@@ -55,6 +55,16 @@ const TaskCard = ({ item }) => {
     setOpenUpdateTaskForm(false);
   };
 
+  const handleRemoveTaskIdParam = () => {
+    const updatedParams = new URLSearchParams(location.search);
+    updatedParams.delete("filter");
+    const queryString = updatedParams.toString();
+    const updatedPath = queryString
+      ? `${location.pathname}?${queryString}`
+      : location.pathname;
+    navigate(updatedPath);
+  };
+
   const handleOpenUpdateTaskModel = () => {
     const updatedParams = new URLSearchParams(location.search);
     setOpenUpdateTaskForm(true);

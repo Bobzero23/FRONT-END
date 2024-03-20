@@ -71,11 +71,12 @@ export const createTask = createAsyncThunk(
 
 export const updateTask = createAsyncThunk(
   "task/updateTask",
-  async ({ taskId, updatadTaskData }) => {
+  async ({ taskId, updatedTaskData }) => {
     setAuthHeader(localStorage.getItem("jwt"), api);
 
     try {
-      const { data } = await api.put(`api/tasks/${taskId}`, updatadTaskData);
+      console.log("inside the update try");
+      const { data } = await api.put(`api/tasks/${taskId}`, updatedTaskData);
       console.log("updated task: ", data);
       return data;
     } catch (error) {
@@ -153,7 +154,7 @@ const taskSlice = createSlice({
       })
       .addCase(fetchTasksById.fulfilled, (state, action) => {
         state.loading = false;
-        state.task = action.payload;
+        state.taskDetails = action.payload;
       })
       .addCase(fetchUsersTasks.rejected, (state, action) => {
         state.error = action.error.message;
@@ -165,19 +166,21 @@ const taskSlice = createSlice({
       })
       .addCase(createTask.fulfilled, (state, action) => {
         state.loading = false;
-        state.tasks.push = action.payload;
+        state.tasks.push(action.payload);
       })
       .addCase(createTask.rejected, (state, action) => {
         state.error = action.error.message;
         state.loading = false;
       })
+
       .addCase(updateTask.fulfilled, (state, action) => {
         const updatedTask = action.payload;
         state.loading = false;
-        state.tasks.push = state.tasks.map((task) =>
+        state.tasks = state.tasks.map((task) =>
           task.id === updatedTask.id ? { ...task, ...updatedTask } : task
         );
       })
+
       .addCase(assignedTaskToUser.fulfilled, (state, action) => {
         const assignedTask = action.payload;
         state.loading = false;

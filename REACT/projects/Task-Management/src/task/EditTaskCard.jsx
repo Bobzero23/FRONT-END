@@ -7,6 +7,7 @@ import { Autocomplete, Button, Grid, TextField } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTasksById, updateTask } from "../reduxToolkit/TaskSlice";
+import { useLocation } from "react-router-dom";
 
 const style = {
   position: "absolute",
@@ -22,6 +23,9 @@ const style = {
 const tags = ["Angular", "React", "Vue", "SpringBoot", "Node", "Python"];
 
 export default function EditTaskCard({ item, handleClose, open }) {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const taskId = queryParams.get("taskId");
   const dispatch = useDispatch();
   const { task } = useSelector((store) => store);
 
@@ -33,6 +37,8 @@ export default function EditTaskCard({ item, handleClose, open }) {
     deadline: new Date(),
   });
 
+  const [selectedTags, setSelectedTags] = useState([]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -40,8 +46,6 @@ export default function EditTaskCard({ item, handleClose, open }) {
       [name]: value,
     });
   };
-
-  const [selectedTags, setSelectedTags] = useState();
 
   const handleTagsChange = (event, value) => {
     setSelectedTags(value);
@@ -80,23 +84,23 @@ export default function EditTaskCard({ item, handleClose, open }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("the given task id is: ", taskId);
     const { deadline } = formData;
     formData.deadline = formatDate(formData.deadline);
     formData.tags = selectedTags;
-    dispatch(EditTaskCard(item.id));
     console.log("formData: ", formData, "deadline: ", formData.deadline);
-    dispatch(updateTask({ taskId: item.id, updatedTaskData: formData }));
+    dispatch(updateTask({ taskId: taskId, updatedTaskData: formData }));
     handleClose();
   };
 
   useEffect(() => {
-    dispatch(fetchTasksById(item.id));
-  }, [item.id]);
+    dispatch(fetchTasksById(taskId));
+  }, [taskId]);
 
   useEffect(() => {
     if (task.taskDetails) {
       setFormData(task.taskDetails);
-      console.log("I am triggered");
+      setSelectedTags(task.taskDetails.tags || []);
     }
   }, [task.taskDetails]);
 
@@ -145,6 +149,7 @@ export default function EditTaskCard({ item, handleClose, open }) {
                   multiple
                   id="multiple-limit-tags"
                   options={tags}
+                  value={selectedTags}
                   onChange={handleTagsChange}
                   getOptionLabel={(option) => option}
                   renderInput={(params) => (
