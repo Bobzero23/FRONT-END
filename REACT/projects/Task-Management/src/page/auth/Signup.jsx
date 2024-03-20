@@ -7,8 +7,11 @@ import {
   Select,
   TextField,
 } from "@mui/material";
+import { useDispatch } from "react-redux";
+import { register } from "../../reduxToolkit/AuthSlice";
 
 const Signup = ({ togglePanel }) => {
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -26,6 +29,7 @@ const Signup = ({ togglePanel }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(register(formData));
     console.log("login form: ", formData);
   };
 

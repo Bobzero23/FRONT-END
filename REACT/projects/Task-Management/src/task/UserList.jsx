@@ -52,11 +52,11 @@ export default function UserList({ handleClose, open }) {
                       <Avatar src="https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FydG9vbiUyMGNoYXJhY3RlcnxlbnwwfHwwfHx8MA%3D%3D" />
                     </ListItemAvatar>
                     <ListItemText
-                      primary={`@${item.fullName
+                      secondary={`@${item.fullName
                         .split(" ")
                         .join("_")
                         .toLowerCase()}`}
-                      secondary={item.fullName}
+                      primary={item.fullName}
                     />
                   </ListItem>
                 </div>

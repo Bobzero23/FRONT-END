@@ -3,6 +3,8 @@ import { Avatar, Button } from "@mui/material";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./SideBar.css";
 import CreateTask from "../../task/CreateTask";
+import { useDispatch } from "react-redux";
+import { logout } from "../../reduxToolkit/AuthSlice";
 
 const menu = [
   { name: "HOME", value: "HOME", role: ["ROLE_ADMIN", "ROLE_CUSTOMER"] },
@@ -18,6 +20,7 @@ const role = "ROLE_ADMIN";
 const SideBar = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const dispatch = useDispatch();
 
   const [activeMenu, setActiveMenu] = useState("HOME");
 
@@ -40,6 +43,7 @@ const SideBar = () => {
   };
 
   const handleLogout = () => {
+    dispatch(logout());
     console.log("Handle logout");
   };
 
