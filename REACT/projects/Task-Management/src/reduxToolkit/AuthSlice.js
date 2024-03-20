@@ -56,7 +56,7 @@ export const getUserProfile = createAsyncThunk(
 export const getUserList = createAsyncThunk("auth/getUserList", async (jwt) => {
   setAuthHeader(jwt, api);
   try {
-    const { data } = await api.get(`auth/user`);
+    const { data } = await api.get(`api/user`);
     console.log("user list success", data);
     return data;
   } catch (error) {
@@ -105,7 +105,8 @@ const authSlice = createSlice({
         state.error = action.error.message;
       })
       .addCase(getUserProfile.pending, (state) => {
-        (state.loading = true), (state.error = null);
+        state.loading = true;
+        state.error = null;
       })
       .addCase(getUserProfile.fulfilled, (state, action) => {
         state.loading = false;
@@ -117,7 +118,8 @@ const authSlice = createSlice({
         state.error = action.error.message;
       })
       .addCase(getUserList.pending, (state) => {
-        (state.loading = true), (state.error = null);
+        state.loading = true;
+        state.error = null;
       })
       .addCase(getUserList.fulfilled, (state, action) => {
         state.loading = false;

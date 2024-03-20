@@ -1,6 +1,5 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import {
   Avatar,
@@ -10,6 +9,9 @@ import {
   ListItemAvatar,
   ListItemText,
 } from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getUserList } from "../reduxToolkit/AuthSlice";
 
 const style = {
   position: "absolute",
@@ -23,9 +25,15 @@ const style = {
   p: 2,
 };
 
-const tasks = [1, 1, 1, 1];
-
 export default function UserList({ handleClose, open }) {
+  const dispatch = useDispatch();
+  const { auth } = useSelector((store) => store);
+
+  useEffect(() => {
+    dispatch(getUserList(localStorage.getItem("jwt")));
+    console.log("users", auth.users);
+  }, []);
+
   return (
     <div>
       <Modal
@@ -35,7 +43,7 @@ export default function UserList({ handleClose, open }) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          {tasks.map((item, index) => (
+          {auth.users.map((item, index) => (
             <>
               <div className="flex items-center justify-between w-full">
                 <div>
@@ -44,8 +52,11 @@ export default function UserList({ handleClose, open }) {
                       <Avatar src="https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FydG9vbiUyMGNoYXJhY3RlcnxlbnwwfHwwfHx8MA%3D%3D" />
                     </ListItemAvatar>
                     <ListItemText
-                      primary={"Code With Zosh"}
-                      secondary="@code_with_zosh"
+                      primary={`@${item.fullName
+                        .split(" ")
+                        .join("_")
+                        .toLowerCase()}`}
+                      secondary={item.fullName}
                     />
                   </ListItem>
                 </div>
@@ -61,7 +72,7 @@ export default function UserList({ handleClose, open }) {
                   </Button>
                 </div>
               </div>
-              {index !== tasks.length - 1 && <Divider />}
+              {index !== auth.users.length - 1 && <Divider />}
             </>
           ))}
         </Box>
