@@ -30,7 +30,7 @@ const SubmissionCard = ({ item }) => {
         </div>
       </div>
       <div>
-        {item.status === "PENDING" ? (
+        {item.status === "Pending" ? (
           <div className="flex gap-5">
             <div className="text-green-500">
               <IconButton
@@ -53,9 +53,9 @@ const SubmissionCard = ({ item }) => {
           <Button
             size="small"
             variant="outlined"
-            color={true ? "success" : "error"}
+            color={item.status === "Accepted" ? "success" : "error"}
           >
-            Accepted
+            {item.status}
           </Button>
         )}
       </div>
