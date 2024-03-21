@@ -12,6 +12,8 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getUserList } from "../reduxToolkit/AuthSlice";
+import { assignedTaskToUser } from "../reduxToolkit/TaskSlice";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const style = {
   position: "absolute",
@@ -28,11 +30,19 @@ const style = {
 export default function UserList({ handleClose, open }) {
   const dispatch = useDispatch();
   const { auth } = useSelector((store) => store);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const queryParams = new URLSearchParams(location.search);
+  const taskId = queryParams.get("taskId");
 
   useEffect(() => {
     dispatch(getUserList(localStorage.getItem("jwt")));
     console.log("users", auth.users);
   }, []);
+
+  const handleAssignTask = (user) => {
+    dispatch(assignedTaskToUser({ userId: user.id, taskId: taskId }));
+  };
 
   return (
     <div>
@@ -62,6 +72,7 @@ export default function UserList({ handleClose, open }) {
                 </div>
                 <div>
                   <Button
+                    onClick={() => handleAssignTask(item)}
                     sx={{
                       backgroundImage:
                         "linear-gradient(150deg, #c24dd0, #7a72fa)",

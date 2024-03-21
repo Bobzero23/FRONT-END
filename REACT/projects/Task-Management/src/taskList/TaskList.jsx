@@ -19,14 +19,12 @@ const TaskList = () => {
     }
   }, [filterValue]);
 
-  console.log("task: ", task);
-
   return (
     <div className="w-[67vw]">
       <div className="space-y-3">
-        {task.tasks.map((item) => (
-          <TaskCard item={item} />
-        ))}
+        {auth.user.role === "ROLE_ADMIN"
+          ? task.tasks.map((item) => <TaskCard item={item} />)
+          : task.usersTask.map((item) => <TaskCard item={item} />)}
       </div>
     </div>
   );

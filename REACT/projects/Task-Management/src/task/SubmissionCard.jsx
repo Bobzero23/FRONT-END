@@ -3,9 +3,14 @@ import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import { Button, IconButton } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check";
 import CloseIcon from "@mui/icons-material/Close";
+import { useDispatch } from "react-redux";
+import { acceptDeclineSubmission } from "../reduxToolkit/SubmissionSlice";
 
-const SubmissionCard = () => {
+const SubmissionCard = ({ item }) => {
+  const dispatch = useDispatch();
+
   const handleAcceptOrDecline = (status) => {
+    dispatch(acceptDeclineSubmission({ id: item.id, status }));
     console.log(status);
   };
 
@@ -16,16 +21,16 @@ const SubmissionCard = () => {
           <span>Github : </span>
           <div className="flex items-center gap-2 text-[#c24dd0]">
             <OpenInNewIcon />
-            <a href="/">Go To Link</a>
+            <a href={item.githubLink}>Go To Link</a>
           </div>
         </div>
         <div className="flex items-center gap-2 text-xs">
           <p>Submission Time : </p>
-          <p className="text-gray-400">2024-01-18T22:15:39.517343</p>
+          <p className="text-gray-400">{item.submissionTime}</p>
         </div>
       </div>
       <div>
-        {true ? (
+        {item.status === "PENDING" ? (
           <div className="flex gap-5">
             <div className="text-green-500">
               <IconButton

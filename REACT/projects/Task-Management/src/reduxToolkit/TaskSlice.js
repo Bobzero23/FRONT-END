@@ -184,7 +184,7 @@ const taskSlice = createSlice({
       .addCase(assignedTaskToUser.fulfilled, (state, action) => {
         const assignedTask = action.payload;
         state.loading = false;
-        state.tasks.push = state.tasks.map((task) =>
+        state.tasks = state.tasks.map((task) =>
           task.id === assignedTask.id ? { ...task, ...assignedTask } : task
         );
       })

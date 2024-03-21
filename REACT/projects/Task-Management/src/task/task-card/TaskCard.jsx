@@ -9,10 +9,12 @@ import EditTaskCard from "../EditTaskCard";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteTask } from "../../reduxToolkit/TaskSlice";
 import { useLocation, useNavigate } from "react-router-dom";
+import SubmitFormModel from "../SubmitFormModel";
 
 const role = "ROLE_ADMIN";
 
 const TaskCard = ({ item }) => {
+  const { auth } = useSelector((store) => store);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const openMenu = Boolean(anchorEl);
   const dispatch = useDispatch();
@@ -30,6 +32,9 @@ const TaskCard = ({ item }) => {
   const [openUserList, setOpenUserList] = useState(false);
 
   const handleOpenUserList = () => {
+    const updatedParams = new URLSearchParams(location.search);
+    updatedParams.set("taskId", item.id);
+    navigate(`${location.pathname}?${updatedParams.toString()}`);
     setOpenUserList(true);
     handleMenuClose();
   };
@@ -45,7 +50,24 @@ const TaskCard = ({ item }) => {
   };
 
   const handleOpenSubmissionList = () => {
+    const updatedParams = new URLSearchParams(location.search);
+    updatedParams.set("taskId", item.id);
+    navigate(`${location.pathname}?${updatedParams.toString()}`);
     setOpenSubmissionList(true);
+    handleMenuClose();
+  };
+
+  const [openSubmitFormModel, setOpenSubmitFormModel] = useState(false);
+
+  const handleCloseSubmitFormModel = () => {
+    setOpenSubmitFormModel(false);
+  };
+
+  const handleOpenSubmitFormModel = () => {
+    const updatedParams = new URLSearchParams(location.search);
+    updatedParams.set("taskId", item.id);
+    navigate(`${location.pathname}?${updatedParams.toString()}`);
+    setOpenSubmitFormModel(true);
     handleMenuClose();
   };
 
@@ -122,7 +144,7 @@ const TaskCard = ({ item }) => {
               "aria-labelledby": "basic-button",
             }}
           >
-            {role === "ROLE_ADMIN" ? (
+            {auth.user?.role === "ROLE_ADMIN" ? (
               <>
                 <MenuItem onClick={handleOpenUserList}>Assigned User</MenuItem>
                 <MenuItem onClick={handleOpenSubmissionList}>
@@ -132,7 +154,9 @@ const TaskCard = ({ item }) => {
                 <MenuItem onClick={handleDeleteTask}>Delete</MenuItem>
               </>
             ) : (
-              <></>
+              <>
+                <MenuItem onClick={handleOpenSubmitFormModel}>Submit</MenuItem>
+              </>
             )}
           </Menu>
         </div>
@@ -147,6 +171,10 @@ const TaskCard = ({ item }) => {
         item={item}
         open={openUpdateTaskForm}
         handleClose={handleCloseUpdateTaskForm}
+      />
+      <SubmitFormModel
+        open={openSubmitFormModel}
+        handleClose={handleCloseSubmitFormModel}
       />
     </div>
   );
