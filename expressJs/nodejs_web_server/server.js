@@ -8,7 +8,7 @@ app.get("/", (req, res) => {
 });
 
 /**this is another way of doing the same thing above*/
-app.get("/new-page", (req, res) => {
+app.get("^/$new-page(.html)?", (req, res) => {
   res.sendFile(path.join(__dirname, "views", "new-page.html"));
 });
 
