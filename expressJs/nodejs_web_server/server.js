@@ -18,4 +18,9 @@ app.get("/old-page(.html)?", (req, res) => {
   res.redirect(301, "/new-page.html");
 });
 
+/**sending the error page whenever there is an error in the browser */
+app.get("/*", (req, res) => {
+  res.status(404).sendFile("./views/404.html", { root: __dirname });
+});
+
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
