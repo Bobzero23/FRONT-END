@@ -4,6 +4,8 @@ const app = express();
 const path = require("path");
 const PORT = process.env.PORT || 3500;
 
+/**BUILT-IN MIDDLEWARES */
+
 // built-in middleware to handle urlencoded data
 // in other words, form data
 // 'content-type: application/x-www-form-urlencoded'
@@ -12,7 +14,7 @@ app.use(express.urlencoded({ extended: false }));
 //built-in middleware for json
 app.use(express.json());
 
-//built-in middleware for serving static files
+//built-in middleware for serving static files example css files
 app.use(express.static(path.join(__dirname, "/public")));
 
 /**a normal way of sending a file */
