@@ -12,3 +12,7 @@
 20240327	21:35:17	6b99cce5-4509-4cff-a642-51dfaeb06f93	GET	undefined	/
 20240327	21:36:22	1b547dca-61f5-470f-a8fe-b5b2c6458a77	GET	undefined	/
 20240327	21:36:22	1a115748-1efc-4ddf-9818-68b26542efa8	Error Not allowed by cors
+20240327	21:46:01	5eeea01d-a159-4944-bc43-014ff60542bb	GET	undefined	/
+20240327	21:46:01	6e75d243-a2bb-4788-97fd-4f06008a966a	Error Not allowed by cors
+20240327	21:46:21	7c4cf8f3-266e-4033-a19a-04ff1929ffe0	GET	undefined	/
+20240327	21:46:21	e63ba4c1-4c9d-4abe-b23f-c9de021d92fa	GET	undefined	/css/style.css

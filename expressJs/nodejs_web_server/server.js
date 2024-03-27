@@ -19,7 +19,7 @@ const whitelist = [
 
 const corsOptions = {
   origin: (origin, callback) => {
-    if (whitelist.indexOf(origin) !== -1) {
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
       callback(null, true);
     } else {
       callback(new Error("Not allowed by cors"));
@@ -58,8 +58,19 @@ app.get("/old-page(.html)?", (req, res) => {
 });
 
 /**sending the error page whenever there is an error in the browser */
-app.get("/*", (req, res) => {
-  res.status(404).sendFile("./views/404.html", { root: __dirname });
+// app.get("/*", (req, res) => {
+//   res.status(404).sendFile("./views/404.html", { root: __dirname });
+// });
+app.all("/*", (req, res) => {
+  res.status(404);
+
+  if (req.accepts("html")) {
+    res.sendFile("./views/404.html", { root: __dirname });
+  } else if (req.accepts("json")) {
+    res.json({ error: "404 Not Found" });
+  } else {
+    res.type("text").send("404 Not Found");
+  }
 });
 
 /**CUSTOM ERROR HANDLING */
