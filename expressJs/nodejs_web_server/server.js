@@ -1,6 +1,7 @@
 const exp = require("constants");
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const path = require("path");
 const { logger } = require("./middleware/logEvents");
 const PORT = process.env.PORT || 3500;
@@ -8,13 +9,34 @@ const PORT = process.env.PORT || 3500;
 /**BUILT-IN MIDDLEWARES */
 app.use(logger);
 
+const whitelist = [
+  "http://yoursite.com",
+  "http://localhost:127.0.0.1:5500",
+  "http://localhost:3500/",
+  "https://www.google.com.tr/",
+];
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by cors"));
+    }
+  },
+  optionSuccessStatus: 200,
+};
+
+// cross origin resource sharing
+app.use(cors());
+
 // built-in middleware to handle urlencoded data
 // in other words, form data
 // 'content-type: application/x-www-form-urlencoded'
 app.use(express.urlencoded({ extended: false }));
 
 //built-in middleware for json
-app.use(express.json());
+app.use(express.json(corsOptions));
 
 //built-in middleware for serving static files example css files
 app.use(express.static(path.join(__dirname, "/public")));

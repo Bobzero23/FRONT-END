@@ -1,4 +1,2 @@
-20240327	18:54:43	2c9f2801-3b4d-4026-9a3e-e612bc8d992f	GET	undefined	/
-20240327	18:54:43	bcd2bd50-e209-4bb7-8e55-4edcf2e5639f	GET	undefined	/css/style.css
-20240327	20:01:05	b06ab424-a06b-44e3-9e9e-102a6616b978	GET	undefined	/
-20240327	20:01:05	ce4b6cd4-6525-4a95-97ef-a2bd03ab12d8	GET	undefined	/css/style.css
+20240327	20:59:33	f52fe808-e795-4eb8-8c9c-4e34c74694fb	OPTIONS	https://www.google.com.tr	/
+20240327	20:59:33	5532f5d8-ab83-4464-b1ff-f812946ea2eb	GET	https://www.google.com.tr	/
