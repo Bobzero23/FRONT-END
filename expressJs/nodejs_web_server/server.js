@@ -61,4 +61,10 @@ app.get("/*", (req, res) => {
   res.status(404).sendFile("./views/404.html", { root: __dirname });
 });
 
+/**CUSTOM ERROR HANDLING */
+app.use(function (err, req, res, next) {
+  console.log(err.stack);
+  res.status(500).send(err.message);
+});
+
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
