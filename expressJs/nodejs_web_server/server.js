@@ -1,6 +1,7 @@
 const exp = require("constants");
 const express = require("express");
 const app = express();
+const errorHandler = require("./middleware/errorHandler");
 const cors = require("cors");
 const path = require("path");
 const { logger } = require("./middleware/logEvents");
@@ -18,7 +19,7 @@ const whitelist = [
 
 const corsOptions = {
   origin: (origin, callback) => {
-    if (whitelist.indexOf(origin) !== -1 || !origin) {
+    if (whitelist.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
       callback(new Error("Not allowed by cors"));
@@ -62,9 +63,6 @@ app.get("/*", (req, res) => {
 });
 
 /**CUSTOM ERROR HANDLING */
-app.use(function (err, req, res, next) {
-  console.log(err.stack);
-  res.status(500).send(err.message);
-});
+app.use(errorHandler);
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
