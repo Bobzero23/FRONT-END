@@ -13,7 +13,7 @@ const whitelist = [
   "http://yoursite.com",
   "http://localhost:127.0.0.1:5500",
   "http://localhost:3500/",
-  "https://www.google.com.tr/",
+  //   "https://www.google.com.tr/",
 ];
 
 const corsOptions = {
@@ -28,7 +28,7 @@ const corsOptions = {
 };
 
 // cross origin resource sharing
-app.use(cors());
+app.use(cors(corsOptions));
 
 // built-in middleware to handle urlencoded data
 // in other words, form data
