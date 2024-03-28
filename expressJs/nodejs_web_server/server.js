@@ -42,6 +42,9 @@ app.use(express.json(corsOptions));
 //built-in middleware for serving static files example css files
 app.use(express.static(path.join(__dirname, "/public")));
 
+//telling express to apply css for subdir folder
+app.use("/subdir", express.static(path.join(__dirname, "/public")));
+
 app.use("/subdir", require("./routes/subdir"));
 
 /**a normal way of sending a file */

@@ -22,3 +22,6 @@
 20240328	22:03:32	a14d2a67-080c-405d-a817-d80393e6b2e6	GET	undefined	/subdir
 20240328	22:03:32	915716c9-a8bf-4e83-81b5-acc69b4c0759	GET	undefined	/css/style.css
 20240328	22:04:03	fad04597-d9de-4972-b284-2fd3d60a5707	GET	undefined	/subdir
+20240328	22:05:35	10849161-7adb-41b3-b870-40176737fa06	GET	undefined	/subdir/test/
+20240328	22:08:33	8d560c6d-29e5-439e-9529-9e95ae8ad339	GET	undefined	/subdir/test/d
+20240328	22:08:33	2d6a764d-0cbf-4298-9dbb-93dcc157a441	GET	undefined	/subdir/css/style.css
