@@ -17,6 +17,7 @@ const whitelist = [
   //   "https://www.google.com.tr/",
 ];
 
+/**handling cors */
 const corsOptions = {
   origin: (origin, callback) => {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
@@ -39,16 +40,16 @@ app.use(express.urlencoded({ extended: false }));
 //built-in middleware for json
 app.use(express.json(corsOptions));
 
+/**static files routing */
 //built-in middleware for serving static files example css files
 app.use(express.static(path.join(__dirname, "/public")));
-
 //telling express to apply css for subdir folder
 app.use("/subdir", express.static(path.join(__dirname, "/public")));
 
+/**routes */
 app.use("/", require("./routes/root.js"));
-
-//redirecting all the request of /subdir to the given location
 app.use("/subdir", require("./routes/subdir"));
+app.use("/employees", require("./routes/api/employees"));
 
 /**sending the error page whenever there is an error in the browser */
 // app.get("/*", (req, res) => {

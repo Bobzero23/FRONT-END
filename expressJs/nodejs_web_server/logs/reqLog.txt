@@ -2,3 +2,6 @@
 20240330	13:38:51	1739908a-997a-4751-bffb-7aca8beff5c4	GET	undefined	/css/style.css
 20240330	13:39:55	34cc9762-1f85-4c91-ac78-863f49a1d61a	GET	undefined	/index
 20240330	13:39:55	204a7d47-7667-4957-ba5a-c7dc438e5cbe	GET	undefined	/css/style.css
+20240330	14:00:40	ccf7d3ef-e75a-49a4-af5b-6228a103a2d4	GET	undefined	/employees
+20240330	14:04:26	b09eb2c1-bf53-4fc0-a5ae-f766c8a4455e	POST	undefined	/employees
+20240330	14:04:47	369ef8f1-0562-4016-8578-34cd8d2e6d79	GET	undefined	/employees
