@@ -1,27 +1,4 @@
-20240327	20:59:33	f52fe808-e795-4eb8-8c9c-4e34c74694fb	OPTIONS	https://www.google.com.tr	/
-20240327	20:59:33	5532f5d8-ab83-4464-b1ff-f812946ea2eb	GET	https://www.google.com.tr	/
-20240327	21:01:45	6cfbd555-fd2c-4917-8fec-9838d6ee7f1e	OPTIONS	https://www.google.com.tr	/
-20240327	21:01:45	14a3ae84-86af-46f1-979f-85360b9a99c7	GET	https://www.google.com.tr	/
-20240327	21:02:54	ccbbae5b-e717-4493-82f9-c78d2656c081	OPTIONS	https://www.google.com.tr	/
-20240327	21:02:54	5ff012e8-ef26-4d88-896e-783adc26710a	GET	https://www.google.com.tr	/
-20240327	21:08:55	1662d159-fe48-40d4-b7c8-cb4da64aef6e	GET	undefined	/
-20240327	21:10:19	b911f2ff-9d40-4cc3-808a-20d2db9aa2cc	GET	undefined	/
-20240327	21:13:22	9f23c95a-14af-47a9-b487-96e1cc102c9a	GET	undefined	/
-20240327	21:15:32	4ab60ede-2222-4c67-9da1-08ebc6483220	GET	undefined	/
-20240327	21:15:32	6f2d0969-5741-4877-bada-0fddfc75a6b0	GET	undefined	/css/style.css
-20240327	21:35:17	6b99cce5-4509-4cff-a642-51dfaeb06f93	GET	undefined	/
-20240327	21:36:22	1b547dca-61f5-470f-a8fe-b5b2c6458a77	GET	undefined	/
-20240327	21:36:22	1a115748-1efc-4ddf-9818-68b26542efa8	Error Not allowed by cors
-20240327	21:46:01	5eeea01d-a159-4944-bc43-014ff60542bb	GET	undefined	/
-20240327	21:46:01	6e75d243-a2bb-4788-97fd-4f06008a966a	Error Not allowed by cors
-20240327	21:46:21	7c4cf8f3-266e-4033-a19a-04ff1929ffe0	GET	undefined	/
-20240327	21:46:21	e63ba4c1-4c9d-4abe-b23f-c9de021d92fa	GET	undefined	/css/style.css
-20240328	22:02:25	a54c1ff8-9d7d-41b3-bfd9-3c03f40e3e8b	GET	undefined	/
-20240328	22:02:25	27722ca2-1fba-4a88-accd-fca30d9cb5c6	GET	undefined	/css/style.css
-20240328	22:02:25	a8eba0fd-348e-452b-b7a0-986acfc2d0d5	GET	undefined	/favicon.ico
-20240328	22:03:32	a14d2a67-080c-405d-a817-d80393e6b2e6	GET	undefined	/subdir
-20240328	22:03:32	915716c9-a8bf-4e83-81b5-acc69b4c0759	GET	undefined	/css/style.css
-20240328	22:04:03	fad04597-d9de-4972-b284-2fd3d60a5707	GET	undefined	/subdir
-20240328	22:05:35	10849161-7adb-41b3-b870-40176737fa06	GET	undefined	/subdir/test/
-20240328	22:08:33	8d560c6d-29e5-439e-9529-9e95ae8ad339	GET	undefined	/subdir/test/d
-20240328	22:08:33	2d6a764d-0cbf-4298-9dbb-93dcc157a441	GET	undefined	/subdir/css/style.css
+20240330	13:38:51	e6e6c2d2-1c44-4290-93f6-e5775c862ff3	GET	undefined	/index
+20240330	13:38:51	1739908a-997a-4751-bffb-7aca8beff5c4	GET	undefined	/css/style.css
+20240330	13:39:55	34cc9762-1f85-4c91-ac78-863f49a1d61a	GET	undefined	/index
+20240330	13:39:55	204a7d47-7667-4957-ba5a-c7dc438e5cbe	GET	undefined	/css/style.css
