@@ -10,3 +10,6 @@
 20240413	21:37:18	25b8a6ed-b740-4a95-9395-27b873de9fdc	POST	undefined	/register
 20240413	21:43:16	608272df-9c48-4923-9444-4b0b267cc2b0	POST	undefined	/register
 20240413	21:45:04	8036d2f5-2e55-4fdf-b8f1-f752d7ae3da3	POST	undefined	/register
+20240413	22:03:12	62f46042-0aa5-4a7b-a0d7-d4e1a111ed06	POST	undefined	/auth
+20240413	22:05:05	96c06618-4224-44d6-8f9a-bb22d5966280	POST	undefined	/register
+20240413	22:05:25	479537d8-e76c-41c6-b545-8d84077d0ec8	POST	undefined	/register
