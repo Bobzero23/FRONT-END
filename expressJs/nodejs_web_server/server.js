@@ -30,6 +30,7 @@ app.use("/subdir", express.static(path.join(__dirname, "/public")));
 
 /**routes */
 app.use("/", require("./routes/root.js"));
+app.use("/register", require("./routes/register.js"));
 app.use("/subdir", require("./routes/subdir"));
 app.use("/employees", require("./routes/api/employees"));
 
