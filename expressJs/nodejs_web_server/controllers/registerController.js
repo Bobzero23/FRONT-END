@@ -18,7 +18,8 @@ const handleNewUser = async (req, res) => {
   }
 
   const duplicate = usersDB.users.find((person) => person.username === user);
-  if (duplicate) return res.status(409); // conflict
+  if (duplicate)
+    return res.status(409).json({ message: "user already exists" }); // conflict
 
   try {
     const hashedPwd = await bcrypt.hash(pwd, 10);
