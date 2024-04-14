@@ -24,3 +24,14 @@
 20240414	10:32:07	8811f5c3-63aa-494a-ade9-8cb4f37b45ec	GET	undefined	/employees
 20240414	10:32:12	1d0628a1-5ea9-44ca-a9ca-7f6b87a2e5ab	GET	undefined	/employees
 20240414	10:33:05	d150e3b4-c97b-4b81-8b6f-d22047d956cb	GET	undefined	/employees
+20240414	10:41:47	1ba081e3-1e78-4b7e-8178-c7410deda899	GET	undefined	/employees
+20240414	10:41:51	aee3f100-7c03-4c05-9e5c-f853b949b127	POST	undefined	/auth
+20240414	10:42:01	86d39bdb-afd9-4072-9531-ab93feec7fab	GET	undefined	/employees
+20240414	10:42:16	cb072dd5-2b74-4cf6-b70d-d86093fa66d2	GET	undefined	/employees
+20240414	10:42:17	34fa4ae4-4904-43c9-a343-00b8fc0b6891	GET	undefined	/employees
+20240414	10:42:17	8585241c-0488-4794-b270-b6ce1f5fb93a	GET	undefined	/employees
+20240414	10:42:21	358d4436-e68d-47f8-8fc7-4e4c94615462	GET	undefined	/employees
+20240414	10:42:25	0aff5a64-52e3-44f0-a2f4-afd28c712a7c	POST	undefined	/employees
+20240414	10:42:46	a74297fa-cd3b-414e-9c46-66129cd9013a	POST	undefined	/employees
+20240414	10:43:37	825147e3-31b8-49a6-a47c-5baac1e5005d	POST	undefined	/employees
+20240414	12:54:54	bf960dd7-1cfd-4313-89e6-6f9ad0d4e0e2	POST	undefined	/auth
