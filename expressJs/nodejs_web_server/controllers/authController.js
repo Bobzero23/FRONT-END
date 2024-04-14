@@ -52,7 +52,7 @@ const handleLogin = async (req, res) => {
       httpOnly: true,
       maxAge: 24 * 60 * 60 * 1000,
     }); //one day lifetime httpOnly so js can't access it
-    res.json({ accessTokesn });
+    res.json({ accessToken });
   } else {
     res.sendStatus(401);
   }
