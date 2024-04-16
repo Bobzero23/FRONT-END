@@ -35,3 +35,10 @@
 20240414	10:42:46	a74297fa-cd3b-414e-9c46-66129cd9013a	POST	undefined	/employees
 20240414	10:43:37	825147e3-31b8-49a6-a47c-5baac1e5005d	POST	undefined	/employees
 20240414	12:54:54	bf960dd7-1cfd-4313-89e6-6f9ad0d4e0e2	POST	undefined	/auth
+20240416	12:52:25	4f141768-e668-4e11-bd6b-e6dc7b088043	POST	undefined	/auth
+20240416	12:52:25	37063e0d-ee88-4b16-ab50-edf99ebbc5aa	SyntaxError Expected double-quoted property name in JSON at position 16
+20240416	12:52:41	ab52bdf9-3b05-4742-b162-605d44460e17	POST	undefined	/auth
+20240416	12:52:43	05a1fea2-9aa0-4a95-87bf-1f998d247c86	POST	undefined	/auth
+20240416	12:52:44	6762d9dc-30c8-41fe-a4da-34fb38387af5	POST	undefined	/auth
+20240416	12:52:45	6e48566b-fdc3-41e4-8941-e034e0ec2300	POST	undefined	/auth
+20240416	12:52:51	27ebb073-47d2-4fc1-a6b6-3d1b807055f7	POST	undefined	/auth
