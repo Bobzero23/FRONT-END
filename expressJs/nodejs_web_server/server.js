@@ -39,6 +39,7 @@ app.use("/register", require("./routes/register.js"));
 app.use("/auth", require("./routes/auth.js"));
 app.use("/refresh", require("./routes/refresh.js"));
 app.use("/subdir", require("./routes/subdir"));
+app.use("/logout", require("./routes/logout"));
 //everything comes after this line must verified and the ones above will not
 app.use(verifyJWT);
 app.use("/employees", require("./routes/api/employees"));
