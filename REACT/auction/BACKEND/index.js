@@ -1,5 +1,5 @@
 import express from "express";
-import { PORT } from "./config.js";
+import { PORT, mongoDBURL } from "./config.js";
 
 const app = express();
 
