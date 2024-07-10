@@ -1,0 +1,2 @@
+*** DOCUMENTATION ***
++ after installing the mongoose library you can connect to mongoDB (index.js)
