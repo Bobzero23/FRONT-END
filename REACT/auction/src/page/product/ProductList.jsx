@@ -1,7 +1,11 @@
 import React from "react";
 import Product from "./Product";
 import { Button } from "@mui/material";
-const list = [1, 1, 1, 1, 1];
+
+// demo list
+const list = [1, 1, 1, 1, 1, 1, 1, 1];
+// demo admin
+const admin = false;
 
 const ProductList = () => {
   return (
@@ -12,7 +16,13 @@ const ProductList = () => {
         ))}
       </div>
       <div>
-        <Button variant="contained">ADD PRODUCT</Button>
+        {admin ? (
+          <Button variant="outlined">
+            YOUR CURRENT BALANCE: <span> 500,000</span>
+          </Button>
+        ) : (
+          <Button variant="contained">ADD PRODUCT</Button>
+        )}
       </div>
     </div>
   );
