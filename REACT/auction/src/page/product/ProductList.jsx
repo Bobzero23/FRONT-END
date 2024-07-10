@@ -5,8 +5,8 @@ const list = [1, 1, 1, 1, 1];
 
 const ProductList = () => {
   return (
-    <div className="space-y-3 flex flex-col items-center justify-center p-5">
-      <div className="flex space-x-3">
+    <div className="flex flex-col space-y-3 items-center justify-center p-5">
+      <div className="flex gap-1 flex-wrap justify-center items-center">
         {list.map((item) => (
           <Product />
         ))}
