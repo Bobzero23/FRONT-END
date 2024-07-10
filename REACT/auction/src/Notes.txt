@@ -9,3 +9,4 @@
 
 *****DOCUMENTATION******
 + Use the given linkS to install the required dependencies and libraries
++ overflow-y-auto h-[calc(100vh-100px)] -> setting up the scroll bar when the content exceeds the given height of the parent container
