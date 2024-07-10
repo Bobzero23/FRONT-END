@@ -17,7 +17,7 @@ const ProductList = () => {
         ))}
       </div>
       <div>
-        {admin ? (
+        {user ? (
           <Button variant="outlined">
             YOUR CURRENT BALANCE:{" "}
             <span className="ml-1 font-bold"> 500,000</span>

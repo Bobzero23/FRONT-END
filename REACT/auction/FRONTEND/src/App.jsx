@@ -9,8 +9,8 @@ function App() {
     <>
       {/* <Signup /> */}
       {/* <Signin /> */}
-      {/* <ProductList /> */}
-      <AddProduct />
+      <ProductList />
+      {/* <AddProduct /> */}
     </>
   );
 }

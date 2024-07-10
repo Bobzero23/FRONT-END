@@ -3,8 +3,8 @@ import { Button, TextField } from "@mui/material";
 import React from "react";
 
 const reachedFinalBid = false;
-const outOfbiddingTime = true;
-const admin = true;
+const outOfbiddingTime = false;
+const admin = false;
 
 const Product = () => {
   return (
