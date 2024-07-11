@@ -1,22 +1,21 @@
 import express from "express";
-import { PORT, mongoDBURL } from "./config.js";
 import mongoose from "mongoose";
+import dotenv from "dotenv";
 import productRoute from "./routes/productRoute.js";
 
+dotenv.config();
 const app = express();
+
+//initializing neccessary variables from .env file
+const PORT = parseInt(process.env.PORT, 10);
 
 //middleware for parsing the request body
 app.use(express.json());
-
-app.get("/", (request, response) => {
-  console.log(request);
-  return response.status(234).send("Hi Bob");
-});
-
 app.use("/product", productRoute);
 
 mongoose
-  .connect(mongoDBURL)
+  //connecting to a database
+  .connect(process.env.mongoDBURL)
   .then(() => {
     console.log("App connected to the database");
     // the server will only run if we are connected to the database

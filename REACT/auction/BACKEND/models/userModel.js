@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import jwt from "jsonwebtoken";
 
 const userSchema = new mongoose.Schema({
   username: {
@@ -14,5 +15,7 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
 });
+
+userSchema.methods.generateAuthToken = function () {};
 
 export const User = mongoose.model("User", userSchema);
