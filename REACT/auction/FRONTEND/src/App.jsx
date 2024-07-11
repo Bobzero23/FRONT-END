@@ -3,15 +3,15 @@ import Signin from "./page/auth/signin";
 import AddProduct from "./page/product/AddProduct";
 import Product from "./page/product/Product";
 import ProductList from "./page/product/ProductList";
-
+import { Routes, Route } from "react-router-dom";
 function App() {
   return (
-    <>
-      {/* <Signup /> */}
-      {/* <Signin /> */}
-      <ProductList />
-      {/* <AddProduct /> */}
-    </>
+    <Routes>
+      <Route path="/Products" element={<ProductList />} />
+      <Route path="/AddProduct" element={<AddProduct />} />
+      <Route path="/Signin" element={<Signin />} />
+      <Route path="/Signup" element={<Signup />} />
+    </Routes>
   );
 }
 
