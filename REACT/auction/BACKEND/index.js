@@ -1,13 +1,19 @@
 import express from "express";
 import { PORT, mongoDBURL } from "./config.js";
 import mongoose from "mongoose";
+import productRoute from "./routes/productRoute.js";
 
 const app = express();
+
+//middleware for parsing the request body
+app.use(express.json());
 
 app.get("/", (request, response) => {
   console.log(request);
   return response.status(234).send("Hi Bob");
 });
+
+app.use("/product", productRoute);
 
 mongoose
   .connect(mongoDBURL)
