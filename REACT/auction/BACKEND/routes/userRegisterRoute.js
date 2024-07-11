@@ -1,5 +1,5 @@
 import express from "express";
-import { User, validate } from "../models/userModel";
+import { User, validate } from "../models/userModel.js";
 import bcrypt from "bcrypt";
 
 export const router = express.Router();
@@ -30,3 +30,5 @@ router.post("/", async (response, request) => {
       .send({ message: "There is an error while creating a new user" });
   }
 });
+
+export default router;
