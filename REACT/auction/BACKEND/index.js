@@ -2,6 +2,8 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import productRoute from "./routes/productRoute.js";
+import userRegisterRoute from "./routes/userRegisterRoute.js";
+import userLoginRoute from "./routes/userLoginRoute.js";
 
 dotenv.config();
 const app = express();
@@ -12,6 +14,8 @@ const PORT = parseInt(process.env.PORT, 10);
 //middleware for parsing the request body
 app.use(express.json());
 app.use("/product", productRoute);
+app.use("/userRegister", userRegisterRoute);
+app.use("/userLogin", userLoginRoute);
 
 mongoose
   //connecting to a database
