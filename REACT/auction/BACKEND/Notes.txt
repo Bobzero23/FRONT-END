@@ -1,2 +1,3 @@
 *** DOCUMENTATION ***
-+ after installing the mongoose library you can connect to mongoDB (index.js)
++ salt = In the context of bcrypt, a salt is a random string that is used as an additional input to the hashing process to enhance security.
++ we don't use the validate method created in UserLoginRoute becuase that validate method was created only for user to register and now we just have to do the authentication (login the user)
