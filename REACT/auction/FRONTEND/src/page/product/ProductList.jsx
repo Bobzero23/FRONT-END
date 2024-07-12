@@ -6,7 +6,7 @@ import AddProduct from "./AddProduct";
 // demo list
 const list = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
 // demo admin
-const admin = false;
+const admin = true;
 const user = true;
 
 const ProductList = () => {
