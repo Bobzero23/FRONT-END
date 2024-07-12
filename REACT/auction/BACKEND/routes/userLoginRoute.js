@@ -32,7 +32,9 @@ router.post("/", async (response, request) => {
 
     const token = user.generateAuthToken();
 
-    return response.status(200).send({ message: "Logged in successfully!" });
+    return response
+      .status(200)
+      .send({ data: token, message: "Logged in successfully!" });
   } catch (error) {
     console.log("Error happend while authenticating the user");
   }
