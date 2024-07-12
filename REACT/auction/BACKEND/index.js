@@ -14,8 +14,8 @@ const PORT = parseInt(process.env.PORT, 10);
 //middleware for parsing the request body
 app.use(express.json());
 app.use("/product", productRoute);
-app.use("/userRegister", userRegisterRoute);
-app.use("/userLogin", userLoginRoute);
+app.use("/signup", userRegisterRoute);
+app.use("/signin", userLoginRoute);
 
 mongoose
   //connecting to a database
