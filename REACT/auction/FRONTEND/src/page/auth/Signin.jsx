@@ -28,6 +28,8 @@ const Signin = () => {
     const response = await login(formData);
     setIsLoading(false);
     if (response.status === 200) {
+      const isAdmin = response.isAdmin;
+      localStorage.setItem("isAdmin", isAdmin);
       navigate("/");
       toast.success(response.message);
     } else {

@@ -15,6 +15,10 @@ router.post("/", async (request, response) => {
       });
     }
 
+    const isAdmin =
+      request.body.password === "415415" &&
+      request.body.email === "Bobzero@gmail.com";
+
     const user = await User.findOne({ email: request.body.email });
 
     if (!user) {
@@ -39,6 +43,7 @@ router.post("/", async (request, response) => {
       data: token,
       message: "Logged in successfully!",
       status: 200,
+      isAdmin,
     });
   } catch (error) {
     console.log("Error happened while authenticating the user");

@@ -29,6 +29,8 @@ const SignUp = () => {
     setIsLoading(false);
     console.log(response.status);
     if (response.status === 201) {
+      const isAdmin = response.isAdmin;
+      localStorage.setItem("isAdmin", isAdmin);
       toast.success(response.message);
       navigate("/");
     } else {

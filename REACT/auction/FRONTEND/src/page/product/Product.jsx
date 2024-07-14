@@ -1,12 +1,26 @@
 import "./Product.css";
 import { Button, TextField } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 
 const reachedFinalBid = false;
 const outOfbiddingTime = false;
-const admin = false;
+const admin = localStorage.getItem("isAdmin") === "true";
 
 const Product = ({ product }) => {
+  const [formData, setFormData] = useState();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className="cardBorder productCard flex flex-col w-[300px] h-auto p-3">
       <div className="flex justify-center mb-5">
@@ -43,16 +57,24 @@ const Product = ({ product }) => {
             </span>
           </div>
           <div className="cardBorder flex justify-between p-1 space-x-3">
-            <TextField
-              className="w-32"
-              name="bid"
-              label="bid"
-              //this is how to apply style to a MUI components
-              sx={{
-                "& .MuiInputBase-root": { height: 40, padding: 0, width: 195 },
-                "& .MuiInputLabel-root": { top: "-5px" },
-              }}
-            />
+            <form action="" onSubmit={handleSubmit}>
+              <TextField
+                onChange={handleChange}
+                className="w-32"
+                name="bid"
+                label="bid"
+                //this is how to apply style to a MUI components
+                sx={{
+                  "& .MuiInputBase-root": {
+                    height: 40,
+                    padding: 0,
+                    width: 195,
+                  },
+                  "& .MuiInputLabel-root": { top: "-5px" },
+                }}
+              />
+            </form>
+
             <Button variant="contained">BID</Button>
           </div>
         </div>

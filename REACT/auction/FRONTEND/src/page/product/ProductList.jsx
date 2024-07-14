@@ -5,11 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import AddProduct from "./AddProduct";
 import { getAllProducts } from "../../state/productSlice";
 
-// demo list
-// const list = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
-// demo admin
-const admin = false;
-const user = true;
+const admin = localStorage.getItem("isAdmin") === "true";
 
 const ProductList = () => {
   const dispatch = useDispatch();
@@ -44,13 +40,13 @@ const ProductList = () => {
       </div>
       <div>
         {admin ? (
+          <Button variant="contained" onClick={handleAddProduct}>
+            ADD PRODUCT
+          </Button>
+        ) : (
           <Button variant="outlined">
             YOUR CURRENT BALANCE:{" "}
             <span className="ml-1 font-bold"> 500,000</span>
-          </Button>
-        ) : (
-          <Button variant="contained" onClick={handleAddProduct}>
-            ADD PRODUCT
           </Button>
         )}
       </div>
