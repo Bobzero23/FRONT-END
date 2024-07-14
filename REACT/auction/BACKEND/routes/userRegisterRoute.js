@@ -44,7 +44,13 @@ router.post("/", async (request, response) => {
     });
     User.create(newUser);
 
+    const createdUser = await User.findOne({ email: request.body.email });
+    console.log(createdUser);
+    console.log(request.body.email);
+    const token = createdUser.generateAuthToken();
+
     return response.send({
+      data: token,
       message: "User created successfully",
       status: 201,
     });

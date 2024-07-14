@@ -1,6 +1,6 @@
 import { Button, TextField } from "@mui/material";
 import { useState } from "react";
-import { signUp } from "../../services/apiServices";
+import { signUp } from "../../service/apiService";
 import Spinner from "../../components/Spinner";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
@@ -27,12 +27,12 @@ const SignUp = () => {
     e.preventDefault();
     const response = await signUp(formData);
     setIsLoading(false);
-    console.log(response.data.status);
-    if (response.data.status === 201) {
-      toast.success(response.data.message);
+    console.log(response.status);
+    if (response.status === 201) {
+      toast.success(response.message);
       navigate("/");
     } else {
-      toast.error(response.data.message);
+      toast.error(response.message);
     }
   };
 

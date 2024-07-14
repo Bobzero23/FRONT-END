@@ -4,15 +4,15 @@ import React from "react";
 
 const reachedFinalBid = false;
 const outOfbiddingTime = false;
-const admin = true;
+const admin = false;
 
-const Product = () => {
+const Product = ({ product }) => {
   return (
     <div className="cardBorder productCard flex flex-col w-[300px] h-auto p-3">
       <div className="flex justify-center mb-5">
         <img
-          className="object-cover w-full max-w-[7rem] h-auto"
-          src="https://images.unsplash.com/photo-1718068769782-b76cda287298?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          className="object-cover w-full max-w-[7rem] h-[150px]"
+          src={product.link}
           alt=""
         />
       </div>
@@ -30,13 +30,17 @@ const Product = () => {
       ) : admin ? (
         <div className="cardBorder p-1 mb-1">
           current bid:{" "}
-          <span className="font-extrabold text-green-900 ml-1">200,000</span>
+          <span className="font-extrabold text-green-900 ml-1">
+            {product.startingBid}
+          </span>
         </div>
       ) : (
         <div className="flex flex-col">
           <div className="cardBorder p-1 mb-1">
             current bid:{" "}
-            <span className="font-extrabold text-green-900 ml-1">200,000</span>
+            <span className="font-extrabold text-green-900 ml-1">
+              {product.startingBid}
+            </span>
           </div>
           <div className="cardBorder flex justify-between p-1 space-x-3">
             <TextField

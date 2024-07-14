@@ -4,7 +4,8 @@ import AddProduct from "./page/product/AddProduct";
 import Product from "./page/product/Product";
 import ProductList from "./page/product/ProductList";
 import { Routes, Route } from "react-router-dom";
-import ProtectedRoutes from "./providers/ProtectedRoutes";
+import ProtectedRoutes from "./providers/protectedRoutes";
+
 function App() {
   return (
     <Routes>

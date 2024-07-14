@@ -1,6 +1,6 @@
 import { Button, TextField } from "@mui/material";
 import { useState } from "react";
-import { login } from "../../services/apiServices";
+import { login } from "../../service/apiService";
 import Spinner from "../../components/Spinner";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
@@ -24,11 +24,12 @@ const Signin = () => {
   const handleSubmit = async (e) => {
     setIsLoading(true);
     e.preventDefault();
+    console.log(formData);
     const response = await login(formData);
     setIsLoading(false);
     if (response.status === 200) {
-      toast.success(response.message);
       navigate("/");
+      toast.success(response.message);
     } else {
       toast.error(response.message);
     }
@@ -60,7 +61,7 @@ const Signin = () => {
             </div>
           </form>
           <div>
-            <span>Already have an account? </span>
+            <span>Don't have an account? </span>
             <Button onClick={() => navigate("/signup")}>Sign Up </Button>
           </div>
         </div>

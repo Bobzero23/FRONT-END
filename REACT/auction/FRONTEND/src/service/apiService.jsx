@@ -20,3 +20,12 @@ export async function signUp(data) {
     throw Error(error.response.response.error);
   }
 }
+
+export async function getAllProducts() {
+  try {
+    const { data: response } = await axios.get(`${BASE_URL}/product`);
+    return response;
+  } catch (error) {
+    throw Error(error.response.response.error);
+  }
+}

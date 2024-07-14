@@ -1,5 +1,7 @@
 import { Box, Button, Grid, Modal, TextField } from "@mui/material";
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addProduct } from "../../state/productSlice";
 
 const style = {
   position: "absolute",
@@ -14,6 +16,7 @@ const style = {
 };
 
 const AddProduct = ({ handleClose, open }) => {
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     link: "",
     startingBid: "",
@@ -27,6 +30,7 @@ const AddProduct = ({ handleClose, open }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
+    dispatch(addProduct(formData));
     handleClose();
   };
 
