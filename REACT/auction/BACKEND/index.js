@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import productRoute from "./routes/productRoute.js";
 import userRegisterRoute from "./routes/userRegisterRoute.js";
 import userLoginRoute from "./routes/userLoginRoute.js";
+import cors from "cors";
 
 dotenv.config();
 const app = express();
@@ -13,6 +14,7 @@ const PORT = parseInt(process.env.PORT, 10);
 
 //middleware for parsing the request body
 app.use(express.json());
+app.use(cors());
 app.use("/product", productRoute);
 app.use("/signup", userRegisterRoute);
 app.use("/signin", userLoginRoute);

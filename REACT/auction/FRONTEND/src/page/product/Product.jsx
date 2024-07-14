@@ -4,7 +4,7 @@ import React from "react";
 
 const reachedFinalBid = false;
 const outOfbiddingTime = false;
-const admin = false;
+const admin = true;
 
 const Product = () => {
   return (

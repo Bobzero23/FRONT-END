@@ -52,7 +52,7 @@ const authSlice = createSlice({
         state.jwt = action.payload.jwt;
         state.loggedIn = true;
       })
-      .addCase.apply(login.rejected, (state, action) => {
+      .addCase(login.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
       })
@@ -65,9 +65,11 @@ const authSlice = createSlice({
         state.jwt = action.payload.jwt;
         state.loggedIn = true;
       })
-      .addCase.apply(signup.rejected, (state, action) => {
+      .addCase(signup.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
       });
   },
 });
+
+export default authSlice.reducer;

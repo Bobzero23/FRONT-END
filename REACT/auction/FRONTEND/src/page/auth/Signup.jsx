@@ -1,7 +1,10 @@
 import { Button, TextField } from "@mui/material";
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { signup } from "../../state/slice";
 
 const Signup = () => {
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -18,6 +21,7 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    signup(formData);
     console.log("form data: ", formData);
   };
 
