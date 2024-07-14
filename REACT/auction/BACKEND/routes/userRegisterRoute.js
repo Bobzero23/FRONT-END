@@ -18,9 +18,10 @@ router.post("/", async (request, response) => {
       !request.body.password
     ) {
       console.log("There is a missing property");
-      return response
-        .status(400)
-        .send({ message: "One of the property is missing" });
+      return response.send({
+        message: "One of the property is missing",
+        status: 400,
+      });
     }
 
     console.log("Before finding a user");
@@ -29,9 +30,10 @@ router.post("/", async (request, response) => {
     console.log("Here is the email", request.body.email);
 
     if (user) {
-      return response
-        .status(409)
-        .send({ message: "The user with the emial alredy exist" });
+      return response.send({
+        message: "The user with the email already exist",
+        status: 409,
+      });
     }
 
     const salt = await bcrypt.genSalt(Number(process.env.SALT));
@@ -42,12 +44,16 @@ router.post("/", async (request, response) => {
     });
     User.create(newUser);
 
-    return response.status(201).send("User registered");
+    return response.send({
+      message: "User created successfully",
+      status: 201,
+    });
   } catch (error) {
     console.log(error);
-    return response
-      .status(500)
-      .send({ message: "There is an error while creating a new user" });
+    return response.send({
+      message: "There is an error while creating a new user",
+      status: 500,
+    });
   }
 });
 
