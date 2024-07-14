@@ -4,11 +4,26 @@ import AddProduct from "./page/product/AddProduct";
 import Product from "./page/product/Product";
 import ProductList from "./page/product/ProductList";
 import { Routes, Route } from "react-router-dom";
+import ProtectedRoutes from "./providers/ProtectedRoutes";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<ProductList />} />
-      <Route path="/AddProduct" element={<AddProduct />} />
+      <Route
+        path="/"
+        element={
+          <ProtectedRoutes>
+            <ProductList />
+          </ProtectedRoutes>
+        }
+      />
+      <Route
+        path="/AddProduct"
+        element={
+          <ProtectedRoutes>
+            <AddProduct />
+          </ProtectedRoutes>
+        }
+      />
       <Route path="/Signin" element={<Signin />} />
       <Route path="/Signup" element={<Signup />} />
     </Routes>
