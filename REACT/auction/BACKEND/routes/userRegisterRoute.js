@@ -27,7 +27,6 @@ router.post("/", async (request, response) => {
     console.log("Before finding a user");
 
     const user = await User.findOne({ email: request.body.email });
-    console.log("Here is the email", request.body.email);
 
     if (user) {
       return response.send({

@@ -8,10 +8,8 @@ import { useNavigate } from "react-router-dom";
 
 const ProductList = () => {
   const navigate = useNavigate();
-  const [admin, setAdmin] = useState(false);
   const dispatch = useDispatch();
   const { product, auth } = useSelector((store) => store);
-  console.log(product);
 
   useEffect(() => {
     dispatch(getAllProducts());

@@ -38,7 +38,7 @@ const authSlice = createSlice({
     loggedIn: false,
     loading: false,
     error: null,
-    isAdmin: false,
+    isAdmin: true,
     jwt: null,
   },
   reducers: {},
@@ -51,7 +51,6 @@ const authSlice = createSlice({
       .addCase(login.fulfilled, (state, action) => {
         state.loading = false;
         state.isAdmin = action.payload.isAdmin;
-        console.log(action.payload);
         state.jwt = action.payload.jwt;
         state.loggedIn = true;
       })

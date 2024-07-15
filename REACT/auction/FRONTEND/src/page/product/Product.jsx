@@ -1,12 +1,13 @@
 import "./Product.css";
 import { Button, TextField } from "@mui/material";
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 
 const reachedFinalBid = false;
 const outOfbiddingTime = false;
-const admin = localStorage.getItem("isAdmin") === "true";
 
 const Product = ({ product }) => {
+  const { auth } = useSelector((store) => store);
   const [formData, setFormData] = useState({
     startingBid: "",
   });
@@ -49,7 +50,7 @@ const Product = ({ product }) => {
             NOT SELLING FOR NOW
           </h1>
         </div>
-      ) : admin ? (
+      ) : auth.isAdmin ? (
         <div className="cardBorder p-1 mb-1">
           current bid:{" "}
           <span className="font-extrabold text-green-900 ml-1">
