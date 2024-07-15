@@ -4,17 +4,17 @@ import { Button } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import AddProduct from "./AddProduct";
 import { getAllProducts } from "../../state/productSlice";
-
-const admin = localStorage.getItem("isAdmin") === "true";
+import { useNavigate } from "react-router-dom";
 
 const ProductList = () => {
+  const navigate = useNavigate();
+  const [admin, setAdmin] = useState(false);
   const dispatch = useDispatch();
-  const { product } = useSelector((store) => store);
+  const { product, auth } = useSelector((store) => store);
   console.log(product);
+
   useEffect(() => {
-    (async () => {
-      dispatch(getAllProducts());
-    })();
+    dispatch(getAllProducts());
   }, []);
 
   const [openAddProductForm, setOpenAddProductForm] = useState(false);
@@ -31,6 +31,11 @@ const ProductList = () => {
     handleOpenAddProductForm();
   };
 
+  const handleLogout = () => {
+    localStorage.clear();
+    navigate("/Signin");
+  };
+
   return (
     <div className="flex flex-col space-y-3 items-center justify-center p-5">
       <div className="flex gap-1 flex-wrap justify-center items-center overflow-y-auto h-[calc(100vh-100px)]">
@@ -38,8 +43,11 @@ const ProductList = () => {
           <Product product={item} />
         ))}
       </div>
-      <div>
-        {admin ? (
+      <div className="space-x-2">
+        <Button variant="contained" onClick={handleLogout}>
+          LOGOUT
+        </Button>
+        {auth.isAdmin ? (
           <Button variant="contained" onClick={handleAddProduct}>
             ADD PRODUCT
           </Button>

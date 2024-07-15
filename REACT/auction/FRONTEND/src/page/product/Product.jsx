@@ -7,7 +7,9 @@ const outOfbiddingTime = false;
 const admin = localStorage.getItem("isAdmin") === "true";
 
 const Product = ({ product }) => {
-  const [formData, setFormData] = useState();
+  const [formData, setFormData] = useState({
+    startingBid: "",
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,7 +21,13 @@ const Product = ({ product }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(formData);
+    setFormData({
+      startingBid: "",
+    });
   };
+
+  const handleReachedFinalBid = () => {};
 
   return (
     <div className="cardBorder productCard flex flex-col w-[300px] h-auto p-3">
@@ -57,12 +65,17 @@ const Product = ({ product }) => {
             </span>
           </div>
           <div className="cardBorder flex justify-between p-1 space-x-3">
-            <form action="" onSubmit={handleSubmit}>
+            <form
+              className="w-full flex justify-between"
+              action=""
+              onSubmit={handleSubmit}
+            >
               <TextField
                 onChange={handleChange}
                 className="w-32"
-                name="bid"
+                name="startingBid"
                 label="bid"
+                value={formData.startingBid}
                 //this is how to apply style to a MUI components
                 sx={{
                   "& .MuiInputBase-root": {
@@ -73,9 +86,10 @@ const Product = ({ product }) => {
                   "& .MuiInputLabel-root": { top: "-5px" },
                 }}
               />
+              <Button variant="contained" type="submit">
+                BID
+              </Button>
             </form>
-
-            <Button variant="contained">BID</Button>
           </div>
         </div>
       )}

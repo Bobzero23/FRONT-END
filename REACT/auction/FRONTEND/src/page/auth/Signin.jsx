@@ -1,11 +1,13 @@
 import { Button, TextField } from "@mui/material";
 import { useState } from "react";
-import { login } from "../../service/apiService";
 import Spinner from "../../components/Spinner";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { login } from "../../state/slice";
 
 const Signin = () => {
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -25,15 +27,14 @@ const Signin = () => {
     setIsLoading(true);
     e.preventDefault();
     console.log(formData);
-    const response = await login(formData);
+    const { payload: response } = await dispatch(login(formData));
+    console.log(response);
     setIsLoading(false);
     if (response.status === 200) {
-      const isAdmin = response.isAdmin;
-      localStorage.setItem("isAdmin", isAdmin);
       navigate("/");
       toast.success(response.message);
     } else {
-      toast.error(response.message);
+      toast.error("response.message");
     }
   };
   return (
@@ -48,6 +49,7 @@ const Signin = () => {
               fullWidth
               name="email"
               label="email"
+              value={formData.email}
             />
             <TextField
               onChange={handleChange}
@@ -55,6 +57,7 @@ const Signin = () => {
               name="password"
               label="password"
               type="password"
+              value={formData.password}
             />
             <div>
               <Button fullWidth type="submit" variant="contained">

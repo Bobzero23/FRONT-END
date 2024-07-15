@@ -1,11 +1,13 @@
 import { Button, TextField } from "@mui/material";
 import { useState } from "react";
-import { signUp } from "../../service/apiService";
 import Spinner from "../../components/Spinner";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { signup } from "../../state/slice";
 
 const SignUp = () => {
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -25,12 +27,10 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     setIsLoading(true);
     e.preventDefault();
-    const response = await signUp(formData);
+    const response = await dispatch(signup(formData));
     setIsLoading(false);
     console.log(response.status);
     if (response.status === 201) {
-      const isAdmin = response.isAdmin;
-      localStorage.setItem("isAdmin", isAdmin);
       toast.success(response.message);
       navigate("/");
     } else {
