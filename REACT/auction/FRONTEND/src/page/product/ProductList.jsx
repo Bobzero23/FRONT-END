@@ -3,7 +3,7 @@ import Product from "./Product";
 import { Button } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import AddProduct from "./AddProduct";
-import { getAllProducts } from "../../state/productSlice";
+import { getAllProducts } from "../../state/productSlice.js";
 import { useNavigate } from "react-router-dom";
 
 const ProductList = () => {

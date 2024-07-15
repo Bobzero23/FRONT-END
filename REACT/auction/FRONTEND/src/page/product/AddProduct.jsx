@@ -1,7 +1,7 @@
 import { Box, Button, Grid, Modal, TextField } from "@mui/material";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addProduct } from "../../state/productSlice";
+import { addProduct } from "../../state/productSlice.js";
 
 const style = {
   position: "absolute",
@@ -20,6 +20,7 @@ const AddProduct = ({ handleClose, open }) => {
   const [formData, setFormData] = useState({
     link: "",
     startingBid: "",
+    finalBid: "",
   });
 
   const handleChange = (e) => {
@@ -31,6 +32,7 @@ const AddProduct = ({ handleClose, open }) => {
     e.preventDefault();
     console.log(formData);
     dispatch(addProduct(formData));
+    setFormData({ link: "", startingBid: "", finalBid: "" });
     handleClose();
   };
 
@@ -60,6 +62,15 @@ const AddProduct = ({ handleClose, open }) => {
                   name="startingBid"
                   fullWidth
                   value={formData.startingBid}
+                  onChange={handleChange}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  label="Enter a final bid"
+                  name="finalBid"
+                  fullWidth
+                  value={formData.finalBid}
                   onChange={handleChange}
                 />
               </Grid>

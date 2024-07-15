@@ -6,7 +6,11 @@ const router = express.Router();
 //adding a new product
 router.post("/", async (request, response) => {
   try {
-    if (!request.body.link || !request.body.startingBid) {
+    if (
+      !request.body.link ||
+      !request.body.startingBid ||
+      !request.body.finalBid
+    ) {
       return response.status(400).send("Fill all required fields");
     }
 
@@ -14,6 +18,7 @@ router.post("/", async (request, response) => {
     const newProduct = {
       link: request.body.link,
       startingBid: request.body.startingBid,
+      finalBid: request.body.finalBid,
     };
 
     //creating a new entry in the database

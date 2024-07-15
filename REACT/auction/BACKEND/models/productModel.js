@@ -10,6 +10,10 @@ const productSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    finalBid: {
+      type: Number,
+      required: true,
+    },
   },
   { timestamps: true }
 );

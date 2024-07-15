@@ -1,6 +1,7 @@
 import "./Product.css";
 import { Button, TextField } from "@mui/material";
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 import { useSelector } from "react-redux";
 
 const reachedFinalBid = false;
@@ -23,12 +24,22 @@ const Product = ({ product }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
+    // handleReachedFinalBid(formData);
     setFormData({
       startingBid: "",
     });
   };
 
-  const handleReachedFinalBid = () => {};
+  // const handleReachedFinalBid = (data) => {
+  //   const key = Number(data);
+  //   switch (key) {
+  //     case value:
+  //       break;
+
+  //     default:
+  //       break;
+  //   }
+  // };
 
   return (
     <div className="cardBorder productCard flex flex-col w-[300px] h-auto p-3">

@@ -49,6 +49,7 @@ const Signin = () => {
               fullWidth
               name="email"
               label="email"
+              type="email"
               value={formData.email}
             />
             <TextField
