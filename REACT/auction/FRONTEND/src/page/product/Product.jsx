@@ -10,7 +10,7 @@ const outOfbiddingTime = false;
 const Product = ({ product }) => {
   const { auth } = useSelector((store) => store);
   const [formData, setFormData] = useState({
-    startingBid: "",
+    bid: "",
   });
 
   const handleChange = (e) => {
@@ -21,25 +21,48 @@ const Product = ({ product }) => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData);
-    // handleReachedFinalBid(formData);
+  const clearForm = () => {
     setFormData({
-      startingBid: "",
+      bid: "",
     });
   };
 
-  // const handleReachedFinalBid = (data) => {
-  //   const key = Number(data);
-  //   switch (key) {
-  //     case value:
-  //       break;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleReachedFinalBid(formData);
+    clearForm();
+  };
 
-  //     default:
-  //       break;
-  //   }
-  // };
+  const isInteger = (data) => {
+    const bidValue = Number(data);
+
+    if (isNaN(bidValue)) {
+      toast.error("Enter only a number");
+      clearForm();
+      return;
+    }
+
+    if (!Number.isInteger(bidValue)) {
+      toast.error("Enter only a whole number");
+      clearForm();
+      return;
+    }
+  };
+
+  const handleReachedFinalBid = (data) => {
+    const input = data.bid;
+    isInteger(input);
+    console.log(input);
+    const finalBid = product.finalBid;
+
+    // switch (key) {
+    //   case value:
+    //     break;
+
+    //   default:
+    //     break;
+    // }
+  };
 
   return (
     <div className="cardBorder productCard flex flex-col w-[300px] h-auto p-3">
@@ -85,9 +108,9 @@ const Product = ({ product }) => {
               <TextField
                 onChange={handleChange}
                 className="w-32"
-                name="startingBid"
+                name="bid"
                 label="bid"
-                value={formData.startingBid}
+                value={formData.bid}
                 //this is how to apply style to a MUI components
                 sx={{
                   "& .MuiInputBase-root": {

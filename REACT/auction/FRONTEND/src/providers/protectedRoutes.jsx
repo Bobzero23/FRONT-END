@@ -3,7 +3,6 @@ import { useEffect } from "react";
 
 export default function ProtectedRoutes({ children }) {
   const token = localStorage.getItem("jwt");
-  console.log(token);
   const navigate = useNavigate();
 
   useEffect(() => {

@@ -38,7 +38,7 @@ const authSlice = createSlice({
     loggedIn: false,
     loading: false,
     error: null,
-    isAdmin: true,
+    isAdmin: false,
     jwt: null,
   },
   reducers: {},
