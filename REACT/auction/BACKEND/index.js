@@ -44,7 +44,7 @@ mongoose
         console.log("Gelen mesaj:", data);
 
         // // Mesajı tüm kullanıcılara yayınlayın
-        io.emit("biddingAProduct", data);
+        socket.broadcast.emit("biddingAProduct", data);
       });
 
       // Kullanıcı bağlantısı kesildiğinde

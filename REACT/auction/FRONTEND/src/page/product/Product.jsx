@@ -47,9 +47,10 @@ const Product = ({ socket, product, handleSetleftBalance }) => {
         balance: auth.balance - formData.bid,
       })
     );
-    console.log(result);
+
     dispatch(updateBid({ id: product._id, startingBid: formData.bid }));
-    socket.emit("biddingAProduct", { product: formData });
+    //sending all the data coming from the client to server
+    socket.emit("biddingAProduct", { product: { ...formData, ...product } });
     handleSetleftBalance(result.payload?.balance);
     clearForm();
   };
