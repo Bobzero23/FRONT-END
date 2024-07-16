@@ -2,12 +2,15 @@ import "./Product.css";
 import { Button, TextField } from "@mui/material";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
-const reachedFinalBid = false;
-const outOfbiddingTime = false;
+import { updateBid } from "../../state/productSlice";
+
+let outOfbiddingTime = false;
 
 const Product = ({ product }) => {
+  const dispatch = useDispatch();
+  const [balance, setBalance] = useState(700000);
   const { auth } = useSelector((store) => store);
   const [formData, setFormData] = useState({
     bid: "",
@@ -29,39 +32,14 @@ const Product = ({ product }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleReachedFinalBid(formData);
+    console.log(formData);
+    handleUpdate({ id: product._id, startingBid: formData.bid });
     clearForm();
   };
 
-  const isInteger = (data) => {
-    const bidValue = Number(data);
-
-    if (isNaN(bidValue)) {
-      toast.error("Enter only a number");
-      clearForm();
-      return;
-    }
-
-    if (!Number.isInteger(bidValue)) {
-      toast.error("Enter only a whole number");
-      clearForm();
-      return;
-    }
-  };
-
-  const handleReachedFinalBid = (data) => {
-    const input = data.bid;
-    isInteger(input);
-    console.log(input);
-    const finalBid = product.finalBid;
-
-    // switch (key) {
-    //   case value:
-    //     break;
-
-    //   default:
-    //     break;
-    // }
+  const handleUpdate = ({ id, data }) => {
+    const bid = data;
+    dispatch(updateBid(id, data));
   };
 
   return (
@@ -74,15 +52,9 @@ const Product = ({ product }) => {
         />
       </div>
 
-      {reachedFinalBid ? (
+      {outOfbiddingTime ? (
         <div className="flex justify-center items-center">
-          <h1 className="font-extrabold text-red-900">SOLD OUT</h1>
-        </div>
-      ) : outOfbiddingTime ? (
-        <div className="flex justify-center items-center">
-          <h1 className="font-extrabold text-orange-500">
-            NOT SELLING FOR NOW
-          </h1>
+          <h1 className="font-extrabold text-orange-500">SOLD OUT</h1>
         </div>
       ) : auth.isAdmin ? (
         <div className="cardBorder p-1 mb-1">
@@ -105,22 +77,26 @@ const Product = ({ product }) => {
               action=""
               onSubmit={handleSubmit}
             >
-              <TextField
-                onChange={handleChange}
-                className="w-32"
-                name="bid"
-                label="bid"
-                value={formData.bid}
-                //this is how to apply style to a MUI components
-                sx={{
-                  "& .MuiInputBase-root": {
-                    height: 40,
-                    padding: 0,
-                    width: 195,
-                  },
-                  "& .MuiInputLabel-root": { top: "-5px" },
-                }}
-              />
+              <div className="mr-1">
+                <TextField
+                  onChange={handleChange}
+                  fullWidth
+                  name="bid"
+                  label="bid"
+                  value={formData.bid}
+                  type="number"
+                  inputProps={{ min: "0", step: "1" }} // Optional: to specify minimum value and step size
+                  sx={{
+                    "& .MuiInputBase-root": {
+                      height: 40,
+                      padding: 0,
+                      width: 195,
+                    },
+                    "& .MuiInputLabel-root": { top: "-5px" },
+                  }}
+                />
+              </div>
+
               <Button variant="contained" type="submit">
                 BID
               </Button>

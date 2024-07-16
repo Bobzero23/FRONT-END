@@ -43,4 +43,28 @@ router.get("/", async (request, response) => {
   }
 });
 
+//update the bidding value
+router.put("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { startingBid } = req.body;
+
+    // Find the product by id and update the startingBid
+    const product = await Product.findByIdAndUpdate(
+      id,
+      { startingBid },
+      { new: true } // Return the updated document
+    );
+
+    if (!product) {
+      return res.status(404).send({ message: "Product not found" });
+    }
+
+    res.status(200).send(product);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({ message: error.message });
+  }
+});
+
 export default router;

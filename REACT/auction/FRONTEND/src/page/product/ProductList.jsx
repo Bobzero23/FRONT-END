@@ -37,9 +37,10 @@ const ProductList = () => {
   return (
     <div className="flex flex-col space-y-3 items-center justify-center p-5">
       <div className="flex gap-1 flex-wrap justify-center items-center overflow-y-auto h-[calc(100vh-100px)]">
-        {product?.products.map((item) => (
-          <Product product={item} key={item._id} />
-        ))}
+        {product.products.length > 0 &&
+          product?.products?.map((item) => (
+            <Product product={item} key={item._id} />
+          ))}
       </div>
       <div className="space-x-2">
         <Button variant="contained" onClick={handleLogout}>
