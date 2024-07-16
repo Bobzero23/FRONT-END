@@ -1,10 +1,11 @@
 import express from "express";
 import { Product } from "../models/productModel.js";
+import verifyToken from "./verifyToken.js";
 
 const router = express.Router();
 
 //adding a new product
-router.post("/", async (request, response) => {
+router.post("/", verifyToken, async (request, response) => {
   try {
     if (
       !request.body.link ||
@@ -32,7 +33,7 @@ router.post("/", async (request, response) => {
 });
 
 //getting all the products
-router.get("/", async (request, response) => {
+router.get("/", verifyToken, async (request, response) => {
   try {
     //getting all the products in the database
     const products = await Product.find({});
@@ -44,7 +45,7 @@ router.get("/", async (request, response) => {
 });
 
 //update the bidding value
-router.put("/:id", async (req, res) => {
+router.put("/:id", verifyToken, async (req, res) => {
   const { id } = req.params;
   const { startingBid } = req.body;
 

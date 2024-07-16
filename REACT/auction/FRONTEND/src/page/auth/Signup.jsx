@@ -30,11 +30,11 @@ const SignUp = () => {
     const response = await dispatch(signup(formData));
     setIsLoading(false);
     console.log(response.status);
-    if (response.status === 201) {
-      toast.success(response.message);
+    if (signup.fulfilled.match(response)) {
+      toast.success("registered successfully!");
       navigate("/");
     } else {
-      toast.error(response.message);
+      toast.error("Error happened");
     }
   };
 
@@ -47,6 +47,7 @@ const SignUp = () => {
           <form className="space-y-3" onSubmit={handleSubmit}>
             <TextField
               fullWidth
+              required
               name="username"
               label="username"
               value={formData.username}
@@ -54,6 +55,7 @@ const SignUp = () => {
             />
             <TextField
               fullWidth
+              required
               name="email"
               label="email"
               type="email"
@@ -62,6 +64,7 @@ const SignUp = () => {
             />
             <TextField
               fullWidth
+              required
               name="password"
               label="password"
               type="password"

@@ -5,12 +5,12 @@ import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 
 import { updateBid } from "../../state/productSlice";
+import { updateBalance } from "../../state/slice";
 
 let outOfbiddingTime = false;
 
-const Product = ({ product }) => {
+const Product = ({ product, handleSetleftBalance }) => {
   const dispatch = useDispatch();
-  const [balance, setBalance] = useState(700000);
   const { auth } = useSelector((store) => store);
   const [formData, setFormData] = useState({
     bid: "",
@@ -30,18 +30,28 @@ const Product = ({ product }) => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+
+    if (formData.bid > auth.balance) {
+      toast.error("Your balance is not enough");
+      clearForm();
+      return;
+    } else if (formData.bid <= product.startingBid) {
+      toast.error("You must bid higher");
+      clearForm();
+      return;
+    }
+    const result = await dispatch(
+      updateBalance({
+        balance: auth.balance - formData.bid,
+      })
+    );
+    console.log(result);
     dispatch(updateBid({ id: product._id, startingBid: formData.bid }));
-    // handleUpdate({ id: product._id, startingBid: formData.bid });
+    handleSetleftBalance(result.payload?.balance);
     clearForm();
   };
-
-  // const handleUpdate = ({ id, data }) => {
-  //   const bid = data;
-  //   dispatch(updateBid(id, data));
-  // };
 
   return (
     <div className="cardBorder productCard flex flex-col w-[300px] h-auto p-3">

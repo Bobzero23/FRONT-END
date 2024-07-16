@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import productRoute from "./routes/productRoute.js";
 import userRegisterRoute from "./routes/userRegisterRoute.js";
 import userLoginRoute from "./routes/userLoginRoute.js";
+import userRoute from "./routes/userRoute.js";
 import cors from "cors";
 
 dotenv.config();
@@ -18,6 +19,7 @@ app.use(cors());
 app.use("/product", productRoute);
 app.use("/signup", userRegisterRoute);
 app.use("/signin", userLoginRoute);
+app.use("/user", userRoute);
 
 mongoose
   //connecting to a database

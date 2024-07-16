@@ -1,7 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+import axios from "../api/api";
 import { BASE_URL } from "../api/api";
 
+//adding a new product
 export const addProduct = createAsyncThunk(
   "products/addProduct",
   async (product) => {
@@ -21,6 +22,7 @@ export const addProduct = createAsyncThunk(
   }
 );
 
+//getting all products available
 export const getAllProducts = createAsyncThunk(
   "products/getAllProducts",
   async () => {
@@ -37,6 +39,7 @@ export const getAllProducts = createAsyncThunk(
   }
 );
 
+//updating a product
 export const updateBid = createAsyncThunk(
   "products/updateBid/",
   async ({ id, startingBid }) => {
@@ -45,7 +48,6 @@ export const updateBid = createAsyncThunk(
       const { data: response } = await axios.put(`${BASE_URL}/product/${id}`, {
         startingBid,
       });
-      console.log("updated", response);
       return response;
     } catch (error) {
       console.log("catch error", error);

@@ -3,7 +3,7 @@ import axios from "axios";
 export const BASE_URL = "http://localhost:5555";
 
 //setting default url for backend requests
-export const api = axios.create({
+const api = axios.create({
   baseURL: BASE_URL,
   headers: {
     "Content-Type": "application/json",
@@ -17,3 +17,20 @@ export const setAuthHeader = (token, api) => {
     delete api.defaults.headers.common["Authorization"];
   }
 };
+
+api.interceptors.request.use(
+  (config) => {
+    // localStorage'dan token'ı alın
+    const token = localStorage.getItem("jwt");
+    if (token) {
+      // Token'ı Authorization header'ına ekleyin
+      config.headers["Authorization"] = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
+export default api;

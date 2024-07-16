@@ -1,13 +1,11 @@
 import express from "express";
 import { User } from "../models/userModel.js";
 import bcrypt from "bcrypt";
-import Joi from "joi";
 
 const router = express.Router();
 
 router.post("/", async (request, response) => {
   try {
-    console.log(request);
     if (!request.body.email || !request.body.password) {
       return response.send({
         message: "One of the property is missing",
@@ -43,20 +41,13 @@ router.post("/", async (request, response) => {
       data: token,
       message: "Logged in successfully!",
       status: 200,
+      balance: user.balance,
+      userId: user._id,
       isAdmin,
     });
   } catch (error) {
     console.log("Error happened while authenticating the user");
   }
 });
-
-const validate = (data) => {
-  const schema = Joi.object({
-    email: Joi.string().email().required().label("Email"),
-    password: Joi.string().required().label("Password"),
-  });
-
-  return schema.validate(data);
-};
 
 export default router;

@@ -1,7 +1,9 @@
 import mongoose from "mongoose";
 import jwt from "jsonwebtoken";
-import joi from "joi";
-import passwordComplexity from "joi-password-complexity";
+
+const generateRandomBalance = () => {
+  return Math.floor(Math.random() * (500000 + 1)) + 500000;
+};
 
 const userSchema = new mongoose.Schema({
   username: {
@@ -16,6 +18,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  balance: {
+    type: Number,
+    default: generateRandomBalance,
+  },
 });
 
 //generating a token
@@ -28,14 +34,3 @@ userSchema.methods.generateAuthToken = function () {
 
 //creating a model
 export const User = mongoose.model("User", userSchema);
-
-// //method to validate the coming request body
-// export const validate = (data) => {
-//   const schema = joi.object({
-//     username: joi.string().required().label("Username"),
-//     email: joi.string().email().required().label("Email"),
-//     password: passwordComplexity().required().label("Password"),
-//   });
-
-//   return schema.validate(data);
-// };
