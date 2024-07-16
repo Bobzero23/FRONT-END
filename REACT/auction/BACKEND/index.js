@@ -5,7 +5,7 @@ import productRoute from "./routes/productRoute.js";
 import userRegisterRoute from "./routes/userRegisterRoute.js";
 import userLoginRoute from "./routes/userLoginRoute.js";
 import userRoute from "./routes/userRoute.js";
-import socketIO from "socket.io";
+import { Server } from "socket.io";
 
 import http from "http";
 import cors from "cors";
@@ -34,8 +34,24 @@ mongoose
     server.listen(PORT, () => {
       console.log(`App is listening to port: ${PORT}`);
     });
-    const io = socketIO(server);
-    server.listen();
+
+    const io = new Server(server);
+    io.on("connection", (socket) => {
+      console.log("Yeni bir kullanıcı bağlandı:", socket.id);
+
+      // Kullanıcıdan gelen mesajı dinleyin
+      socket.on("biddingAProduct", (data) => {
+        console.log("Gelen mesaj:", data);
+
+        // // Mesajı tüm kullanıcılara yayınlayın
+        io.emit("biddingAProduct", data);
+      });
+
+      // Kullanıcı bağlantısı kesildiğinde
+      socket.on("disconnect", () => {
+        console.log("Kullanıcı bağlantısı kesildi:", socket.id);
+      });
+    });
   })
   .catch((error) => {
     console.log("There is a problem with the connection");

@@ -8,7 +8,7 @@ import { getAllProducts } from "../../state/productSlice.js";
 import { useNavigate } from "react-router-dom";
 import { getUserById } from "../../state/slice.js";
 
-const ProductList = () => {
+const ProductList = ({ socket }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { product, auth } = useSelector((store) => store);
@@ -52,6 +52,7 @@ const ProductList = () => {
         {product.products.length > 0 &&
           product?.products?.map((item) => (
             <Product
+              socket={socket}
               product={item}
               key={item._id}
               handleSetleftBalance={handleSetleftBalance}

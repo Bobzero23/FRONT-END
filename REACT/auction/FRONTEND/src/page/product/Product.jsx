@@ -9,7 +9,7 @@ import { updateBalance } from "../../state/slice";
 
 let outOfbiddingTime = false;
 
-const Product = ({ product, handleSetleftBalance }) => {
+const Product = ({ socket, product, handleSetleftBalance }) => {
   const dispatch = useDispatch();
   const { auth } = useSelector((store) => store);
   const [formData, setFormData] = useState({
@@ -49,6 +49,7 @@ const Product = ({ product, handleSetleftBalance }) => {
     );
     console.log(result);
     dispatch(updateBid({ id: product._id, startingBid: formData.bid }));
+    socket.emit("biddingAProduct", { product: formData });
     handleSetleftBalance(result.payload?.balance);
     clearForm();
   };
