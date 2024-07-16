@@ -45,15 +45,14 @@ router.get("/", async (request, response) => {
 
 //update the bidding value
 router.put("/:id", async (req, res) => {
-  try {
-    const { id } = req.params;
-    const { startingBid } = req.body;
+  const { id } = req.params;
+  const { startingBid } = req.body;
 
-    // Find the product by id and update the startingBid
+  try {
     const product = await Product.findByIdAndUpdate(
       id,
       { startingBid },
-      { new: true } // Return the updated document
+      { new: true }
     );
 
     if (!product) {

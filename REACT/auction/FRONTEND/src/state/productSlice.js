@@ -41,12 +41,10 @@ export const updateBid = createAsyncThunk(
   "products/updateBid/",
   async ({ id, startingBid }) => {
     try {
-      console.log("before the update");
       //destructing, renaming the data to response
-      const { data: response } = await axios.put(
-        `${BASE_URL}/product/${id}`,
-        startingBid
-      );
+      const { data: response } = await axios.put(`${BASE_URL}/product/${id}`, {
+        startingBid,
+      });
       console.log("updated", response);
       return response;
     } catch (error) {
@@ -98,7 +96,12 @@ const productSlice = createSlice({
       })
       .addCase(updateBid.fulfilled, (state, action) => {
         state.loading = false;
-        state.products = action.payload;
+        const index = state.products.findIndex(
+          (product) => product._id === action.payload._id
+        );
+        if (index !== -1) {
+          state.products[index] = action.payload;
+        }
       })
       .addCase(updateBid.rejected, (state, action) => {
         state.loading = false;

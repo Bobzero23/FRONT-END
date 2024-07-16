@@ -33,14 +33,15 @@ const Product = ({ product }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
-    handleUpdate({ id: product._id, startingBid: formData.bid });
+    dispatch(updateBid({ id: product._id, startingBid: formData.bid }));
+    // handleUpdate({ id: product._id, startingBid: formData.bid });
     clearForm();
   };
 
-  const handleUpdate = ({ id, data }) => {
-    const bid = data;
-    dispatch(updateBid(id, data));
-  };
+  // const handleUpdate = ({ id, data }) => {
+  //   const bid = data;
+  //   dispatch(updateBid(id, data));
+  // };
 
   return (
     <div className="cardBorder productCard flex flex-col w-[300px] h-auto p-3">
