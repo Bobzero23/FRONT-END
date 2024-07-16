@@ -5,6 +5,9 @@ import productRoute from "./routes/productRoute.js";
 import userRegisterRoute from "./routes/userRegisterRoute.js";
 import userLoginRoute from "./routes/userLoginRoute.js";
 import userRoute from "./routes/userRoute.js";
+import socketIO from "socket.io";
+
+import http from "http";
 import cors from "cors";
 
 dotenv.config();
@@ -27,9 +30,12 @@ mongoose
   .then(() => {
     console.log("App connected to the database");
     // the server will only run if we are connected to the database
-    app.listen(PORT, () => {
+    const server = http.createServer(app); //intiating a server
+    server.listen(PORT, () => {
       console.log(`App is listening to port: ${PORT}`);
     });
+    const io = socketIO(server);
+    server.listen();
   })
   .catch((error) => {
     console.log("There is a problem with the connection");
