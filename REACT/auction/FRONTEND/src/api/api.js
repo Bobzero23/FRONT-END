@@ -1,5 +1,6 @@
 import axios from "axios";
 
+//here is the live backend link
 export const BASE_URL = "https://auction-app-backend-i9xh.onrender.com";
 
 //setting default url for backend requests
