@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const BASE_URL = "http://localhost:5555";
+export const BASE_URL = "https://auction-app-backend-i9xh.onrender.com";
 
 //setting default url for backend requests
 const api = axios.create({
