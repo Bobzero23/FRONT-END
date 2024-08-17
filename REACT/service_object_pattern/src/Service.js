@@ -1,7 +1,7 @@
 class MakeSound {
   voice(sound) {
     console.log(sound);
-    return;
+    return; // was it neccessary
   }
 }
 
