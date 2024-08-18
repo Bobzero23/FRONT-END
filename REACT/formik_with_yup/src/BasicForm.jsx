@@ -44,6 +44,9 @@ const BasicForm = () => {
           placeholder="Enter your email"
           className={errors.email && touched.email ? "input-error" : ""}
         />
+        {errors.email && touched.email && (
+          <p className="error">{errors.email}</p>
+        )}
         <label htmlFor="age">age</label>
         <input
           style={{ height: "30px" }}
@@ -55,6 +58,7 @@ const BasicForm = () => {
           placeholder="Enter your age"
           className={errors.age && touched.age ? "input-error" : ""}
         />
+        {errors.age && touched.age && <p className="error">{errors.age}</p>}
         <label htmlFor="password">password</label>
         <input
           style={{ height: "30px" }}
@@ -66,6 +70,10 @@ const BasicForm = () => {
           placeholder="Enter your password"
           className={errors.password && touched.password ? "input-error" : ""}
         />
+        {errors.password && touched.password && (
+          <p className="error">{errors.password}</p>
+        )}
+
         <label htmlFor="confirmPassword">confirm password</label>
         <input
           style={{ height: "30px" }}
@@ -81,6 +89,9 @@ const BasicForm = () => {
               : ""
           }
         />
+        {errors.confirmPassword && touched.confirmPassword && (
+          <p className="error">{errors.confirmPassword}</p>
+        )}
         <button type="submit">Submit</button>
       </form>
     </div>
