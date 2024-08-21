@@ -5,11 +5,11 @@ import { useEffect } from "react";
 
 function App() {
   const [name, setName] = useState("");
-  const renderedCount = useRef(1);
+  const previousName = useRef("");
 
   useEffect(() => {
-    renderedCount.current = renderedCount.current + 1;
-  });
+    previousName.current = name;
+  }, [name]);
 
   return (
     <>
@@ -18,8 +18,9 @@ function App() {
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
-      <div>You just typed: {name}</div>
-      <div>Component rendered {renderedCount.current} times</div>
+      <div>
+        My name is {name} but it used to be {previousName.current}
+      </div>
     </>
   );
 }
