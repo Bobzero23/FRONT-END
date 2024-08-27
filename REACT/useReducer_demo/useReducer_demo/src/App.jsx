@@ -1,13 +1,20 @@
-import { useState } from "react";
+import { useReducer, useState } from "react";
 import "./App.css";
 
+function reducer(state, action) {
+  return { count: state.count + 1 };
+}
+
 function App() {
-  const [count, setCount] = useState(0);
+  const [state, dispatch] = useReducer(reducer, { count: 0 });
+  function increment() {
+    dispatch();
+  }
 
   return (
     <div>
-      <button onClick={() => setCount((prevCount) => prevCount + 1)}>+</button>
-      <span>{count}</span>
+      <button onClick={increment}>+</button>
+      <span>{state.count}</span>
       <button onClick={() => setCount((prevCount) => prevCount - 1)}>-</button>
     </div>
   );
