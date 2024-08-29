@@ -16,7 +16,7 @@ const Todo = ({ todo, dispatch }) => {
         {todo.name}
       </span>
       <button onClick={handleToggle}>Toggle</button>
-      <button>Delete</button>
+      <button onClick={handleDelete}>Delete</button>
     </div>
   );
 };
