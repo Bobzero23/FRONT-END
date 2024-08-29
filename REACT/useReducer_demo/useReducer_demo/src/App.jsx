@@ -2,6 +2,10 @@ import { useReducer, useState } from "react";
 import "./App.css";
 import Todo from "./Todo";
 
+function addNewTodo(name) {
+  return { id: Date.now(), name: name, complete: false };
+}
+
 export const ACTIONS = {
   ADD_TODO: "add-todo",
   TOGGLE_TODO: "toggle-todo",
@@ -11,7 +15,7 @@ export const ACTIONS = {
 function reducer(todos, action) {
   switch (action.type) {
     case ACTIONS.ADD_TODO:
-      return [...todos, newTodo(action.payload.name)];
+      return [...todos, addNewTodo(action.payload.name)];
     case ACTIONS.TOGGLE_TODO:
       return todos.map((todo) => {
         if (todo.id === action.payload.id) {
@@ -26,13 +30,9 @@ function reducer(todos, action) {
   }
 }
 
-function newTodo(name) {
-  return { id: Date.now(), name: name, complete: false };
-}
-
 function App() {
-  const [todos, dispatch] = useReducer(reducer, []);
   const [name, setName] = useState("");
+  const [todos, dispatch] = useReducer(reducer, []);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -44,10 +44,8 @@ function App() {
     <div>
       <form onSubmit={handleSubmit}>
         <input
-          required
-          value={name}
           type="text"
-          placeholder="Enter a todo"
+          value={name}
           onChange={(e) => setName(e.target.value)}
         />
         <button type="submit">submit</button>
