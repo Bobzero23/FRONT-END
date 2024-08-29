@@ -5,6 +5,11 @@ const Todo = ({ todo, dispatch }) => {
   function handleToggle() {
     dispatch({ type: ACTIONS.TOGGLE_TODO, payload: { id: todo.id } });
   }
+
+  function handleDelete() {
+    dispatch({ type: ACTIONS.DELETE_TODO, payload: { id: todo.id } });
+  }
+
   return (
     <div>
       <span style={{ color: todo.complete ? "#AAA" : "#000" }}>
