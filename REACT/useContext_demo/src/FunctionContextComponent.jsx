@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { ThemeContext } from "./App";
+import { ThemeContext } from "./ThemeContext";
 
 const FunctionContextComponent = () => {
   const darkTheme = useContext(ThemeContext); //accesing the state of another component
