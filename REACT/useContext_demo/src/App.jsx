@@ -1,34 +1,40 @@
 import React, { useContext, useState } from "react";
 import "./App.css";
 import {styled} from "@mui/material/styles"
+import { Box } from "@mui/material";
+import ThemeBox from "./ThemeBox";
+import { themeContex } from "./ThemeContext";
 
 const ToggleThemeButton = styled('button')(({ theme }) => ({
   display: 'flex',
   flex: '1 1 auto',
   maxWidth: '100%',
-  paddingTop: 16, // Adjust padding as needed for buttons
+  paddingTop: 16, 
   paddingBottom: 16,
-  paddingLeft: 32,  // Adds padding to make the button appear well-sized
+  paddingLeft: 32, 
   paddingRight: 32,
-  fontSize: '16px', // Customize button text size
-  backgroundColor: theme.palette.primary.main, // Use the theme's primary color
-  color: '#fff', // White text for contrast
-  border: 'none', // No border for modern button style
-  borderRadius: '8px', // Rounded corners
+  fontSize: '16px', 
+  backgroundColor: theme.palette.primary.main, 
+  color: '#fff', 
+  border: 'none', 
+  borderRadius: '8px', 
   cursor: 'pointer',
   [theme.breakpoints.up('lg')]: {
-      paddingLeft: 280, // For larger screens, if needed
+      paddingLeft: 280, 
   },
   '&:hover': {
-      backgroundColor: theme.palette.primary.dark, // Darker background on hover
+      backgroundColor: theme.palette.primary.dark, 
   }
 }));
 
 function App() {
+  const {toggleTheme} = useContext(themeContex);
+
   return (
-    <>
-      <ToggleThemeButton>Toggle Theme</ToggleThemeButton>
-    </>
+    <Box sx={{display: "flex", gap: 2, flexDirection: "column"}}>
+      <ToggleThemeButton onClick={toggleTheme}>Toggle Theme</ToggleThemeButton>
+      <ThemeBox/>
+    </Box>
   );
 }
 
