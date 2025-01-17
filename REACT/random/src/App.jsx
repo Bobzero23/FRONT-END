@@ -1,10 +1,14 @@
 import './App.css'
 import data from './data.json'
+import { useState } from 'react'
 
 function App() {
+  const [people, setPeople] = useState(data);
 
-  const handleRemove = (index) => {
-    alert("This is the user index: " + index)
+  const handleRemove = (index) => {}
+
+  const handleClear = () => {
+    setPeople([]);
   }
 
   return (
@@ -12,15 +16,15 @@ function App() {
       <div className="App">
         <h1>User List</h1>
         {
-          data.map((user, index) => {
+          people.map((person, index) => {
             return <li key={index} style={{listStyleType: "none"}}>
-              <h4>{user.firstName} {" "} {user.lastName}</h4> 
+              <h4>{person.firstName} {" "} {person.lastName}</h4> 
               <button onClick={() => handleRemove(index)}>remove</button>
             </li>
           })
         }
 
-        <button style={{marginTop: "20px"}}>CLEAR</button>
+        <button style={{marginTop: "20px"}} onClick={handleClear}>CLEAR</button>
       </div>
     </>
   )
