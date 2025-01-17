@@ -5,7 +5,10 @@ import { useState } from 'react'
 function App() {
   const [people, setPeople] = useState(data);
 
-  const handleRemove = (index) => {}
+  const handleRemove = (id) => {
+    const newPoeple = people.filter((person) => person.id !== id);
+    setPeople(newPoeple);
+  }
 
   const handleClear = () => {
     setPeople([]);
@@ -16,10 +19,10 @@ function App() {
       <div className="App">
         <h1>User List</h1>
         {
-          people.map((person, index) => {
-            return <li key={index} style={{listStyleType: "none"}}>
+          people.map((person) => {
+            return <li key={person.id} style={{listStyleType: "none"}}>
               <h4>{person.firstName} {" "} {person.lastName}</h4> 
-              <button onClick={() => handleRemove(index)}>remove</button>
+              <button onClick={() => handleRemove(person.id)}>remove</button>
             </li>
           })
         }
