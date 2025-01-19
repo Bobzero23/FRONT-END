@@ -1,11 +1,11 @@
-import './App.css'
-import UseStateWithObject from './UseStateWithObject'
+
+import ReadMore from './ReadMore'
 
 function App() {
 
   return (
     <>
-      <UseStateWithObject />
+      <ReadMore />
     </>
   )
 }
