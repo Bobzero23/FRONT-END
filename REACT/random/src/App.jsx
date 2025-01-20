@@ -1,11 +1,11 @@
 
-import ReadMore from './ReadMore'
+import Questions from './Questions'
 
 function App() {
 
   return (
     <>
-      <ReadMore />
+      <Questions />
     </>
   )
 }
