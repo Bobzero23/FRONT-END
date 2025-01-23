@@ -5,12 +5,21 @@ import { SingleQuestion } from "./SingleQuestion";
 
 const Questions = () => {
   const [questions, setQuestions] = useState(data);
-  const [activeId, setActiveId] = useState(null);
+  const [openQuestionId,setOpenQeustionId] = useState(null);
+
+  const handleToggle = (id) => {
+    setOpenQeustionId(openQuestionId === id ? null : id);
+  };
 
   return (
     <div>
       {questions.map((question) => (
-        <SingleQuestion key={question.id} />
+        <SingleQuestion
+          key={question.id}
+          {...question}
+          isOpen={openQuestionId === question.id}
+          onToggle={()=> handleToggle(question.id)}
+        />
       ))}
     </div>
   );
