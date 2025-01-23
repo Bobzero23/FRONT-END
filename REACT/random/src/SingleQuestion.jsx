@@ -1,14 +1,13 @@
 
 
-export const SingleQuestion = ({id, question, answer}) => {
+export const SingleQuestion = ({id, question, answer, isOpen, onToggle}) => {
     return (
         <article>
             <header>
                 <h4>{question}</h4>
-                <button className="btn">+</button>
-                <button className="btn">-</button>
+                <button onClick={onToggle}>{isOpen ? '-' : '+'}</button>
             </header>
-            <p>{answer}</p>
+            {isOpen && <p>{answer}</p>}
         </article>
     )
 }
