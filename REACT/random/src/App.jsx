@@ -1,11 +1,11 @@
 
-import Questions from './Questions'
+import Menu from './Menu'
 
 function App() {
 
   return (
     <>
-      <Questions />
+      <Menu />
     </>
   )
 }
