@@ -1,27 +1,30 @@
 [
-    {
-        "id": 1,
-        "question": "What is the capital of France?",
-        "answer": "Paris"
-    },
-    {
-        "id": 2,
-        "question": "What is 2 + 2?",
-        "answer": "4"
-    },
-    {
-        "id": 3,
-        "question": "What is the largest planet in our solar system?",
-        "answer": "Jupiter"
-    },
-    {
-        "id": 4,
-        "question": "What is the boiling point of water?",
-        "answer": "100°C"
-    },
-    {
-        "id": 5,
-        "question": "Who wrote 'To Kill a Mockingbird'?",
-        "answer": "Harper Lee"
-    }
+    [
+        { "id": 1, "food": "Apple", "description": "A sweet red fruit", "price": 1.2 },
+        { "id": 2, "food": "Banana", "description": "A long yellow fruit", "price": 0.5 },
+        { "id": 3, "food": "Carrot", "description": "An orange root vegetable", "price": 0.3 },
+        { "id": 4, "food": "Donut", "description": "A sweet fried dough", "price": 1.5 },
+        { "id": 5, "food": "Egg", "description": "A protein-rich food", "price": 0.2 }
+    ],
+    [
+        { "id": 6, "food": "Fish", "description": "A healthy seafood", "price": 3.0 },
+        { "id": 7, "food": "Grapes", "description": "A bunch of small fruits", "price": 2.0 },
+        { "id": 8, "food": "Hamburger", "description": "A beef sandwich", "price": 4.5 },
+        { "id": 9, "food": "Ice Cream", "description": "A cold sweet dessert", "price": 2.5 },
+        { "id": 10, "food": "Juice", "description": "A refreshing drink", "price": 1.8 }
+    ],
+    [
+        { "id": 11, "food": "Kiwi", "description": "A small brown fruit", "price": 1.0 },
+        { "id": 12, "food": "Lemon", "description": "A sour yellow fruit", "price": 0.7 },
+        { "id": 13, "food": "Mango", "description": "A tropical fruit", "price": 1.5 },
+        { "id": 14, "food": "Nuts", "description": "A crunchy snack", "price": 2.0 },
+        { "id": 15, "food": "Orange", "description": "A citrus fruit", "price": 1.2 }
+    ],
+    [
+        { "id": 16, "food": "Pizza", "description": "A cheesy dish", "price": 5.0 },
+        { "id": 17, "food": "Quinoa", "description": "A healthy grain", "price": 3.5 },
+        { "id": 18, "food": "Rice", "description": "A staple food", "price": 1.0 },
+        { "id": 19, "food": "Steak", "description": "A juicy meat", "price": 7.0 },
+        { "id": 20, "food": "Tomato", "description": "A red vegetable", "price": 0.8 }
+    ]
 ]
